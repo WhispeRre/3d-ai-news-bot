@@ -522,8 +522,9 @@ def _reddit_sub_items(src, ctx, log, sub: dict, entries: list) -> List[NewsItem]
 
 # ---------------------------------------------------------------- X (Twitter)
 
-def _tweets_via_api(account: str, api_cfg: dict, api_key: str, max_age: int) -> List[dict]:
-    """twitterapi.io：低价套餐有 QPS 限流，429 时退避重试"""
+def _tweets_via_api(account: str, api_cfg: dict, api_key: str, max_age: int) -> Optional[List[dict]]:
+    """twitterapi.io：低价套餐有 QPS 限流，429 时退避重试。
+    接口一条推文都没返回时给 None（X 可能在搜索里隐藏了该账号），和"有推文但都不在时间窗内"区分开"""
     resp = None
     for attempt in range(3):
         resp = requests.get(f"{api_cfg.get('base_url', 'https://api.twitterapi.io')}/twitter/user/last_tweets",
@@ -535,9 +536,11 @@ def _tweets_via_api(account: str, api_cfg: dict, api_key: str, max_age: int) -> 
     resp.raise_for_status()
     data = resp.json()
     if data.get('status') == 'error':
-        raise RuntimeError(data.get('message', 'twitterapi.io 返回错误'))
+        raise RuntimeError(data.get('msg') or data.get('message') or 'twitterapi.io 返回错误')
     # tweets 可能在顶层或 data 内
     tweets = data.get('tweets') or (data.get('data') or {}).get('tweets') or []
+    if not tweets:
+        return None
     out = []
     for tw in tweets:
         text = (tw.get('text') or '').strip()
@@ -599,10 +602,9 @@ def collect_twitter(src, ctx, log):
             tweets = None
             if api_key:
                 try:
-                    # 部分账号 API 会成功返回空列表，用 nitter 再确认一次
-                    tweets = _tweets_via_api(account, api_cfg, api_key, max_age) or None
+                    tweets = _tweets_via_api(account, api_cfg, api_key, max_age)
                 except Exception as e:
-                    log(f'@{account} API 失败（{type(e).__name__}），回退 nitter')
+                    log(f'@{account} API 失败（{type(e).__name__}: {clip(str(e), 80)}），回退 nitter')
             if tweets is None:
                 try:
                     tweets = _tweets_via_nitter(account, instances, max_age)
