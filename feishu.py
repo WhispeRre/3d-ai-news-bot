@@ -2,7 +2,8 @@
 """
 飞书消息发送，方式由 config.feishu.mode 决定：
 - app：飞书应用机器人。凭 App ID / App Secret（环境变量 LARK_APP_ID / LARK_APP_SECRET）调开放接口，
-  日报发到 feishu.chat_ids 里的每个群（机器人需已入群），告警私信给 feishu.admin_user_ids（需在应用可用范围内）
+  日报发到 feishu.chat_ids 里的每个群（机器人需已入群）并私信 feishu.user_ids 里的每个人，
+  告警私信给 feishu.admin_user_ids（私信对象都需在应用可用范围内）
 - webhook：群自定义机器人，只需要 Webhook 地址（FEISHU_WEBHOOK_URL；开了签名校验再配 FEISHU_WEBHOOK_SECRET）
 两种方式发的是同一种消息卡片。告警发不出私信（或没配管理员）时退回 FEISHU_ALERT_WEBHOOK_URL，
 这样应用凭证失效导致推送失败时，告警仍能送达。
@@ -41,7 +42,7 @@ class FeishuError(RuntimeError):
 
 # ---------------------------------------------------------------- 消息卡片
 
-def _card(title: str, blocks: List[str]) -> dict:
+def _card(title: str, blocks: List[str], color: str = 'blue') -> dict:
     elements = []
     for i, block in enumerate(blocks):
         if i:
@@ -49,7 +50,7 @@ def _card(title: str, blocks: List[str]) -> dict:
         elements.append({'tag': 'markdown', 'content': block})
     return {
         'config': {'wide_screen_mode': True},
-        'header': {'title': {'tag': 'plain_text', 'content': title}, 'template': 'blue'},
+        'header': {'title': {'tag': 'plain_text', 'content': title}, 'template': color},
         'elements': elements,
     }
 
@@ -58,10 +59,11 @@ def _card_size(card: dict) -> int:
     return len(json.dumps({'msg_type': 'interactive', 'card': card}, ensure_ascii=False).encode('utf-8'))
 
 
-def report_to_cards(markdown: str) -> List[dict]:
+def report_to_cards(markdown: str, color: str = 'blue') -> List[dict]:
     """
     日报 Markdown 转消息卡片：首行 # 标题做卡片头，每个 ## 板块一段、板块之间加分割线，
     板块标题转成加粗（卡片 Markdown 不支持 # 标题）。超过请求体上限时按板块拆成多张卡片。
+    color 是卡片头的颜色（飞书卡片模板色：blue、indigo、purple、green 等）
     """
     lines = markdown.strip().splitlines()
     title = '每日资讯'
@@ -80,15 +82,15 @@ def report_to_cards(markdown: str) -> List[dict]:
 
     groups, chunk = [], []
     for block in blocks:
-        if chunk and _card_size(_card(title, chunk + [block])) > CARD_BODY_LIMIT:
+        if chunk and _card_size(_card(title, chunk + [block], color)) > CARD_BODY_LIMIT:
             groups.append(chunk)
             chunk = []
         chunk.append(block)
     if chunk:
         groups.append(chunk)
     if len(groups) == 1:
-        return [_card(title, groups[0])]
-    return [_card(f'{title}（{i}/{len(groups)}）', g) for i, g in enumerate(groups, 1)]
+        return [_card(title, groups[0], color)]
+    return [_card(f'{title}（{i}/{len(groups)}）', g, color) for i, g in enumerate(groups, 1)]
 
 
 # ---------------------------------------------------------------- 自定义机器人 Webhook
@@ -169,21 +171,22 @@ def _app_send(receive_id_type: str, receive_id: str, msg_type: str, content: dic
 def send_report(config: dict, markdown: str) -> bool:
     fs = config.get('feishu', {})
     mode = fs.get('mode', 'webhook')
-    cards = report_to_cards(markdown)
+    cards = report_to_cards(markdown, fs.get('card_color', 'blue'))
     if mode == 'app':
-        chat_ids = fs.get('chat_ids') or []
-        if not chat_ids:
-            print('❌ 未配置 feishu.chat_ids')
+        targets = ([('chat_id', c) for c in fs.get('chat_ids') or []]
+                   + [('open_id', u) for u in fs.get('user_ids') or []])
+        if not targets:
+            print('❌ 未配置 feishu.chat_ids 或 feishu.user_ids')
             return False
         ok = True
-        for chat_id in chat_ids:
+        for id_type, target in targets:
             try:
                 for i, card in enumerate(cards):
                     if i:
                         time.sleep(1)
-                    _app_send('chat_id', chat_id, 'interactive', card)
+                    _app_send(id_type, target, 'interactive', card)
             except Exception as e:
-                print(f'   ❌ 推送到群 {chat_id} 失败：{e}')
+                print(f"   ❌ 推送到{'群' if id_type == 'chat_id' else '用户'} {target} 失败：{e}")
                 ok = False
         return ok
     if mode == 'webhook':

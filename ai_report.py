@@ -14,16 +14,22 @@ import os
 import re
 import sys
 import time
-from typing import List
+from typing import List, Optional
 
-from common import (BASE_DIR, TOPICS_FILE, item_key, load_config, load_env_var, raw_path, read_json,
-                    report_path, today_str)
+from common import (BASE_DIR, TOPICS_FILE, item_key, load_config, load_env_var, pick_topic, raw_path, read_json,
+                    report_heading, report_path, today_str)
 
 MAX_ATTEMPTS = 2      # 1 次正式 + 1 次重试
 RETRY_DELAY = 30
 URL_RE = re.compile(r'https?://[^\s)\]>"]+')
 # 报告里出现几个候选数据之外的链接就判定为编造，降级到模板整理
 MAX_UNKNOWN_URLS = 2
+
+DATA_GUIDE = """- 每条有 title、url、source、kind、reliability、summary、published_at、score、tracks、section、meta
+- kind：official 官方发布 / paper 论文 / model 模型 / repo 开源仓库 / release 版本发布 / media 媒体报道 / kol 博主 / community 社区帖子
+- score 是采集时按信源权重和热度估的分，只作参考；tracks、section 是关键词自动匹配的，经常不准，以你的判断为准
+- meta 里的热度信号：upvotes（HF 论文点赞）、likes（HF 模型点赞）、stars（GitHub 星数）、points（Hacker News 分数）；\
+also_in 表示同一内容还出现在其他信源，说明关注度更高"""
 
 
 def load_recent_topics(date: str) -> str:
@@ -37,21 +43,30 @@ def load_recent_topics(date: str) -> str:
     return '\n'.join(lines)
 
 
-def build_prompt(config: dict, raw: dict, date: str, recent_block: str) -> str:
+def build_prompt(config: dict, raw: dict, date: str, recent_block: str, topic: Optional[dict]) -> str:
+    """report.style 选写法：news 是资讯日报（默认），learning 是带深读和知识点的学习简报"""
+    if config.get('report', {}).get('style') == 'learning':
+        return build_learning_prompt(config, raw, date, recent_block, topic)
+    return build_news_prompt(config, raw, date, recent_block)
+
+
+def section_guide(config: dict) -> str:
+    tracks = config['tracks']
+    return '\n'.join(
+        f"- `## {s['title']}`：" + '；'.join(f"{tracks[t]['name']}——{tracks[t]['description']}" for t in s['tracks'])
+        for s in config['sections']
+    )
+
+
+def build_news_prompt(config: dict, raw: dict, date: str, recent_block: str) -> str:
     report = config.get('report', {})
     name = config.get('name', '每日资讯')
-    tracks = config['tracks']
     sections = config['sections']
     top_n = report.get('top_picks', 3)
     per_section = max(s.get('max_items', 3) for s in sections)
     total = len(raw.get('items', []))
     raw_rel = os.path.relpath(raw_path(date), BASE_DIR)
     out_rel = os.path.relpath(report_path(date), BASE_DIR)
-
-    section_lines = '\n'.join(
-        f"- `## {s['title']}`：" + '；'.join(f"{tracks[t]['name']}——{tracks[t]['description']}" for t in s['tracks'])
-        for s in sections
-    )
     section_titles = '、'.join(f"`## {s['title']}`" for s in sections)
 
     dedup_rule = dedup_section = ''
@@ -71,18 +86,14 @@ def build_prompt(config: dict, raw: dict, date: str, recent_block: str) -> str:
 例如"高斯泼溅（用大量半透明小椭球表示 3D 场景的技术）"。
 
 ## 候选数据怎么读
-- 每条有 title、url、source、kind、reliability、summary、published_at、score、tracks、section、meta
-- kind：official 官方发布 / paper 论文 / model 模型 / repo 开源仓库 / release 版本发布 / media 媒体报道 / kol 博主 / community 社区帖子
-- score 是采集时按信源权重和热度估的分，只作参考；tracks、section 是关键词自动匹配的，经常不准，以你的判断为准
-- meta 里的热度信号：upvotes（HF 论文点赞）、likes（HF 模型点赞）、stars（GitHub 星数）、points（Hacker News 分数）；\
-also_in 表示同一内容还出现在其他信源，说明关注度更高
+{DATA_GUIDE}
 
 ## 板块与方向（决定每条放进哪个板块）
-{section_lines}
+{section_guide(config)}
 
 ## 输出格式（严格遵守，推送脚本按这个格式解析）
 ```markdown
-# 📰 {name} · {date[:4]}-{date[4:6]}-{date[6:]}
+{report_heading(config)} · {date[:4]}-{date[4:6]}-{date[6:]}
 
 一句话导语，概括今天最值得关注的动向（不超过 50 字）
 
@@ -120,8 +131,104 @@ also_in 表示同一内容还出现在其他信源，说明关注度更高
 只创建或覆盖 `{out_rel}` 这一个文件，不要修改其他任何文件。"""
 
 
-def allowed_urls(raw: dict) -> set:
-    keys = set()
+def build_learning_prompt(config: dict, raw: dict, date: str, recent_block: str, topic: Optional[dict]) -> str:
+    report = config.get('report', {})
+    name = config.get('name', '每日学习')
+    sections = config['sections']
+    deep_reads = report.get('deep_reads', 2)
+    per_section = max(s.get('max_items', 3) for s in sections)
+    total = len(raw.get('items', []))
+    raw_rel = os.path.relpath(raw_path(date), BASE_DIR)
+    out_rel = os.path.relpath(report_path(date), BASE_DIR)
+    section_titles = '、'.join(f"`## {s['title']}`" for s in sections)
+
+    topic_format = topic_guide = ''
+    if topic:
+        topic_format = f"""
+## 💡 每日知识点：{topic['title']}
+
+讲解正文（分两三段）
+📎 延伸阅读：[原文标题](链接) · [原文标题](链接)
+"""
+        refs = '\n'.join(f"  - [{r['title']}]({r['url']})" for r in topic.get('refs', []))
+        topic_guide = f"""
+## 每日知识点（必写，放在所有板块之后）
+今天讲「{topic['title']}」（属于学习大纲的「{topic.get('module', '')}」部分），要覆盖的点：{topic.get('points', '')}
+- 300–500 字讲透四件事：它是什么；要解决什么问题；具体怎么做（关键步骤或设计要点，可以举一个简短的例子）；\
+什么时候不适用、常见的坑
+- 用自己的话讲，像资深工程师给同事讲解，不要写成百科词条
+- 本期简报里已经写到的条目如果和这个主题直接相关，结尾用一句话点出来（例如"今天深读的 XX 就用了这个思路"）；\
+没写进简报的候选不要提，读者看不到
+- 延伸阅读只能用下面这些链接，原样复制：
+{refs}
+"""
+
+    dedup_rule = dedup_section = ''
+    if recent_block:
+        dedup_rule = ('\n9. **跨天不重复**：文末「近几天已推送」里写过的内容，只有今天出现实质新进展时才能再写，'
+                      '并点明是跟进；没有增量就跳过')
+        dedup_section = f'\n## 近几天已推送（判断"是否写过"以此为准）\n{recent_block}\n'
+
+    return f"""你是「{name}」的编辑兼技术导师。请阅读 `{raw_rel}`（今天采集的 {total} 条候选，JSON），\
+为读者写一份中文学习简报，写入 `{out_rel}`（UTF-8 Markdown，会被转成飞书消息卡片私信推送）。
+
+## 读者
+{config.get('reader_profile', '')}
+写作要讲清原理和做法，给出能借鉴的要点，不要泛泛而谈；术语第一次出现时顺手补半句解释。
+
+## 候选数据怎么读
+{DATA_GUIDE}
+
+## 板块与方向（决定每条放进哪个板块）
+{section_guide(config)}
+
+## 输出格式（严格遵守，推送脚本按这个格式解析）
+```markdown
+{report_heading(config)} · {date[:4]}-{date[4:6]}-{date[6:]}
+
+一句话导语，点出今天最值得学的一点（不超过 50 字）
+
+## 📖 今日深读
+
+**标题**
+- **讲了什么**：一两句话概括核心观点或发现
+- **怎么做的**：关键方法、架构或设计取舍，两三句话，尽量具体
+- **可以借鉴**：对做 Agent 产品的启发，或者马上能试的做法
+🔗 [来源名](链接)
+
+## 板块标题
+
+**标题**
+一两句话：是什么 + 值得关注的点（不超过 80 字）
+🔗 [来源名](链接)
+{topic_format}
+---
+📊 本期从 {total} 条候选中精选 X 条 · 🤖 {config.get('bot_name', '学习助手')}自动生成
+```
+- 「今日深读」1–{deep_reads} 篇：挑学习价值最高的深度内容——一线团队的工程复盘、方法论长文、重要论文、框架设计解读。\
+纯新闻、产品公告、营销稿不选；没有够格的就整块省略
+- 板块依次为 {section_titles}，每个板块最多 {per_section} 条；入选深读的不再出现在板块里；板块之间、条目之间各空一行
+- 标题独占一行并整行加粗，写成中文的"谁做了什么"，产品名、框架名保留原文；论文、开源项目、框架版本发布在标题开头分别加【论文】【开源】【版本】
+- 链接原样复制 JSON 里的 url，不得改动或自己拼接；来源名用 source 字段或更易懂的叫法
+- 正文不要用代码块、反引号、表格，也不要另加 # 或 ### 标题（飞书卡片显示不了）；列表只用深读格式里的"- "
+- 页脚的 X 换成实际入选条数（含深读，不含知识点）
+{topic_guide}
+## 编辑原则
+1. **学习价值优先**：优先选能讲清"为什么这样做、怎么做"的内容（方法、架构、实践复盘、评测数据），其次才是"发生了什么"的新闻
+2. **宁缺毋滥**：没有值得推荐内容的板块整块省略
+3. **总量**：全文最多 {report.get('max_items_total', 12)} 条（含深读，不含知识点）；论文合计最多 {report.get('max_papers', 3)} 篇，\
+优先 HF 点赞高或知名机构的，用大白话讲清楚"做了什么、效果如何"
+4. **框架版本**：只写带来新能力或重要变化的版本，讲清楚"新增了什么、解决什么问题"；纯修 bug、依赖升级不选
+5. **同一事件只出现一次**：多个信源报道同一件事时只保留一条，链接选最权威的（官方 > 媒体 > 社区）
+6. **社区帖子**（Reddit、Hacker News）只在有实质信息时入选（实践经验、实测对比、重要开源），纯讨论、求助、吐槽不选
+7. 条目的事实必须来自 JSON，不得编造内容、数字或链接；知识点讲解可以用你自己的知识，但不要编造具体数字、日期和出处
+8. 如果 items 为空，或没有任何值得推送的内容，**不要创建文件**，直接结束并说明原因（当天跳过推送）{dedup_rule}
+{dedup_section}
+只创建或覆盖 `{out_rel}` 这一个文件，不要修改其他任何文件。"""
+
+
+def allowed_urls(raw: dict, topic: Optional[dict] = None) -> set:
+    keys = {item_key(r['url']) for r in (topic or {}).get('refs', [])}
     for item in raw.get('items', []):
         meta = item.get('meta') or {}
         for url in (item.get('url'), meta.get('link_url'), meta.get('discussion_url'), meta.get('github_repo')):
@@ -130,14 +237,14 @@ def allowed_urls(raw: dict) -> set:
     return keys
 
 
-def check_report(config: dict, raw: dict, content: str) -> List[str]:
+def check_report(config: dict, raw: dict, content: str, topic: Optional[dict] = None) -> List[str]:
     problems = []
     first = content.lstrip().splitlines()[0] if content.strip() else ''
-    if not first.startswith(f"# 📰 {config.get('name', '')}"):
+    if not first.startswith(report_heading(config)):
         problems.append(f'标题行不符合格式：{first[:60]!r}')
     if len(content) < 300:
         problems.append(f'内容过短（{len(content)} 字符）')
-    known = allowed_urls(raw)
+    known = allowed_urls(raw, topic)
     unknown = [u for u in URL_RE.findall(content) if item_key(u.rstrip('.,;，。')) not in known]
     if unknown:
         print(f'⚠️ 报告里有 {len(unknown)} 个链接不在候选数据中：{unknown[:5]}')
@@ -183,7 +290,10 @@ def main() -> int:
     recent = load_recent_topics(date)
     if recent:
         print(f'🧠 注入近几天已推送的 {len(recent.splitlines())} 个条目标题，用于跨天去重')
-    prompt = build_prompt(config, raw, date, recent)
+    topic = pick_topic(config, date) if config.get('report', {}).get('style') == 'learning' else None
+    if topic:
+        print(f"📘 今日知识点：{topic['title']}")
+    prompt = build_prompt(config, raw, date, recent, topic)
     model = config.get('report', {}).get('model', 'auto')
     print(f"🤖 启动 Cursor 无头代理整理日报（模型 {model}，候选 {len(raw['items'])} 条）...")
 
@@ -217,7 +327,7 @@ def main() -> int:
 
     with open(out_file, 'r', encoding='utf-8') as f:
         content = f.read()
-    problems = check_report(config, raw, content)
+    problems = check_report(config, raw, content, topic)
     if problems:
         print('❌ AI 日报不合格：' + '；'.join(problems))
         os.rename(out_file, out_file + '.rejected')

@@ -1,0 +1,383 @@
+{
+  "description": "Agent 每日学习的知识点大纲：每天按顺序讲一个，讲完一轮从头开始（进度记在 state/agent/curriculum.json）。points 是要讲到的要点，refs 是延伸阅读，AI 只能引用这里的链接",
+  "topics": [
+    {
+      "id": "agent_vs_workflow",
+      "module": "基础范式",
+      "title": "什么是 Agent：Workflow 与 Agent 的区别",
+      "points": "增强型 LLM（检索、工具、记忆）是基本单元；预定义路径的 Workflow 与由模型自主决定步骤的 Agent；Agent 的代价（延迟、成本、错误累积）；先用最简单的方案，确有必要再上 Agent",
+      "refs": [
+        {"title": "Building effective agents", "url": "https://www.anthropic.com/research/building-effective-agents"},
+        {"title": "LLM Powered Autonomous Agents", "url": "https://lilianweng.github.io/posts/2023-06-23-agent/"}
+      ]
+    },
+    {
+      "id": "react",
+      "module": "基础范式",
+      "title": "ReAct：推理与行动交替",
+      "points": "Thought → Action → Observation 循环；为什么比只推理或只行动更可靠；如今基于函数调用的 Agent 循环与 ReAct 的关系；循环的终止条件与最大步数",
+      "refs": [
+        {"title": "ReAct 论文", "url": "https://arxiv.org/abs/2210.03629"},
+        {"title": "Google Research：ReAct 解读", "url": "https://research.google/blog/react-synergizing-reasoning-and-acting-in-language-models/"}
+      ]
+    },
+    {
+      "id": "workflow_patterns",
+      "module": "基础范式",
+      "title": "五种常用 Workflow 模式",
+      "points": "提示链、路由、并行（分段与投票）、编排者-执行者、评估者-优化者；每种适合什么任务；如何组合；什么时候该升级为 Agent",
+      "refs": [
+        {"title": "Building effective agents", "url": "https://www.anthropic.com/research/building-effective-agents"},
+        {"title": "LangGraph：Workflows and agents", "url": "https://docs.langchain.com/oss/python/langgraph/workflows-agents"}
+      ]
+    },
+    {
+      "id": "planning",
+      "module": "基础范式",
+      "title": "规划：任务分解与 Plan-and-Execute",
+      "points": "先规划再执行 vs 边想边做；计划要能根据执行结果修订；把计划外化成待办清单（如编程 Agent 的 todo 工具）；规划粒度与重新规划的时机",
+      "refs": [
+        {"title": "Plan-and-Solve Prompting", "url": "https://arxiv.org/abs/2305.04091"},
+        {"title": "LangChain：Plan-and-Execute Agents", "url": "https://www.langchain.com/blog/planning-agents"}
+      ]
+    },
+    {
+      "id": "reflection",
+      "module": "基础范式",
+      "title": "反思与自我纠错",
+      "points": "Reflexion 把失败经验写成文字记忆；Self-Refine 的生成-批评-修改循环；有外部信号（测试结果、执行报错）时反思才可靠；没有新信息的反思可能越改越错",
+      "refs": [
+        {"title": "Reflexion", "url": "https://arxiv.org/abs/2303.11366"},
+        {"title": "Self-Refine", "url": "https://arxiv.org/abs/2303.17651"}
+      ]
+    },
+    {
+      "id": "tool_calling",
+      "module": "基础范式",
+      "title": "工具调用的原理",
+      "points": "工具定义（名称、描述、JSON Schema）如何进入上下文；模型输出结构化调用、宿主程序执行、结果回填的循环；并行工具调用；用 tool_choice 强制或禁止调用",
+      "refs": [
+        {"title": "OpenAI：Function calling", "url": "https://developers.openai.com/api/docs/guides/function-calling"},
+        {"title": "Claude：Tool use", "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"}
+      ]
+    },
+    {
+      "id": "tool_design",
+      "module": "基础范式",
+      "title": "给 Agent 设计好用的工具",
+      "points": "Agent-Computer Interface（ACI）：像给人设计界面一样给模型设计工具；工具粒度与命名；返回内容精简、可读、带下一步提示；错误信息要能指导修正；用评测迭代工具描述",
+      "refs": [
+        {"title": "Writing effective tools for agents", "url": "https://www.anthropic.com/research/writing-tools-for-agents"},
+        {"title": "SWE-agent 论文", "url": "https://arxiv.org/abs/2405.15793"}
+      ]
+    },
+    {
+      "id": "context_engineering",
+      "module": "上下文与记忆",
+      "title": "上下文工程",
+      "points": "从提示工程到上下文工程；上下文是有限的注意力预算；系统提示、工具、示例、消息历史各自的取舍；按需检索（just-in-time）而不是一次塞满",
+      "refs": [
+        {"title": "Effective context engineering for AI agents", "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents"},
+        {"title": "Manus：Context Engineering 实践", "url": "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus"}
+      ]
+    },
+    {
+      "id": "long_context_failures",
+      "module": "上下文与记忆",
+      "title": "长上下文为什么会失效",
+      "points": "Context Rot：输入越长、表现越差；上下文中毒、干扰、混淆、冲突四类失效；压缩与摘要（compaction）；把中间结果写进外部笔记而不是留在上下文里",
+      "refs": [
+        {"title": "Chroma：Context Rot", "url": "https://www.trychroma.com/research/context-rot"},
+        {"title": "How Long Contexts Fail", "url": "https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html"}
+      ]
+    },
+    {
+      "id": "prompt_caching",
+      "module": "上下文与记忆",
+      "title": "提示缓存：为什么上下文要只追加",
+      "points": "前缀缓存的原理与价格差；保持系统提示前缀稳定；只追加、确定性序列化（如 JSON 键顺序固定）；动态增删工具会让缓存失效；缓存命中率是 Agent 成本的关键指标",
+      "refs": [
+        {"title": "Manus：Context Engineering 实践", "url": "https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus"},
+        {"title": "Claude：Prompt caching", "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"}
+      ]
+    },
+    {
+      "id": "memory",
+      "module": "上下文与记忆",
+      "title": "Agent 的记忆",
+      "points": "短期记忆（上下文内）与长期记忆（外部存储）；语义、情景、程序三类记忆；什么时候写入、怎么检索；记忆过期与冲突的处理",
+      "refs": [
+        {"title": "CoALA：语言 Agent 的认知架构", "url": "https://arxiv.org/abs/2309.02427"},
+        {"title": "MemGPT", "url": "https://arxiv.org/abs/2310.08560"}
+      ]
+    },
+    {
+      "id": "agentic_rag",
+      "module": "上下文与记忆",
+      "title": "Agentic RAG 与 Agentic Search",
+      "points": "传统 RAG 一次检索 vs Agent 多轮检索、改写查询、判断信息够不够；编程 Agent 用 grep 和读文件代替向量检索的趋势；向量库仍然适合的场景；给检索片段补上下文",
+      "refs": [
+        {"title": "Agentic RAG 综述", "url": "https://arxiv.org/abs/2501.09136"},
+        {"title": "Contextual Retrieval", "url": "https://www.anthropic.com/research/contextual-retrieval"}
+      ]
+    },
+    {
+      "id": "mcp_basics",
+      "module": "协议与生态",
+      "title": "MCP：模型上下文协议入门",
+      "points": "解决 M 个应用 × N 个工具的集成问题；Host、Client、Server 三个角色；Tools、Resources、Prompts 三类能力；本地 stdio 与远程 HTTP 两种传输",
+      "refs": [
+        {"title": "MCP 官方介绍", "url": "https://modelcontextprotocol.io/docs/getting-started/intro"},
+        {"title": "Introducing the Model Context Protocol", "url": "https://www.anthropic.com/news/model-context-protocol"}
+      ]
+    },
+    {
+      "id": "mcp_advanced",
+      "module": "协议与生态",
+      "title": "MCP 进阶：工具太多怎么办",
+      "points": "大量工具定义挤占上下文；按需发现和加载工具；让 Agent 写代码调用 MCP（把工具当 API 用），中间结果不进上下文；远程 MCP 的鉴权与安全",
+      "refs": [
+        {"title": "Code execution with MCP", "url": "https://www.anthropic.com/research/code-execution-with-mcp"},
+        {"title": "MCP 规范", "url": "https://modelcontextprotocol.io/specification/latest"}
+      ]
+    },
+    {
+      "id": "a2a",
+      "module": "协议与生态",
+      "title": "A2A：Agent 之间如何协作",
+      "points": "和 MCP 的分工：MCP 连接 Agent 与工具，A2A 连接 Agent 与 Agent；Agent Card 做能力发现；Task 的生命周期与流式更新；跨团队、跨厂商 Agent 协作的场景",
+      "refs": [
+        {"title": "A2A 协议文档", "url": "https://a2a-protocol.org/latest/"},
+        {"title": "Announcing the Agent2Agent Protocol", "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"}
+      ]
+    },
+    {
+      "id": "agent_skills",
+      "module": "协议与生态",
+      "title": "Agent Skills：按需加载的能力包",
+      "points": "SKILL.md 的结构（元数据 + 指令 + 脚本与资源）；渐进式披露：先只看描述，用到时再读全文；Skills 与 MCP、子 Agent 的区别；怎么写好一个 Skill",
+      "refs": [
+        {"title": "Equipping agents with Agent Skills", "url": "https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills"}
+      ]
+    },
+    {
+      "id": "multi_agent_patterns",
+      "module": "多 Agent",
+      "title": "多 Agent 架构模式",
+      "points": "主管（supervisor）、层级、网状（swarm）、交接（handoff）四种结构；共享状态与消息传递；各自的优缺点和适用任务",
+      "refs": [
+        {"title": "LangChain：Multi-agent", "url": "https://docs.langchain.com/oss/python/langchain/multi-agent"},
+        {"title": "OpenAI Agents SDK：Handoffs", "url": "https://openai.github.io/openai-agents-python/handoffs/"}
+      ]
+    },
+    {
+      "id": "when_multi_agent",
+      "module": "多 Agent",
+      "title": "什么时候该用多 Agent",
+      "points": "Anthropic 多 Agent 研究系统：并行探索和上下文隔离带来提升，代价是 token 消耗约为普通对话的 15 倍；Cognition 的反对意见：上下文割裂导致子 Agent 决策互相冲突；适合可并行拆分的宽任务，不适合强耦合任务",
+      "refs": [
+        {"title": "How we built our multi-agent research system", "url": "https://www.anthropic.com/research/multi-agent-research-system"},
+        {"title": "Don't Build Multi-Agents", "url": "https://cognition.com/blog/dont-build-multi-agents"}
+      ]
+    },
+    {
+      "id": "subagents",
+      "module": "多 Agent",
+      "title": "子 Agent 与上下文隔离",
+      "points": "主 Agent 把子任务派给子 Agent，子 Agent 在独立上下文里工作、只返回精简结果；防止主上下文膨胀；给子 Agent 限定工具权限；与多 Agent 平级协作的区别",
+      "refs": [
+        {"title": "Claude Code：Subagents", "url": "https://code.claude.com/docs/en/sub-agents"},
+        {"title": "Effective context engineering for AI agents", "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents"}
+      ]
+    },
+    {
+      "id": "evals_basics",
+      "module": "评测与可靠性",
+      "title": "Agent 评测入门",
+      "points": "先看真实日志做错误分析，再决定评测什么；代码断言、人工标注、模型评审三层；评测集从线上失败案例中积累；用评测驱动迭代，而不是凭感觉改提示词",
+      "refs": [
+        {"title": "Your AI Product Needs Evals", "url": "https://hamel.dev/blog/posts/evals/"},
+        {"title": "Demystifying evals for AI agents", "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents"}
+      ]
+    },
+    {
+      "id": "trajectory_eval",
+      "module": "评测与可靠性",
+      "title": "评估过程，而不只是结果",
+      "points": "只看最终状态 vs 检查完整轨迹；pass@k（试 k 次至少成功一次）与 pass^k（k 次全部成功，衡量稳定性）；用模拟用户评测多轮交互；校验环境的最终状态",
+      "refs": [
+        {"title": "τ-bench", "url": "https://arxiv.org/abs/2406.12045"},
+        {"title": "Demystifying evals for AI agents", "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents"}
+      ]
+    },
+    {
+      "id": "benchmarks",
+      "module": "评测与可靠性",
+      "title": "主流 Agent 基准怎么读",
+      "points": "SWE-bench（修真实 GitHub issue）、OSWorld（操作电脑完成任务）、τ-bench（工具调用 + 多轮对话）、GAIA（需要检索和推理的通用助手任务）；看分数要注意脚手架差异、数据污染和成本",
+      "refs": [
+        {"title": "SWE-bench", "url": "https://www.swebench.com/"},
+        {"title": "OSWorld", "url": "https://os-world.github.io/"},
+        {"title": "GAIA", "url": "https://arxiv.org/abs/2311.12983"}
+      ]
+    },
+    {
+      "id": "llm_judge",
+      "module": "评测与可靠性",
+      "title": "LLM-as-a-Judge",
+      "points": "用模型打分的适用场景；二元判断（通过/不通过）加理由优于 1–10 打分；先和人工标注对齐再规模化；常见偏差：位置偏好、偏爱长回答、偏爱自己生成的内容",
+      "refs": [
+        {"title": "Using LLM-as-a-Judge For Evaluation", "url": "https://hamel.dev/blog/posts/llm-judge/"},
+        {"title": "Judging LLM-as-a-Judge", "url": "https://arxiv.org/abs/2306.05685"}
+      ]
+    },
+    {
+      "id": "guardrails_hitl",
+      "module": "评测与可靠性",
+      "title": "护栏与人类介入",
+      "points": "输入护栏与输出护栏；高风险操作前请求人工确认；最小权限；失败时优雅降级、把控制权交还给人",
+      "refs": [
+        {"title": "OpenAI：A practical guide to building agents", "url": "https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf"},
+        {"title": "OpenAI Agents SDK：Guardrails", "url": "https://openai.github.io/openai-agents-python/guardrails/"}
+      ]
+    },
+    {
+      "id": "prompt_injection",
+      "module": "评测与可靠性",
+      "title": "提示注入与 Agent 安全",
+      "points": "致命三要素：能读私有数据 + 会接触不可信内容 + 能对外发送信息；间接提示注入（藏在网页、文档、工具返回里）；为什么靠提示词防不住；架构层面的防护模式",
+      "refs": [
+        {"title": "The lethal trifecta for AI agents", "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"},
+        {"title": "Design Patterns for Securing LLM Agents", "url": "https://arxiv.org/abs/2506.08837"}
+      ]
+    },
+    {
+      "id": "twelve_factor",
+      "module": "工程化",
+      "title": "12-Factor Agents：生产级 Agent 的工程原则",
+      "points": "自己掌控提示词和上下文窗口；工具调用本质是结构化输出；统一执行状态和业务状态，支持暂停与恢复；小而专注的 Agent 比大而全的更可靠",
+      "refs": [
+        {"title": "12-Factor Agents", "url": "https://github.com/humanlayer/12-factor-agents"}
+      ]
+    },
+    {
+      "id": "long_running",
+      "module": "工程化",
+      "title": "长任务：检查点与断点续跑",
+      "points": "长任务中途失败怎么续跑；状态持久化与检查点；人工审批时中断、批准后恢复；跨多个上下文窗口时用进度文件和 git 记录交接",
+      "refs": [
+        {"title": "Effective harnesses for long-running agents", "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents"},
+        {"title": "LangGraph：Persistence", "url": "https://docs.langchain.com/oss/python/langgraph/persistence"}
+      ]
+    },
+    {
+      "id": "observability",
+      "module": "工程化",
+      "title": "可观测性：追踪 Agent 的每一步",
+      "points": "用 trace / span 记录每次模型调用和工具调用；按步骤拆解成本、延迟和错误；从线上 trace 中挑失败案例补充评测集",
+      "refs": [
+        {"title": "OpenAI Agents SDK：Tracing", "url": "https://openai.github.io/openai-agents-python/tracing/"}
+      ]
+    },
+    {
+      "id": "cost_latency",
+      "module": "工程化",
+      "title": "成本与延迟优化",
+      "points": "按难度把任务路由到不同模型；提高缓存命中；并行工具调用；控制推理 token；流式输出改善等待体感",
+      "refs": [
+        {"title": "OpenAI：Latency optimization", "url": "https://developers.openai.com/api/docs/guides/latency-optimization"},
+        {"title": "Claude：Prompt caching", "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"}
+      ]
+    },
+    {
+      "id": "structured_output",
+      "module": "工程化",
+      "title": "结构化输出",
+      "points": "用 JSON Schema 约束解码，比在提示词里要求输出 JSON 可靠得多；schema 设计（枚举、必填字段、字段描述）；解析失败时的校验与重试",
+      "refs": [
+        {"title": "OpenAI：Structured outputs", "url": "https://developers.openai.com/api/docs/guides/structured-outputs"}
+      ]
+    },
+    {
+      "id": "reasoning_models",
+      "module": "训练与模型",
+      "title": "推理模型与 Agent",
+      "points": "思考 token 与思考预算；交错思考：在两次工具调用之间继续推理；推理模型适合规划和复杂决策，执行层可以用更快更便宜的模型",
+      "refs": [
+        {"title": "OpenAI：Reasoning models", "url": "https://developers.openai.com/api/docs/guides/reasoning"},
+        {"title": "Claude：Extended thinking", "url": "https://platform.claude.com/docs/en/build-with-claude/extended-thinking"}
+      ]
+    },
+    {
+      "id": "agentic_rl",
+      "module": "训练与模型",
+      "title": "Agentic RL：模型怎么学会做 Agent",
+      "points": "可验证奖励的强化学习（RLVR）与 GRPO；从单轮推理 RL 扩展到多轮工具交互 RL；环境与奖励怎么设计；它为什么推动了模型 Agent 能力的快速提升",
+      "refs": [
+        {"title": "DeepSeek-R1", "url": "https://arxiv.org/abs/2501.12948"},
+        {"title": "Agentic RL 综述", "url": "https://arxiv.org/abs/2509.02547"}
+      ]
+    },
+    {
+      "id": "tool_learning",
+      "module": "训练与模型",
+      "title": "工具使用能力从哪来",
+      "points": "Toolformer：模型自己学会何时调用工具；Gorilla：针对 API 调用的微调；函数调用训练数据的合成；BFCL 等评测怎么衡量工具调用能力",
+      "refs": [
+        {"title": "Toolformer", "url": "https://arxiv.org/abs/2302.04761"},
+        {"title": "Gorilla", "url": "https://arxiv.org/abs/2305.15334"},
+        {"title": "BFCL 排行榜", "url": "https://gorilla.cs.berkeley.edu/leaderboard.html"}
+      ]
+    },
+    {
+      "id": "coding_agents",
+      "module": "应用形态",
+      "title": "编程 Agent 是怎么工作的",
+      "points": "核心循环：读代码、改代码、运行测试、根据结果修正；代码搜索与编辑工具的设计；AGENTS.md 这类项目说明充当长期记忆；为什么编程是 Agent 最先成熟的场景",
+      "refs": [
+        {"title": "Claude Code：Best practices", "url": "https://code.claude.com/docs/en/best-practices"},
+        {"title": "AGENTS.md", "url": "https://agents.md/"}
+      ]
+    },
+    {
+      "id": "computer_use",
+      "module": "应用形态",
+      "title": "Computer-use 与 GUI Agent",
+      "points": "截图、理解、操作的循环；按坐标点击与基于可访问性树两种方式；速度和可靠性的瓶颈；适合没有 API 的软件",
+      "refs": [
+        {"title": "OpenAI：Computer-Using Agent", "url": "https://openai.com/index/computer-using-agent/"},
+        {"title": "OSWorld", "url": "https://os-world.github.io/"}
+      ]
+    },
+    {
+      "id": "deep_research",
+      "module": "应用形态",
+      "title": "Deep Research：多步检索与综合",
+      "points": "规划、搜索、阅读、综合的循环；用并行子 Agent 扩大搜索面；引用与事实核查；怎么评测研究质量",
+      "refs": [
+        {"title": "How we built our multi-agent research system", "url": "https://www.anthropic.com/research/multi-agent-research-system"},
+        {"title": "OpenAI：Introducing deep research", "url": "https://openai.com/index/introducing-deep-research/"}
+      ]
+    },
+    {
+      "id": "agent_harness",
+      "module": "应用形态",
+      "title": "Agent Harness：模型之外的那一层",
+      "points": "Harness 包括循环控制、工具集、上下文管理、权限和状态持久化；同一个模型换不同 harness，效果差别很大；Claude Agent SDK 把 Claude Code 的 harness 开放成通用框架",
+      "refs": [
+        {"title": "Building agents with the Claude Agent SDK", "url": "https://claude.com/resources/articles/building-agents-with-the-claude-agent-sdk"},
+        {"title": "Effective harnesses for long-running agents", "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents"}
+      ]
+    },
+    {
+      "id": "domain_agents",
+      "module": "应用形态",
+      "title": "把 Agent 接入专业软件：以 3D 工具为例",
+      "points": "通过 MCP 或脚本接口（如 Blender Python）把软件能力暴露成工具；用渲染截图做视觉反馈闭环；领域知识放进 Skills 或文档；怎么设计领域评测",
+      "refs": [
+        {"title": "BlenderMCP", "url": "https://github.com/ahujasid/mcp-for-blender"},
+        {"title": "BlenderGym", "url": "https://arxiv.org/abs/2504.01786"}
+      ]
+    }
+  ]
+}

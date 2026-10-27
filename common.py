@@ -23,6 +23,11 @@ import requests
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# NEWS_PROFILE 选择跑哪份日报：留空是 3D × AI 日报（config.json，产物和状态在 output/、state/）；
+# 填 agent 这类名字时读 config.agent.json，产物和状态放 output/agent/、state/agent/，各自独立去重
+PROFILE = os.environ.get('NEWS_PROFILE', '').strip()
+CONFIG_FILE = os.path.join(BASE_DIR, f'config.{PROFILE}.json' if PROFILE else 'config.json')
+
 # 部分站点（Reddit RSS、nitter 等）会拒绝非浏览器 UA
 BROWSER_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
@@ -54,8 +59,14 @@ class NewsItem:
 # ---------------------------------------------------------------- 配置与环境
 
 def load_config(path: Optional[str] = None) -> dict:
-    with open(path or os.path.join(BASE_DIR, 'config.json'), 'r', encoding='utf-8') as f:
+    with open(path or CONFIG_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
+
+
+def report_heading(config: dict) -> str:
+    """日报首行的固定前缀，AI 产出校验靠它判断格式"""
+    emoji = config.get('report', {}).get('title_emoji', '📰')
+    return f"# {emoji} {config.get('name', '每日资讯')}"
 
 
 def load_env_var(name: str) -> str:
@@ -261,10 +272,11 @@ class TrackMatcher:
 
 # output/ 放每天的原始数据和日报（不入库，Actions 归档为 artifact）；
 # state/ 放跨天的去重记忆（Actions 推送成功后提交回仓库）
-OUTPUT_DIR = os.path.join(BASE_DIR, 'output')
-STATE_DIR = os.path.join(BASE_DIR, 'state')
+OUTPUT_DIR = os.path.join(BASE_DIR, 'output', *([PROFILE] if PROFILE else []))
+STATE_DIR = os.path.join(BASE_DIR, 'state', *([PROFILE] if PROFILE else []))
 SEEN_FILE = os.path.join(STATE_DIR, 'seen.json')
 TOPICS_FILE = os.path.join(STATE_DIR, 'recent_topics.json')
+CURRICULUM_FILE = os.path.join(STATE_DIR, 'curriculum.json')
 
 
 def raw_path(date: str) -> str:
@@ -295,3 +307,20 @@ def write_json(path: str, data: Any) -> None:
 def load_seen_keys() -> set:
     """已进入过候选的条目键（item_key），由 mark_seen.py 在推送成功后维护"""
     return set(read_json(SEEN_FILE, {}).get('items', {}))
+
+
+def pick_topic(config: dict, date: str) -> Optional[dict]:
+    """
+    今天的知识点（config.curriculum_file 里的大纲，没配就返回 None）：
+    同一天重跑沿用当天已讲的；否则按大纲顺序接着讲，讲完一轮从头再来。进度由 mark_seen.py 在推送后记录
+    """
+    name = config.get('curriculum_file')
+    topics = read_json(os.path.join(BASE_DIR, name), {}).get('topics', []) if name else []
+    if not topics:
+        return None
+    history = read_json(CURRICULUM_FILE, {}).get('history', {})
+    by_id = {t['id']: t for t in topics}
+    if history.get(date) in by_id:
+        return by_id[history[date]]
+    taught = sum(1 for d in history if d < date)
+    return topics[taught % len(topics)]

@@ -1,0 +1,105 @@
+name: Agent 每日学习
+
+on:
+  schedule:
+    # 北京时间 08:27 为主、10:27 为备份（GitHub 定时触发高峰期会延迟甚至丢失）；
+    # 当天已经成功跑过时，后面的定时触发会在 guard 里跳过
+    - cron: '27 0 * * *'
+    - cron: '27 2 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # 推送成功后把 state/agent/ 里的去重记录和知识点进度提交回仓库
+
+concurrency:
+  group: agent-learning
+  cancel-in-progress: false
+
+env:
+  NEWS_PROFILE: agent   # 读 config.agent.json，产物和状态放 output/agent/、state/agent/
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - id: check
+        run: |
+          last=$(python3 -c "import json; print(json.load(open('state/agent/seen.json')).get('updated_at', '')[:10])" 2>/dev/null || echo "")
+          today=$(TZ=Asia/Shanghai date +%F)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$last" = "$today" ]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ 今天（$today）已经成功运行过，跳过"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  daily:
+    needs: guard
+    if: needs.guard.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+      TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+      FEISHU_ALERT_WEBHOOK_URL: ${{ secrets.FEISHU_ALERT_WEBHOOK_URL }}
+      FEISHU_ALERT_WEBHOOK_SECRET: ${{ secrets.FEISHU_ALERT_WEBHOOK_SECRET }}
+      LARK_APP_ID: ${{ secrets.LARK_APP_ID }}
+      LARK_APP_SECRET: ${{ secrets.LARK_APP_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 采集
+        run: python fetch_news.py
+
+      - name: 整理学习简报（AI 优先，失败自动降级为模板）
+        id: report
+        run: |
+          python ai_report.py || python generate_report.py
+          if ls output/agent/news_*.md >/dev/null 2>&1; then
+            echo "has_report=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_report=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ 今天没有简报，跳过推送"
+          fi
+
+      - name: 私信推送到飞书
+        if: steps.report.outputs.has_report == 'true'
+        run: python push_to_feishu.py
+
+      - name: 更新去重记录和知识点进度
+        run: |
+          python mark_seen.py
+          git add state/agent/
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: 更新 Agent 学习记录 [skip ci]"
+            # 3D 日报的工作流也会往 main 提交 state/，先合并它可能刚推的提交（改的文件不同，不会冲突）
+            git pull --rebase -q
+            git push
+          fi
+
+      - name: 归档当天产物
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-learning-${{ github.run_id }}
+          path: output/agent/
+          retention-days: 14
+          if-no-files-found: ignore

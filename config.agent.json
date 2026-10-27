@@ -1,0 +1,527 @@
+{
+  "name": "Agent 每日学习",
+  "bot_name": "Agent 学习助手",
+  "reader_profile": "读者在做 Agent 方向的产品研发，有工程背景，想系统掌握 Agent：业界在发生什么，背后的范式和方法是什么，主流框架怎么选、怎么用，一线团队怎么把 Agent 落地。每天大约花 10 分钟读完。",
+  "timezone": "Asia/Shanghai",
+  "curriculum_file": "agent_curriculum.json",
+
+  "tracks": {
+    "paradigm": {
+      "name": "范式与方法",
+      "description": "Agent 的设计范式与方法论：ReAct、规划与反思、工具调用与工具设计、上下文工程、记忆、多 Agent 编排、人机协作与护栏、Agent 评测与可靠性、Agentic RL 等训练方法；相关论文和深度技术文章",
+      "keywords": [
+        "react agent*", "reason and act", "reflexion", "self-reflection", "self-refine", "self-correct*",
+        "plan-and-execute", "agent planning", "task planning", "task decomposition", "planner", "tree of thought*",
+        "tool use", "tool calling", "function calling", "tool learning", "tool design", "parallel tool*",
+        "context engineering", "context rot", "context compaction", "prompt caching", "prompt engineering", "structured output*",
+        "agent memory", "long-term memory", "memory layer", "episodic memory", "agentic rag", "agentic search", "agentic retrieval",
+        "multi-agent", "multi agent", "sub-agent*", "subagent*", "handoff*", "agent orchestration", "orchestrator-worker*",
+        "supervisor agent*", "agent swarm*", "human-in-the-loop", "guardrail*", "prompt injection", "lethal trifecta",
+        "evals", "agent eval*", "llm-as-a-judge", "llm as a judge", "llm judge*", "error analysis",
+        "swe-bench", "terminal-bench", "tau-bench", "τ-bench", "tau2-bench", "osworld", "webarena", "browsecomp",
+        "gaia benchmark", "mle-bench", "gdpval", "agentbench", "bfcl",
+        "agentic rl", "grpo", "rlvr", "reward model*", "rl environment*", "post-training",
+        "long-horizon", "self-improv*", "self-evolving", "harness engineering", "agent harness", "agent loop",
+        "agentic workflow*", "agent design pattern*",
+        "上下文工程", "提示词工程", "多智能体", "智能体记忆", "工具调用", "函数调用", "智能体评测", "提示注入"
+      ]
+    },
+    "framework": {
+      "name": "框架与工具",
+      "description": "Agent 框架与 SDK（LangGraph、OpenAI Agents SDK、Claude Agent SDK、Google ADK、CrewAI、Microsoft Agent Framework、Pydantic AI、Mastra 等）的重要版本和新能力；MCP、A2A、Agent Skills 等协议与标准；沙箱、记忆层、可观测性、评测平台等 Agent 基础设施",
+      "keywords": [
+        "langgraph", "langchain", "langsmith", "deepagents", "deep agents", "llamaindex", "llama index", "crewai",
+        "autogen", "ag2", "semantic kernel", "agent framework", "agents sdk", "agent sdk", "agentkit", "adk",
+        "agent development kit", "pydantic ai", "smolagents", "mastra", "agno", "letta", "memgpt", "mem0", "dspy",
+        "haystack", "strands agents", "ai sdk", "responses api", "assistants api", "realtime api",
+        "mcp", "model context protocol", "mcp server*", "a2a", "agent2agent", "agent skills", "skill.md", "agents.md",
+        "agent client protocol", "browser-use", "browser use", "stagehand", "playwright mcp", "e2b", "daytona",
+        "agent sandbox*", "code sandbox*", "langfuse", "braintrust", "agent observability", "llm observability",
+        "durable execution", "openhands", "agentcore", "bedrock agents", "vertex ai agent*", "agent engine",
+        "copilot studio", "foundry agent*", "dify", "coze", "扣子", "n8n",
+        "智能体框架", "智能体平台"
+      ]
+    },
+    "application": {
+      "name": "应用与案例",
+      "description": "Agent 产品与落地：编程 Agent（Claude Code、Codex、Cursor、Devin 等）、通用 Agent（Manus 等）、Deep Research、Computer-use 与浏览器 Agent、垂直行业 Agent；一线团队的实践复盘和架构拆解",
+      "keywords": [
+        "coding agent*", "claude code", "codex", "cursor", "devin", "windsurf", "cline", "roo code", "kilo code",
+        "gemini cli", "github copilot", "copilot agent", "jules", "kiro", "manus", "genspark", "lovable", "replit agent",
+        "deep research", "chatgpt agent", "chatgpt atlas", "openai operator", "computer use", "computer-use",
+        "computer-using agent*", "browser agent*", "agentic browser*", "gui agent*", "web agent*", "voice agent*",
+        "customer service agent*", "customer support agent*", "agentic commerce", "case study", "in production",
+        "lessons learned", "how we built", "postmortem", "vibe coding", "ai employee*",
+        "agent*", "agentic",
+        "智能体", "智能体应用", "编程智能体", "AI 编程", "落地"
+      ]
+    }
+  },
+
+  "keyword_sets": {
+    "agent_related": [
+      "agent*", "agentic", "multi-agent", "mcp", "model context protocol", "a2a", "tool use", "tool calling",
+      "function calling", "computer use", "context engineering", "claude code", "codex", "cursor", "devin", "manus",
+      "langgraph", "langchain", "llamaindex", "crewai", "deep research", "智能体", "AI 编程"
+    ],
+    "arxiv_agent": [
+      "llm agent*", "llm-based agent*", "language agent*", "ai agent*", "autonomous agent*", "agentic",
+      "multi-agent system*", "llm-based multi-agent", "multi-agent llm*", "multi-agent framework*", "multi-agent collaboration",
+      "tool use", "tool-use", "tool calling", "tool learning", "function calling", "computer-use", "computer use",
+      "gui agent*", "web agent*", "browser agent*", "mobile agent*", "coding agent*", "software engineering agent*",
+      "swe-agent", "swe-bench", "terminal-bench", "agent benchmark*", "agentic rl", "agentic reinforcement learning",
+      "deep research", "research agent*", "context engineering", "agent memory", "memory-augmented", "agent planning",
+      "self-evolving", "self-improving agent*", "agent workflow*", "agentic workflow*", "mcp", "model context protocol",
+      "agent skill*"
+    ]
+  },
+
+  "sections": [
+    {
+      "key": "paradigm",
+      "title": "🧩 范式与方法",
+      "tracks": ["paradigm"],
+      "max_items": 3
+    },
+    {
+      "key": "framework",
+      "title": "🛠️ 框架与工具",
+      "tracks": ["framework"],
+      "max_items": 3
+    },
+    {
+      "key": "application",
+      "title": "🚀 应用与案例",
+      "tracks": ["application"],
+      "max_items": 3
+    }
+  ],
+
+  "report": {
+    "style": "learning",
+    "title_emoji": "📚",
+    "top_picks": 0,
+    "deep_reads": 2,
+    "max_items_total": 12,
+    "max_papers": 3,
+    "model": "auto"
+  },
+
+  "collect": {
+    "default_max_age_hours": 48,
+    "summary_chars": 280,
+    "max_total_items": 160,
+    "retries": 2,
+    "retry_delay": 3,
+    "workers": 6,
+    "alert_failed_ratio": 0.3
+  },
+
+  "sources": [
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "type": "hf_daily_papers",
+      "kind": "paper",
+      "reliability": "high",
+      "score": 50,
+      "days_back": 2,
+      "min_upvotes": 3,
+      "filter": "all",
+      "require": "@arxiv_agent",
+      "default_tracks": ["paradigm"],
+      "max_items": 10
+    },
+
+    {
+      "id": "gh_releases",
+      "name": "Agent 框架版本发布",
+      "type": "github_releases",
+      "kind": "release",
+      "reliability": "official",
+      "score": 60,
+      "max_age_hours": 72,
+      "skip_patch": true,
+      "skip_prerelease": true,
+      "repos": [
+        {"repo": "openai/openai-agents-python", "tracks": ["framework"]},
+        {"repo": "openai/openai-agents-js", "tracks": ["framework"], "tag_pattern": "^@openai/agents@\\d", "per_page": 20},
+        {"repo": "anthropics/claude-agent-sdk-python", "tracks": ["framework"]},
+        {"repo": "google/adk-python", "tracks": ["framework"]},
+        {"repo": "langchain-ai/langgraph", "tracks": ["framework"], "tag_pattern": "^\\d+\\.\\d+\\.\\d+$", "per_page": 20},
+        {"repo": "langchain-ai/langchain", "tracks": ["framework"], "tag_pattern": "^langchain==", "per_page": 30},
+        {"repo": "langchain-ai/deepagents", "tracks": ["framework"], "tag_pattern": "^deepagents==", "per_page": 30},
+        {"repo": "crewAIInc/crewAI", "tracks": ["framework"]},
+        {"repo": "microsoft/agent-framework", "tracks": ["framework"], "tag_pattern": "^python-", "per_page": 20},
+        {"repo": "pydantic/pydantic-ai", "tracks": ["framework"], "tag_pattern": "^v\\d+\\.\\d+\\.\\d+$"},
+        {"repo": "huggingface/smolagents", "tracks": ["framework"]},
+        {"repo": "agno-agi/agno", "tracks": ["framework"]},
+        {"repo": "mastra-ai/mastra", "tracks": ["framework"], "tag_pattern": "^@mastra/core@", "per_page": 30},
+        {"repo": "vercel/ai", "tracks": ["framework"], "tag_pattern": "^ai@", "per_page": 30},
+        {"repo": "stanfordnlp/dspy", "tracks": ["framework"]},
+        {"repo": "letta-ai/letta", "tracks": ["framework"]},
+        {"repo": "mem0ai/mem0", "tracks": ["framework"], "tag_pattern": "^v\\d"},
+        {"repo": "modelcontextprotocol/modelcontextprotocol", "tracks": ["framework"]},
+        {"repo": "modelcontextprotocol/python-sdk", "tracks": ["framework"]},
+        {"repo": "a2aproject/A2A", "tracks": ["framework"]},
+        {"repo": "browser-use/browser-use", "tracks": ["framework"]},
+        {"repo": "OpenHands/OpenHands", "tracks": ["application"]}
+      ],
+      "filter": "all",
+      "max_items": 8
+    },
+    {
+      "id": "gh_search_agent",
+      "name": "GitHub 新仓库（Agent）",
+      "type": "github_search",
+      "kind": "repo",
+      "reliability": "high",
+      "score": 50,
+      "queries": ["agent framework", "multi-agent", "mcp server", "coding agent", "computer use agent", "browser agent",
+                  "context engineering", "agent memory", "agent harness", "agent evaluation"],
+      "created_within_days": 7,
+      "min_stars": 150,
+      "filter": "all",
+      "default_tracks": ["framework"],
+      "max_items": 8
+    },
+    {
+      "id": "gh_orgs_agent",
+      "name": "GitHub 重点机构新仓库",
+      "type": "github_new_repos",
+      "kind": "repo",
+      "reliability": "official",
+      "score": 60,
+      "orgs": [
+        "anthropics", "openai", "google-gemini", "langchain-ai", "modelcontextprotocol", "a2aproject", "huggingface",
+        "run-llama", "crewAIInc", "pydantic", "browser-use", "OpenHands", "letta-ai", "agno-agi", "mastra-ai", "humanlayer"
+      ],
+      "created_within_days": 7,
+      "min_stars": 20,
+      "filter": "any",
+      "default_tracks": ["framework"],
+      "max_items": 6
+    },
+
+    {
+      "id": "anthropic",
+      "name": "Anthropic 官方",
+      "type": "anthropic_news",
+      "kind": "official",
+      "reliability": "official",
+      "score": 85,
+      "paths": ["research", "news"],
+      "max_age_hours": 72,
+      "scan_top": 8,
+      "filter": "any",
+      "default_tracks": ["paradigm"],
+      "max_items": 4
+    },
+    {
+      "id": "openai_news",
+      "name": "OpenAI 官方",
+      "type": "rss",
+      "url": "https://openai.com/news/rss.xml",
+      "kind": "official",
+      "reliability": "official",
+      "score": 80,
+      "filter": "any",
+      "default_tracks": ["application"],
+      "max_items": 3
+    },
+    {
+      "id": "openai_devs",
+      "name": "OpenAI 开发者社区公告",
+      "type": "rss",
+      "url": "https://community.openai.com/c/announcements/6.rss",
+      "kind": "official",
+      "reliability": "official",
+      "score": 70,
+      "filter": "any",
+      "default_tracks": ["framework"],
+      "max_items": 3
+    },
+    {
+      "id": "google_dev",
+      "name": "Google 开发者博客",
+      "type": "rss",
+      "url": "https://blog.google/technology/developers/rss/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 65,
+      "filter": "any",
+      "default_tracks": ["framework"],
+      "max_items": 2
+    },
+    {
+      "id": "ms_agent_framework",
+      "name": "Microsoft Agent Framework 博客",
+      "type": "rss",
+      "url": "https://devblogs.microsoft.com/agent-framework/feed/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 55,
+      "filter": "all",
+      "default_tracks": ["framework"],
+      "max_items": 2
+    },
+    {
+      "id": "hf_blog",
+      "name": "Hugging Face 博客",
+      "type": "rss",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "kind": "official",
+      "reliability": "high",
+      "score": 60,
+      "filter": "any",
+      "default_tracks": ["framework"],
+      "max_items": 3
+    },
+
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "type": "rss",
+      "url": "https://simonwillison.net/atom/everything/",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 60,
+      "filter": "any",
+      "exclude_titles": ["quoting"],
+      "default_tracks": ["application"],
+      "max_items": 3
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space",
+      "type": "rss",
+      "url": "https://www.latent.space/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 60,
+      "filter": "any",
+      "default_tracks": ["application"],
+      "max_items": 2
+    },
+    {
+      "id": "philschmid",
+      "name": "Philipp Schmid",
+      "type": "rss",
+      "url": "https://www.philschmid.de/rss",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 65,
+      "filter": "all",
+      "default_tracks": ["paradigm"],
+      "max_items": 1
+    },
+    {
+      "id": "hamel",
+      "name": "Hamel Husain",
+      "type": "rss",
+      "url": "https://hamel.dev/index.xml",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 65,
+      "filter": "all",
+      "default_tracks": ["paradigm"],
+      "max_items": 1
+    },
+    {
+      "id": "lilianweng",
+      "name": "Lilian Weng（Lil'Log）",
+      "type": "rss",
+      "url": "https://lilianweng.github.io/index.xml",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 70,
+      "filter": "all",
+      "default_tracks": ["paradigm"],
+      "max_items": 1
+    },
+    {
+      "id": "dbreunig",
+      "name": "Drew Breunig",
+      "type": "rss",
+      "url": "https://www.dbreunig.com/feed.xml",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 60,
+      "filter": "any",
+      "default_tracks": ["paradigm"],
+      "max_items": 1
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects（Nathan Lambert）",
+      "type": "rss",
+      "url": "https://www.interconnects.ai/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 55,
+      "filter": "any",
+      "default_tracks": ["paradigm"],
+      "max_items": 1
+    },
+    {
+      "id": "raschka",
+      "name": "Sebastian Raschka（Ahead of AI）",
+      "type": "rss",
+      "url": "https://magazine.sebastianraschka.com/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 55,
+      "filter": "any",
+      "default_tracks": ["paradigm"],
+      "max_items": 1
+    },
+    {
+      "id": "mollick",
+      "name": "Ethan Mollick（One Useful Thing）",
+      "type": "rss",
+      "url": "https://www.oneusefulthing.org/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 50,
+      "filter": "any",
+      "default_tracks": ["application"],
+      "max_items": 1
+    },
+    {
+      "id": "baoyu",
+      "name": "宝玉",
+      "type": "rss",
+      "url": "https://baoyu.io/feed.xml",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 50,
+      "filter": "any",
+      "default_tracks": ["application"],
+      "max_items": 1
+    },
+
+    {
+      "id": "qbitai",
+      "name": "量子位",
+      "type": "rss",
+      "url": "https://www.qbitai.com/feed",
+      "kind": "media",
+      "reliability": "high",
+      "score": 45,
+      "filter": "any",
+      "require": "@agent_related",
+      "default_tracks": ["application"],
+      "max_items": 3
+    },
+    {
+      "id": "infoq_cn",
+      "name": "InfoQ 中文",
+      "type": "rss",
+      "url": "https://www.infoq.cn/feed",
+      "kind": "media",
+      "reliability": "high",
+      "score": 45,
+      "filter": "any",
+      "require": "@agent_related",
+      "default_tracks": ["application"],
+      "max_items": 3
+    },
+    {
+      "id": "geekpark",
+      "name": "极客公园",
+      "type": "rss",
+      "url": "https://www.geekpark.net/rss",
+      "kind": "media",
+      "reliability": "high",
+      "score": 40,
+      "filter": "any",
+      "require": "@agent_related",
+      "default_tracks": ["application"],
+      "max_items": 2
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "type": "rss",
+      "url": "https://the-decoder.com/feed/",
+      "kind": "media",
+      "reliability": "high",
+      "score": 45,
+      "filter": "any",
+      "require": "@agent_related",
+      "default_tracks": ["application"],
+      "max_items": 3
+    },
+
+    {
+      "id": "hackernews",
+      "name": "Hacker News",
+      "type": "hackernews",
+      "kind": "community",
+      "reliability": "high",
+      "score": 40,
+      "max_age_hours": 36,
+      "min_points": 60,
+      "filter": "any",
+      "max_items": 8
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit",
+      "type": "reddit",
+      "kind": "community",
+      "reliability": "medium",
+      "score": 35,
+      "retries": 1,
+      "subreddits": [
+        {"name": "AI_Agents", "listing": "top", "t": "day", "take": 4, "filter": "any", "tracks": ["application"]},
+        {"name": "LangChain", "listing": "top", "t": "day", "take": 2, "filter": "any", "tracks": ["framework"]},
+        {"name": "mcp", "listing": "top", "t": "day", "take": 2, "filter": "all", "tracks": ["framework"]},
+        {"name": "LocalLLaMA", "listing": "top", "t": "day", "take": 3, "filter": "any", "require": "@agent_related", "tracks": ["framework"]}
+      ],
+      "max_items": 8
+    },
+
+    {
+      "id": "twitter",
+      "name": "X (Twitter)",
+      "type": "twitter",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 60,
+      "retries": 0,
+      "api_provider": {
+        "name": "twitterapi.io",
+        "base_url": "https://api.twitterapi.io",
+        "api_key_env": "TWITTERAPI_IO_KEY"
+      },
+      "nitter_instances": ["https://nitter.net", "https://nitter.perennialte.ch"],
+      "max_age_hours": 36,
+      "account_groups": {
+        "officials": {
+          "name": "官方账号",
+          "filter": "any",
+          "score": 70,
+          "accounts": ["OpenAIDevs", "AnthropicAI", "googleaidevs", "LangChain", "llama_index", "cursor_ai", "cognition"]
+        },
+        "people": {
+          "name": "研究者与工程师",
+          "filter": "any",
+          "score": 55,
+          "accounts": [
+            "omarsar0", "dair_ai", "hwchase17", "jerryjliu0", "_philschmid", "HamelHusain", "swyx", "simonw",
+            "karpathy", "OfficialLoganK", "akshay_pachaar", "lateinteraction"
+          ]
+        }
+      },
+      "max_items": 20
+    }
+  ],
+
+  "feishu": {
+    "mode": "app",
+    "user_ids": ["ou_7d3e402835860e7d9ce336306a57bde9"],
+    "admin_user_ids": ["ou_7d3e402835860e7d9ce336306a57bde9"],
+    "card_color": "indigo"
+  }
+}

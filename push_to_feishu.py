@@ -29,10 +29,11 @@ def main() -> int:
     with open(path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    mode = config.get('feishu', {}).get('mode', 'webhook')
+    fs = config.get('feishu', {})
+    mode = fs.get('mode', 'webhook')
     print(f'📤 推送 {rel}（{len(content)} 字符，方式：{mode}）')
     if args.dry_run:
-        for card in report_to_cards(content):
+        for card in report_to_cards(content, fs.get('card_color', 'blue')):
             body = json.dumps({'msg_type': 'interactive', 'card': card}, ensure_ascii=False, indent=2)
             print(f'--- 卡片（{len(body.encode("utf-8"))} 字节）---\n{body}')
         return 0

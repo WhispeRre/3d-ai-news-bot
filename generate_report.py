@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import sys
 
-from common import clip, load_config, raw_path, read_json, report_path, today_str
+from common import clip, load_config, pick_topic, raw_path, read_json, report_heading, report_path, today_str
 
 KIND_TAGS = {'paper': '【论文】', 'repo': '【开源】', 'model': '【模型】'}
 TOP_KINDS = ('official', 'release', 'media', 'model', 'kol')
@@ -41,7 +41,7 @@ def main() -> int:
     used = {i['url'] for i in top}
     papers_left = report.get('max_papers', 3)
 
-    parts = [f"# 📰 {config.get('name', '每日资讯')} · {date[:4]}-{date[4:6]}-{date[6:]}", '',
+    parts = [f"{report_heading(config)} · {date[:4]}-{date[4:6]}-{date[6:]}", '',
              '今天 AI 整理不可用，以下是按热度自动挑选的候选，未经编辑。']
     if top:
         parts += ['', f'## 🏆 今日 TOP {len(top)}'] + [format_item(i) for i in top]
@@ -62,6 +62,11 @@ def main() -> int:
         if chosen:
             parts += ['', f"## {sec['title']}"] + [format_item(i) for i in chosen]
             count += len(chosen)
+    topic = pick_topic(config, date) if report.get('style') == 'learning' else None
+    if topic:
+        parts += ['', f"## 💡 每日知识点：{topic['title']}", topic.get('points', '')]
+        if topic.get('refs'):
+            parts.append('📎 延伸阅读：' + ' · '.join(f"[{r['title']}]({r['url']})" for r in topic['refs']))
     parts += ['', '---', f"📊 本期从 {len(items)} 条候选中精选 {count} 条 · "
                           f"🤖 {config.get('bot_name', '资讯机器人')}自动生成（模板整理）"]
 

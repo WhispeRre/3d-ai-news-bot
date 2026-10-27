@@ -336,7 +336,8 @@ def collect_github_releases(src, ctx, log):
     for cfg in src['repos']:
         repo = cfg['repo']
         try:
-            releases = github_get(ctx, f'/repos/{repo}/releases', {'per_page': 5})
+            # 一个仓库发多个包时（monorepo），主包的版本可能排在其他包后面，per_page 要配大一些
+            releases = github_get(ctx, f'/repos/{repo}/releases', {'per_page': cfg.get('per_page', 5)})
         except Exception as e:
             failed.append(f'{repo}({type(e).__name__})')
             continue

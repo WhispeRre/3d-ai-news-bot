@@ -4,7 +4,8 @@
 1. 把今天候选里的全部条目记入 state/seen.json（保留 60 天），以后采集自动过滤。
    AI 没选中的也要记，否则它们会天天回到候选里；
 2. 把今天日报的条目标题记入 state/recent_topics.json（保留 7 天），供 AI 做跨天事件去重——
-   同一事件不同渠道的连日报道链接各不相同，靠标题清单让 AI 在语义层判断。
+   同一事件不同渠道的连日报道链接各不相同，靠标题清单让 AI 在语义层判断；
+3. 学习简报还要把今天讲过的知识点记入 state/<profile>/curriculum.json，明天接着讲下一个。
 """
 
 from __future__ import annotations
@@ -14,8 +15,8 @@ import re
 import sys
 from datetime import timedelta
 
-from common import (SEEN_FILE, TOPICS_FILE, item_key, load_config, local_now, raw_path, read_json,
-                    report_path, today_str, write_json)
+from common import (CURRICULUM_FILE, SEEN_FILE, TOPICS_FILE, item_key, load_config, local_now, pick_topic,
+                    raw_path, read_json, report_path, today_str, write_json)
 
 SEEN_RETENTION_DAYS = 60
 # 跨天去重的记忆窗口覆盖新闻跟进周期即可
@@ -65,6 +66,16 @@ def main() -> int:
         days[date] = titles
     write_json(TOPICS_FILE, {'updated_at': now.isoformat(timespec='seconds'), 'days': days})
     print(f'✅ 跨天去重记录：今天记入 {len(titles)} 个标题（保留 {TOPICS_RETENTION_DAYS} 天）')
+
+    topic = pick_topic(config, date) if config.get('report', {}).get('style') == 'learning' else None
+    if topic and os.path.exists(report_path(date)):
+        with open(report_path(date), 'r', encoding='utf-8') as f:
+            taught = '每日知识点' in f.read()
+        if taught:
+            history = read_json(CURRICULUM_FILE, {}).get('history', {})
+            history[date] = topic['id']
+            write_json(CURRICULUM_FILE, {'updated_at': now.isoformat(timespec='seconds'), 'history': history})
+            print(f"✅ 知识点进度：今天讲「{topic['title']}」，累计 {len(history)} 讲")
     return 0
 
 
