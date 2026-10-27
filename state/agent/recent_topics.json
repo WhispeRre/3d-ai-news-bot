@@ -1,0 +1,17 @@
+{
+  "updated_at": "2026-10-27T20:54:41+08:00",
+  "days": {
+    "20261027": [
+      "花椒直播拆出四层 Agent 平台，落地约 30 个业务应用",
+      "Trajectory2Gym：不为「成功轨迹」而造交互，为可学决策造数据",
+      "DynaFlow：主 Agent 按需合成可执行工作流编排子 Agent",
+      "TraceTrial-Bench：任务做成了，也不等于 harness 可靠",
+      "Cursor 发布 Agent SDK：代码定义 Agent，并内置评测",
+      "Pydantic AI v2.62.0：对话中改思考力度，子 Agent 可后台控任务",
+      "tstack：可日用的 Agent Skills，适配 Claude Code 与 Codex",
+      "Manus 用自家 Agent 改造组织：人从环内补洞变为环上监管",
+      "Greptile 用 GPT-6 Astra 做应用级验收，MCP 知识库降返工",
+      "投研 Agent 两年：模型好换，搜索与信源才是长痛"
+    ]
+  }
+}
