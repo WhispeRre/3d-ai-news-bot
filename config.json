@@ -370,7 +370,7 @@
       "kind": "official",
       "reliability": "official",
       "score": 85,
-      "paths": ["news", "engineering"],
+      "paths": ["news", "research"],
       "max_age_hours": 72,
       "filter": "all",
       "default_tracks": ["foundation"],

@@ -374,12 +374,15 @@ def collect_github_releases(src, ctx, log):
 _SITEMAP_ENTRY_RE = re.compile(r'<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>')
 _OG_TITLE_RE = re.compile(r'<meta[^>]+property="og:title"[^>]+content="([^"]*)"', re.I)
 _OG_DESC_RE = re.compile(r'<meta[^>]+(?:property="og:description"|name="description")[^>]+content="([^"]*)"', re.I)
+_PUBLISHED_TIME_RE = re.compile(r'<meta[^>]+property="article:published_time"[^>]+content="([^"]*)"', re.I)
 
 
 def collect_anthropic_news(src, ctx, log):
     """
     Anthropic 官网没有 RSS，列表页结构也常改版：从 sitemap 取最近更新的文章（带精确时间），
-    再从文章页的 og 标签取标题和摘要
+    再从文章页的 og 标签取标题和摘要。
+    整站重新发布会批量刷新 lastmod（几十篇旧文挤在一两分钟内），所以扎堆的条目排到后面先扫正常更新的，
+    再用文章页的发布日期确认确实是新文章
     """
     max_age = src.get('max_age_hours', 72)
     paths = '|'.join(re.escape(p) for p in src.get('paths', ['news']))
@@ -388,17 +391,30 @@ def collect_anthropic_news(src, ctx, log):
     entries = [(url, parse_iso(lastmod)) for url, lastmod in _SITEMAP_ENTRY_RE.findall(sitemap) if url_re.match(url)]
     if not entries:
         raise RuntimeError('sitemap 里没有匹配到文章，结构可能变了')
-    recent = sorted((e for e in entries if within_hours(e[1], max_age)), key=lambda e: e[1], reverse=True)
-    items = []
+    recent = [e for e in entries if within_hours(e[1], max_age)]
+    stamps = [t.timestamp() for _, t in recent]
+
+    def crowded(t: datetime) -> bool:
+        return sum(abs(s - t.timestamp()) <= 120 for s in stamps) >= 5
+
+    recent.sort(key=lambda e: (crowded(e[1]), -e[1].timestamp()))
+    items, stale = [], 0
     for url, updated in recent[:src.get('scan_top', 6)]:
         page = http_get(url, timeout=20).text
         title = _OG_TITLE_RE.search(page)
         if not title:
             continue
+        published = _PUBLISHED_TIME_RE.search(page)
+        published = parse_iso(published.group(1)) if published else None
+        # 发布时间只精确到日期，多放宽一天
+        if published and not within_hours(published, max_age + 24):
+            stale += 1
+            continue
         desc = _OG_DESC_RE.search(page)
         items.append(make_item(src, ctx, title=html.unescape(title.group(1)), url=url,
                                summary=html.unescape(desc.group(1)) if desc else '', published=updated))
-    log(f'sitemap 共 {len(entries)} 篇，{max_age} 小时内更新 {len(recent)} 篇')
+    log(f'sitemap 共 {len(entries)} 篇，{max_age} 小时内更新 {len(recent)} 篇'
+        + (f'，跳过 {stale} 篇被刷新的旧文' if stale else ''))
     return items
 
 
