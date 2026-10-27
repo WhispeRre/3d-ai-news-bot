@@ -710,8 +710,8 @@
   ],
 
   "feishu": {
-    "mode": "webhook",
-    "chat_ids": [],
-    "admin_user_ids": []
+    "mode": "app",
+    "chat_ids": ["oc_7bd5ec50a1b432ea2a3763d02fc3528c"],
+    "admin_user_ids": ["ou_7d3e402835860e7d9ce336306a57bde9"]
   }
 }
