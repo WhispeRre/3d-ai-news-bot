@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 飞书消息发送，方式由 config.feishu.mode 决定：
-- webhook：群自定义机器人，只需要 Webhook 地址（环境变量 FEISHU_WEBHOOK_URL；
-  机器人开了签名校验时再配 FEISHU_WEBHOOK_SECRET）。告警发到 FEISHU_ALERT_WEBHOOK_URL，没配就跳过
-- lark-cli：飞书应用机器人，需要安装并初始化 lark-cli，
-  告警私信给 feishu.admin_user_ids
+- app：飞书应用机器人。凭 App ID / App Secret（环境变量 LARK_APP_ID / LARK_APP_SECRET）调开放接口，
+  日报发到 feishu.chat_ids 里的每个群（机器人需已入群），告警私信给 feishu.admin_user_ids（需在应用可用范围内）
+- webhook：群自定义机器人，只需要 Webhook 地址（FEISHU_WEBHOOK_URL；开了签名校验再配 FEISHU_WEBHOOK_SECRET）
+两种方式发的是同一种消息卡片。告警发不出私信（或没配管理员）时退回 FEISHU_ALERT_WEBHOOK_URL，
+这样应用凭证失效导致推送失败时，告警仍能送达。
 """
 
 from __future__ import annotations
@@ -13,40 +14,32 @@ import base64
 import hashlib
 import hmac
 import json
-import shutil
-import subprocess
 import time
-from typing import List
+from typing import List, Optional
 
 import requests
 
 from common import load_env_var, local_now
 
-# 自定义机器人请求体上限 20 KB，留一点余量
-WEBHOOK_BODY_LIMIT = 18 * 1024
+API_BASE = 'https://open.feishu.cn/open-apis'
+
+# 卡片请求体上限：自定义机器人 20 KB、开放接口 30 KB，统一按小的留余量
+CARD_BODY_LIMIT = 18 * 1024
+
+_ERROR_HINTS = {
+    230002: '机器人不在这个群里，先在群设置 → 群机器人里把应用加进来',
+    230013: '对方不在应用的可用范围内，去开发者后台调整可用范围并发布新版本',
+    232011: '机器人不在这个群里',
+    232025: '应用没开启机器人能力，或开启后还没发布新版本',
+    99991672: '应用缺少接口权限，或开通权限后还没发布新版本',
+}
 
 
-# ---------------------------------------------------------------- Webhook
-
-def _sign(secret: str) -> dict:
-    timestamp = str(int(time.time()))
-    digest = hmac.new(f'{timestamp}\n{secret}'.encode('utf-8'), digestmod=hashlib.sha256).digest()
-    return {'timestamp': timestamp, 'sign': base64.b64encode(digest).decode('utf-8')}
+class FeishuError(RuntimeError):
+    pass
 
 
-def _post_webhook(url: str, secret: str, payload: dict) -> bool:
-    body = dict(payload, **_sign(secret)) if secret else payload
-    try:
-        data = requests.post(url, json=body, timeout=20).json()
-    except Exception as e:
-        print(f'   ❌ Webhook 请求异常: {e}')
-        return False
-    # 成功返回 {"code": 0}，旧版接口返回 {"StatusCode": 0}
-    if data.get('code', data.get('StatusCode', -1)) != 0:
-        print(f'   ❌ Webhook 返回错误: {json.dumps(data, ensure_ascii=False)[:300]}')
-        return False
-    return True
-
+# ---------------------------------------------------------------- 消息卡片
 
 def _card(title: str, blocks: List[str]) -> dict:
     elements = []
@@ -87,7 +80,7 @@ def report_to_cards(markdown: str) -> List[dict]:
 
     groups, chunk = [], []
     for block in blocks:
-        if chunk and _card_size(_card(title, chunk + [block])) > WEBHOOK_BODY_LIMIT:
+        if chunk and _card_size(_card(title, chunk + [block])) > CARD_BODY_LIMIT:
             groups.append(chunk)
             chunk = []
         chunk.append(block)
@@ -98,25 +91,77 @@ def report_to_cards(markdown: str) -> List[dict]:
     return [_card(f'{title}（{i}/{len(groups)}）', g) for i, g in enumerate(groups, 1)]
 
 
-# ---------------------------------------------------------------- lark-cli
+# ---------------------------------------------------------------- 自定义机器人 Webhook
 
-def _lark_send(target_flag: str, target: str, body_flag: str, body: str, timeout: int = 60) -> bool:
-    """target_flag: --chat-id / --user-id；body_flag: --markdown / --text"""
-    if not shutil.which('lark-cli'):
-        print('   ❌ 未安装 lark-cli')
-        return False
+def _sign(secret: str) -> dict:
+    timestamp = str(int(time.time()))
+    digest = hmac.new(f'{timestamp}\n{secret}'.encode('utf-8'), digestmod=hashlib.sha256).digest()
+    return {'timestamp': timestamp, 'sign': base64.b64encode(digest).decode('utf-8')}
+
+
+def _post_webhook(url: str, secret: str, payload: dict) -> bool:
+    body = dict(payload, **_sign(secret)) if secret else payload
     try:
-        result = subprocess.run(
-            ['lark-cli', 'im', '+messages-send', '--as', 'bot', target_flag, target, body_flag, body],
-            capture_output=True, text=True, timeout=timeout,
-        )
+        data = requests.post(url, json=body, timeout=20).json()
     except Exception as e:
-        print(f'   ❌ lark-cli 调用异常: {e}')
+        print(f'   ❌ Webhook 请求异常: {e}')
         return False
-    if result.returncode != 0:
-        print(f'   ❌ lark-cli 发送失败: {(result.stderr or result.stdout).strip()[:500]}')
+    # 成功返回 {"code": 0}，旧版接口返回 {"StatusCode": 0}
+    if data.get('code', data.get('StatusCode', -1)) != 0:
+        print(f'   ❌ Webhook 返回错误: {json.dumps(data, ensure_ascii=False)[:300]}')
         return False
     return True
+
+
+# ---------------------------------------------------------------- 应用机器人（开放接口）
+
+_token_cache: dict = {}
+
+
+def tenant_token() -> str:
+    if _token_cache.get('expires', 0) > time.time():
+        return _token_cache['token']
+    app_id, app_secret = load_env_var('LARK_APP_ID'), load_env_var('LARK_APP_SECRET')
+    if not app_id or not app_secret:
+        raise FeishuError('未配置 LARK_APP_ID / LARK_APP_SECRET')
+    data = requests.post(f'{API_BASE}/auth/v3/tenant_access_token/internal',
+                         json={'app_id': app_id, 'app_secret': app_secret}, timeout=20).json()
+    if data.get('code') != 0:
+        raise FeishuError(f"获取 tenant_access_token 失败：{data.get('msg')}（code {data.get('code')}）")
+    _token_cache.update(token=data['tenant_access_token'], expires=time.time() + data.get('expire', 7200) - 300)
+    return _token_cache['token']
+
+
+def api(method: str, path: str, *, params: Optional[dict] = None, body: Optional[dict] = None) -> dict:
+    """调开放接口，返回完整响应 JSON；code 非 0 时抛 FeishuError（附常见错误的排查提示）"""
+    resp = requests.request(method, f'{API_BASE}{path}', params=params, json=body, timeout=20,
+                            headers={'Authorization': f'Bearer {tenant_token()}'})
+    try:
+        data = resp.json()
+    except ValueError:
+        raise FeishuError(f'HTTP {resp.status_code}：{resp.text[:200]}')
+    code = data.get('code', -1)
+    if code != 0:
+        hint = _ERROR_HINTS.get(code)
+        raise FeishuError(f"{data.get('msg', '')}（code {code}）" + (f'。{hint}' if hint else ''))
+    return data
+
+
+def api_items(path: str, params: Optional[dict] = None) -> List[dict]:
+    """分页接口的全部 items"""
+    items, page_token = [], ''
+    while True:
+        query = dict(params or {}, page_size=100, **({'page_token': page_token} if page_token else {}))
+        data = api('GET', path, params=query).get('data') or {}
+        items.extend(data.get('items') or [])
+        page_token = data.get('page_token', '')
+        if not data.get('has_more') or not page_token:
+            return items
+
+
+def _app_send(receive_id_type: str, receive_id: str, msg_type: str, content: dict) -> None:
+    api('POST', '/im/v1/messages', params={'receive_id_type': receive_id_type},
+        body={'receive_id': receive_id, 'msg_type': msg_type, 'content': json.dumps(content, ensure_ascii=False)})
 
 
 # ---------------------------------------------------------------- 对外接口
@@ -124,25 +169,36 @@ def _lark_send(target_flag: str, target: str, body_flag: str, body: str, timeout
 def send_report(config: dict, markdown: str) -> bool:
     fs = config.get('feishu', {})
     mode = fs.get('mode', 'webhook')
+    cards = report_to_cards(markdown)
+    if mode == 'app':
+        chat_ids = fs.get('chat_ids') or []
+        if not chat_ids:
+            print('❌ 未配置 feishu.chat_ids')
+            return False
+        ok = True
+        for chat_id in chat_ids:
+            try:
+                for i, card in enumerate(cards):
+                    if i:
+                        time.sleep(1)
+                    _app_send('chat_id', chat_id, 'interactive', card)
+            except Exception as e:
+                print(f'   ❌ 推送到群 {chat_id} 失败：{e}')
+                ok = False
+        return ok
     if mode == 'webhook':
         url = load_env_var('FEISHU_WEBHOOK_URL')
         if not url:
             print('❌ 未配置 FEISHU_WEBHOOK_URL')
             return False
         secret = load_env_var('FEISHU_WEBHOOK_SECRET')
-        cards = report_to_cards(markdown)
         results = []
         for i, card in enumerate(cards):
             if i:
                 time.sleep(1)
             results.append(_post_webhook(url, secret, {'msg_type': 'interactive', 'card': card}))
         return all(results)
-    if mode == 'lark-cli':
-        if not fs.get('chat_id'):
-            print('❌ 未配置 feishu.chat_id')
-            return False
-        return _lark_send('--chat-id', fs['chat_id'], '--markdown', markdown)
-    print(f'❌ 未知的 feishu.mode：{mode}（可选 webhook / lark-cli）')
+    print(f'❌ 未知的 feishu.mode：{mode}（可选 app / webhook）')
     return False
 
 
@@ -150,19 +206,23 @@ def send_alert(config: dict, title: str, message: str) -> bool:
     text = (f"⚠️ {config.get('name', '每日资讯')}：{title}\n\n"
             f"时间：{local_now(config):%Y-%m-%d %H:%M:%S}\n{message}")
     fs = config.get('feishu', {})
-    if fs.get('mode', 'webhook') == 'lark-cli':
-        admins = fs.get('admin_user_ids') or []
-        if not admins:
-            print('   ℹ️ 未配置 feishu.admin_user_ids，跳过告警')
-            return False
-        sent = any([_lark_send('--user-id', uid, '--text', text, timeout=30) for uid in admins])
-    else:
-        url = load_env_var('FEISHU_ALERT_WEBHOOK_URL')
-        if not url:
-            print('   ℹ️ 未配置 FEISHU_ALERT_WEBHOOK_URL，跳过告警')
-            return False
-        sent = _post_webhook(url, load_env_var('FEISHU_ALERT_WEBHOOK_SECRET'),
-                             {'msg_type': 'text', 'content': {'text': text}})
+    if fs.get('mode') == 'app' and fs.get('admin_user_ids'):
+        sent = False
+        for open_id in fs['admin_user_ids']:
+            try:
+                _app_send('open_id', open_id, 'text', {'text': text})
+                sent = True
+            except Exception as e:
+                print(f'   ❌ 告警私信 {open_id} 失败：{e}')
+        if sent:
+            print('   📢 已私信告警')
+            return True
+    url = load_env_var('FEISHU_ALERT_WEBHOOK_URL')
+    if not url:
+        print('   ℹ️ 没有可用的告警渠道（私信未配置或失败，也没配 FEISHU_ALERT_WEBHOOK_URL），跳过告警')
+        return False
+    sent = _post_webhook(url, load_env_var('FEISHU_ALERT_WEBHOOK_SECRET'),
+                         {'msg_type': 'text', 'content': {'text': text}})
     if sent:
         print('   📢 已发送告警')
     return sent

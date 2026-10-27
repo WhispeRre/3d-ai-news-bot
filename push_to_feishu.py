@@ -40,7 +40,7 @@ def main() -> int:
     if send_report(config, content):
         print('✅ 推送成功')
         return 0
-    send_alert(config, '日报推送失败', f'报告文件：{rel}\n请检查飞书推送配置（Webhook / lark-cli）和网络。')
+    send_alert(config, '日报推送失败', f'报告文件：{rel}\n请检查飞书推送配置（应用机器人 / Webhook）和网络。')
     return 1
 
 

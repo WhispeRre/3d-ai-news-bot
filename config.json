@@ -711,7 +711,7 @@
 
   "feishu": {
     "mode": "webhook",
-    "chat_id": "",
+    "chat_ids": [],
     "admin_user_ids": []
   }
 }

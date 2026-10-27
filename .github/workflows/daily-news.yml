@@ -64,12 +64,6 @@ jobs:
       - name: 安装依赖
         run: pip install -r requirements.txt
 
-      - name: 安装 lark-cli（只有 lark-cli 推送方式需要）
-        if: env.LARK_APP_ID != ''
-        run: |
-          npm install -g @larksuite/cli
-          printf '%s' "$LARK_APP_SECRET" | lark-cli config init --app-id "$LARK_APP_ID" --app-secret-stdin
-
       - name: 采集
         run: python fetch_news.py
 
