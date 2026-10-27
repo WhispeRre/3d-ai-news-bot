@@ -1,0 +1,109 @@
+name: 每日资讯
+
+on:
+  schedule:
+    # GitHub 的定时触发在高峰期会延迟甚至丢失，所以排两次：北京时间 09:07 为主、11:07 为备份。
+    # 当天已经成功跑过时，后面的定时触发会在 guard 里跳过
+    - cron: '7 1 * * *'
+    - cron: '7 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # 推送成功后把 state/ 里的去重记录提交回仓库
+
+concurrency:
+  group: daily-news
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 取分支最新提交而不是触发时的提交，才能看到前一次运行刚写回的去重记录
+          ref: ${{ github.event.repository.default_branch }}
+      - id: check
+        run: |
+          last=$(python3 -c "import json; print(json.load(open('state/seen.json')).get('updated_at', '')[:10])" 2>/dev/null || echo "")
+          today=$(TZ=Asia/Shanghai date +%F)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$last" = "$today" ]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ 今天（$today）已经成功运行过，跳过"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  daily:
+    needs: guard
+    if: needs.guard.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+      TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
+      FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+      FEISHU_WEBHOOK_SECRET: ${{ secrets.FEISHU_WEBHOOK_SECRET }}
+      FEISHU_ALERT_WEBHOOK_URL: ${{ secrets.FEISHU_ALERT_WEBHOOK_URL }}
+      FEISHU_ALERT_WEBHOOK_SECRET: ${{ secrets.FEISHU_ALERT_WEBHOOK_SECRET }}
+      LARK_APP_ID: ${{ secrets.LARK_APP_ID }}
+      LARK_APP_SECRET: ${{ secrets.LARK_APP_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 安装 lark-cli（只有 lark-cli 推送方式需要）
+        if: env.LARK_APP_ID != ''
+        run: |
+          npm install -g @larksuite/cli
+          printf '%s' "$LARK_APP_SECRET" | lark-cli config init --app-id "$LARK_APP_ID" --app-secret-stdin
+
+      - name: 采集
+        run: python fetch_news.py
+
+      - name: 整理日报（AI 优先，失败自动降级为模板）
+        id: report
+        run: |
+          python ai_report.py || python generate_report.py
+          if ls output/news_*.md >/dev/null 2>&1; then
+            echo "has_report=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_report=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ 今天没有日报，跳过推送"
+          fi
+
+      - name: 推送到飞书
+        if: steps.report.outputs.has_report == 'true'
+        run: python push_to_feishu.py
+
+      - name: 更新去重记录
+        run: |
+          python mark_seen.py
+          git add state/
+          if ! git diff --cached --quiet; then
+            git -c user.name="github-actions[bot]" \
+                -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                commit -m "chore: 更新去重记录 [skip ci]"
+            git push
+          fi
+
+      - name: 归档当天产物
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: news-${{ github.run_id }}
+          path: output/
+          retention-days: 14
+          if-no-files-found: ignore

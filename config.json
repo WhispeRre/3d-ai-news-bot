@@ -1,0 +1,715 @@
+{
+  "name": "3D × AI 每日资讯",
+  "bot_name": "3D × AI 资讯机器人",
+  "reader_profile": "读者是一支做 3D 生成模型和 3D Agent 的团队，技术、产品、业务岗位都有。",
+  "timezone": "Asia/Shanghai",
+
+  "tracks": {
+    "3d_agent": {
+      "name": "3D × Agent",
+      "description": "DCC 工具（Blender、Unity、Unreal、Maya、Houdini、Roblox Studio 等）的 Agent 化与 MCP；让 LLM 写代码建模（Blender Python、OpenSCAD、CadQuery、程序化生成）；LLM 做场景布局和资产编排；用多模态模型看渲染图来评估、迭代 3D 结果；3D Agent 的评测基准",
+      "keywords": [
+        "blender mcp", "unity mcp", "unreal mcp", "maya mcp", "houdini mcp", "godot mcp", "roblox mcp",
+        "3d agent*", "agentic 3d", "blender agent*", "cad agent*", "text-to-cad", "cad generation",
+        "bpy", "blender python", "openscad", "cadquery", "procedural generation", "procedural modeling",
+        "infinigen", "scenecraft", "blendergym", "3d llm*", "llm for 3d", "scene layout",
+        "roblox assistant", "studio agent", "unity ai",
+        "3D智能体", "三维智能体"
+      ],
+      "combine": [["3d_gen", "agent_eng"], ["toolchain", "agent_eng"]]
+    },
+    "3d_gen": {
+      "name": "3D 生成与重建",
+      "description": "原生 3D 生成（图/文生 3D 的几何与纹理）、网格质量与拓扑、PBR 材质、部件级生成与分割、自动绑骨与动作、3D 场景生成、高斯泼溅（3DGS）、前馈式三维重建",
+      "keywords": [
+        "3D", "3d generation", "3d generative", "3d asset*", "3d model*", "3d scene*", "3d reconstruction",
+        "gaussian splat*", "3dgs", "nerf*", "mesh*", "point cloud*",
+        "image-to-3d", "text-to-3d", "sketch-to-3d", "multi-view diffusion", "novel view synthesis",
+        "texture generation", "texturing", "pbr", "uv unwrap*", "retopology", "remesh*", "quad mesh*",
+        "rigging", "auto-rig*", "autorig*", "skinning", "motion generation", "text-to-motion", "mocap",
+        "3d avatar*", "avatar generation", "articulated object*", "part segmentation", "part-level",
+        "4d generation", "4d reconstruction", "4d gaussian*", "voxel*", "signed distance",
+        "trellis", "hunyuan3d", "hunyuan 3d", "triposg", "tripo", "meshy", "rodin", "hyper3d",
+        "sam 3d", "vggt", "dust3r", "mast3r",
+        "三维", "3D生成", "3D模型", "3D建模", "三维重建", "高斯泼溅", "点云"
+      ],
+      "exclude": [
+        "service mesh", "mesh network*", "mesh vpn", "mesh wifi", "mesh wi-fi", "mesh router*",
+        "3d nand", "3d stacking", "3d chip*", "3d packaging", "3d v-cache", "3d ic"
+      ]
+    },
+    "visual_world": {
+      "name": "视觉生成与世界模型",
+      "description": "图像生成与编辑（多视角一致性、角色一致性）、视频生成、世界模型与可交互 3D 世界、空间智能、具身智能与仿真资产",
+      "keywords": [
+        "image generation", "image generator*", "image model*", "image editing", "text-to-image", "image-to-image",
+        "video generation", "video generator*", "video model*", "text-to-video", "image-to-video", "video diffusion",
+        "diffusion model*", "sora", "veo", "kling", "wan2*", "wan 2", "seedance", "seedream", "midjourney",
+        "flux", "nano banana", "imagen", "firefly", "runway gen*", "hailuo", "vidu",
+        "world model*", "genie", "cosmos", "world labs", "worldlabs", "hunyuanworld", "hunyuan world",
+        "spatial intelligence", "embodied", "vla", "vision-language-action", "sim-ready", "digital twin*",
+        "可灵", "通义万相", "海螺", "世界模型", "空间智能", "具身", "视频生成", "图像生成", "文生图", "文生视频", "图生视频"
+      ]
+    },
+    "toolchain": {
+      "name": "3D 工具链与标准",
+      "description": "Blender、OpenUSD、glTF、three.js / WebGPU、游戏引擎与 DCC 软件的重要版本，3DGS 等格式的标准化",
+      "keywords": [
+        "blender", "openusd", "universal scene description", "usdz", "gltf", "three.js", "threejs",
+        "webgpu", "webgl", "babylon.js", "playcanvas", "supersplat", "godot", "unity 6", "unity engine",
+        "unreal engine", "ue5", "ue6", "houdini", "maya", "3ds max", "cinema 4d", "substance 3d", "zbrush",
+        "omniverse", "khronos", "roblox studio", "spz"
+      ]
+    },
+    "agent_eng": {
+      "name": "Agent 工程与生态",
+      "description": "MCP、A2A、Agent Skills 等协议与标准；Agent 框架与 SDK 的重要版本；上下文工程、记忆、多 Agent 编排、长任务等工程方法；Computer-use / GUI Agent；Agent 评测榜单",
+      "keywords": [
+        "agent*", "agentic", "multi-agent", "mcp", "model context protocol", "a2a", "agent2agent", "agent skills",
+        "tool use", "tool calling", "function calling", "computer use", "browser use", "gui agent*",
+        "langgraph", "langchain", "llamaindex", "crewai", "autogen", "agents sdk", "agent sdk", "adk",
+        "codex", "claude code", "cursor", "devin", "gemini cli",
+        "swe-bench", "osworld", "terminal-bench", "tau-bench", "τ-bench",
+        "context engineering", "harness engineering", "agent harness",
+        "智能体", "多智能体"
+      ]
+    },
+    "foundation": {
+      "name": "基座模型",
+      "description": "闭源前沿模型与价格变化；开源与国产模型（Qwen、DeepSeek、Kimi、GLM、MiniMax、混元、Seed 等）；对 3D Agent 最要紧的能力：工具调用稳定性、视觉理解与空间推理、长上下文、成本和延迟",
+      "keywords": [
+        "llm*", "large language model*", "foundation model*", "frontier model*", "reasoning model*",
+        "open-weight*", "open weights", "open-source model*", "open source model*",
+        "vlm*", "vision-language model*", "vision language model*", "multimodal", "omni model*",
+        "gpt*", "chatgpt", "openai", "claude", "anthropic", "gemini", "gemma", "deepmind",
+        "qwen*", "deepseek*", "kimi", "moonshot", "glm*", "zhipu", "z.ai", "minimax",
+        "llama*", "mistral", "grok", "xai", "doubao", "bytedance seed", "hunyuan", "ernie",
+        "stepfun", "nemotron", "phi-4", "phi-5", "mimo",
+        "豆包", "混元", "文心", "阶跃", "大模型", "基座模型", "开源模型", "多模态", "推理模型"
+      ]
+    },
+    "industry": {
+      "name": "行业与竞品",
+      "description": "3D 生成同行（Meshy、Rodin、混元 3D、CSM、Luma 等）的产品发布、定价、融资；平台方（Roblox、Meta、NVIDIA、Apple、Adobe、Autodesk、Unity、Epic）的 3D 与 AI 动作；下游场景（游戏 UGC、3D 打印、电商、XR）；AI 行业的重大商业事件",
+      "keywords": [
+        "tripo ai", "tripo3d", "vast ai", "vastai", "meshy", "rodin", "deemos", "hyper3d", "csm.ai",
+        "common sense machines", "luma ai", "luma labs", "lumalabs", "kaedim", "sloyd", "masterpiece x",
+        "spline", "polycam", "scaniverse", "niantic spatial", "roblox", "cube 3d", "omniverse",
+        "meta horizon", "horizon worlds", "vision pro", "visionos", "android xr", "meta quest",
+        "smart glasses", "ar glasses", "xr", "epic games", "autodesk", "adobe substance",
+        "bambu lab", "makerworld", "3d printing", "3d printer*", "world labs",
+        "funding", "raises", "raised", "series a", "series b", "series c", "seed round",
+        "acquire*", "acquisition", "ipo", "valuation", "revenue",
+        "3D打印", "融资", "收购", "上市", "估值", "营收"
+      ]
+    }
+  },
+
+  "keyword_sets": {
+    "ai_related": [
+      "AI", "generative", "genai", "gen ai", "neural", "machine learning", "deep learning", "agent*", "mcp",
+      "llm*", "diffusion", "gaussian splat*", "3dgs", "nerf*", "text-to-3d", "image-to-3d", "meshy", "tripo",
+      "rodin", "hunyuan*", "trellis", "copilot", "人工智能", "AIGC", "生成式", "大模型", "智能体"
+    ],
+    "arxiv_3d": [
+      "3d generation", "3d generative", "3d asset*", "image-to-3d", "text-to-3d", "single-view 3d", "single image to 3d",
+      "native 3d", "3d native", "mesh generation", "artist-created mesh*", "autoregressive mesh*",
+      "texture generation", "texture synthesis", "pbr material*", "material generation",
+      "rigging", "auto-rig*", "skinning weight*", "3d scene generation", "scene generation", "3d layout",
+      "articulated object*", "part-aware", "part-level", "3d part*", "feed-forward 3d", "feed-forward gaussian*",
+      "large reconstruction model*", "3d foundation model*", "4d generation", "3d editing", "3d avatar*",
+      "3d agent*", "blender", "cad generation", "text-to-cad", "procedural generation", "procedural modeling",
+      "3d world*", "world generation", "explorable world*"
+    ],
+    "model_noise": [
+      "gguf", "mlx", "awq", "gptq", "exl2", "exl3", "fp8", "fp4", "nvfp4", "int4", "int8", "bnb", "4bit", "8bit",
+      "quant*", "abliterat*", "uncensored", "heretic", "merge*", "lora", "comfy*"
+    ]
+  },
+
+  "sections": [
+    {
+      "key": "3d_agent",
+      "title": "🧊 3D × Agent",
+      "tracks": ["3d_agent"],
+      "max_items": 3
+    },
+    {
+      "key": "3d_world",
+      "title": "🎨 3D 生成与世界模型",
+      "tracks": ["3d_gen", "visual_world", "toolchain"],
+      "max_items": 3
+    },
+    {
+      "key": "agent_model",
+      "title": "🤖 Agent 与基座模型",
+      "tracks": ["agent_eng", "foundation"],
+      "max_items": 3
+    },
+    {
+      "key": "industry",
+      "title": "🏢 行业与竞品",
+      "tracks": ["industry"],
+      "max_items": 3
+    }
+  ],
+
+  "report": {
+    "top_picks": 3,
+    "max_items_total": 15,
+    "max_papers": 3,
+    "model": "auto"
+  },
+
+  "collect": {
+    "default_max_age_hours": 48,
+    "summary_chars": 280,
+    "max_total_items": 220,
+    "retries": 2,
+    "retry_delay": 3,
+    "workers": 6,
+    "alert_failed_ratio": 0.3
+  },
+
+  "sources": [
+    {
+      "id": "hf_papers",
+      "name": "Hugging Face Daily Papers",
+      "type": "hf_daily_papers",
+      "kind": "paper",
+      "reliability": "high",
+      "score": 45,
+      "days_back": 2,
+      "min_upvotes": 3,
+      "always_keep_top": 3,
+      "filter": "any",
+      "max_items": 20
+    },
+    {
+      "id": "arxiv_3d",
+      "name": "arXiv（cs.GR / cs.CV）",
+      "type": "arxiv_rss",
+      "kind": "paper",
+      "reliability": "medium",
+      "score": 30,
+      "categories": ["cs.GR", "cs.CV"],
+      "filter": "all",
+      "require": "@arxiv_3d",
+      "default_tracks": ["3d_gen"],
+      "max_items": 20
+    },
+
+    {
+      "id": "hf_models_3d",
+      "name": "Hugging Face 热门 3D 模型",
+      "type": "hf_models",
+      "kind": "model",
+      "reliability": "high",
+      "score": 60,
+      "pipeline_tags": ["image-to-3d", "text-to-3d"],
+      "max_age_days": 21,
+      "min_likes": 10,
+      "filter": "all",
+      "default_tracks": ["3d_gen"],
+      "max_items": 5
+    },
+    {
+      "id": "hf_models_llm",
+      "name": "Hugging Face 热门语言/多模态模型",
+      "type": "hf_models",
+      "kind": "model",
+      "reliability": "high",
+      "score": 55,
+      "pipeline_tags": ["text-generation", "image-text-to-text", "any-to-any"],
+      "max_age_days": 14,
+      "min_likes": 150,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 6
+    },
+    {
+      "id": "hf_models_visual",
+      "name": "Hugging Face 热门图像/视频模型",
+      "type": "hf_models",
+      "kind": "model",
+      "reliability": "high",
+      "score": 55,
+      "pipeline_tags": ["text-to-image", "image-to-image", "text-to-video", "image-to-video"],
+      "max_age_days": 14,
+      "min_likes": 60,
+      "filter": "all",
+      "default_tracks": ["visual_world"],
+      "max_items": 5
+    },
+    {
+      "id": "hf_org_models",
+      "name": "Hugging Face 重点机构新模型",
+      "type": "hf_author_models",
+      "kind": "model",
+      "reliability": "official",
+      "score": 70,
+      "authors": [
+        "VAST-AI", "tencent", "TencentARC", "microsoft", "facebook", "nvidia", "google", "apple", "stabilityai",
+        "deepseek-ai", "Qwen", "moonshotai", "zai-org", "MiniMaxAI", "ByteDance-Seed", "stepfun-ai", "XiaomiMiMo",
+        "baidu", "meta-llama", "mistralai", "openai", "black-forest-labs", "Wan-AI", "Lightricks"
+      ],
+      "max_age_hours": 72,
+      "min_likes": 5,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 10
+    },
+
+    {
+      "id": "gh_search_3d_agent",
+      "name": "GitHub 新仓库（3D × Agent）",
+      "type": "github_search",
+      "kind": "repo",
+      "reliability": "high",
+      "score": 55,
+      "queries": ["blender mcp", "mcp unity", "mcp unreal", "mcp godot", "3d agent", "blender agent", "cad agent"],
+      "created_within_days": 7,
+      "min_stars": 10,
+      "filter": "all",
+      "default_tracks": ["3d_agent"],
+      "max_items": 8
+    },
+    {
+      "id": "gh_search_3d_gen",
+      "name": "GitHub 新仓库（3D 生成）",
+      "type": "github_search",
+      "kind": "repo",
+      "reliability": "high",
+      "score": 50,
+      "queries": ["image-to-3d", "text-to-3d", "3d generation", "gaussian splatting", "mesh generation", "world model"],
+      "created_within_days": 7,
+      "min_stars": 20,
+      "filter": "all",
+      "default_tracks": ["3d_gen"],
+      "max_items": 8
+    },
+    {
+      "id": "gh_orgs_core",
+      "name": "GitHub 重点机构新仓库",
+      "type": "github_new_repos",
+      "kind": "repo",
+      "reliability": "official",
+      "score": 65,
+      "orgs": [
+        "VAST-AI-Research", "Tencent-Hunyuan", "TencentARC", "3DTopia", "nv-tlabs", "NVlabs", "facebookresearch",
+        "QwenLM", "deepseek-ai", "MoonshotAI", "zai-org", "MiniMax-AI", "ByteDance-Seed", "stepfun-ai",
+        "google-deepmind", "openai", "anthropics", "modelcontextprotocol", "Roblox", "Stability-AI", "meta-llama",
+        "mistralai", "XiaomiMiMo"
+      ],
+      "created_within_days": 7,
+      "min_stars": 10,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 10
+    },
+    {
+      "id": "gh_orgs_big",
+      "name": "GitHub 大厂新仓库",
+      "type": "github_new_repos",
+      "kind": "repo",
+      "reliability": "official",
+      "score": 60,
+      "orgs": ["microsoft", "google", "NVIDIA", "apple", "huggingface", "google-research", "bytedance", "alibaba"],
+      "created_within_days": 7,
+      "min_stars": 50,
+      "filter": "any",
+      "default_tracks": ["foundation"],
+      "max_items": 6
+    },
+    {
+      "id": "gh_releases",
+      "name": "GitHub 重点项目版本发布",
+      "type": "github_releases",
+      "kind": "release",
+      "reliability": "official",
+      "score": 60,
+      "max_age_hours": 72,
+      "skip_patch": true,
+      "skip_prerelease": true,
+      "repos": [
+        {"repo": "openai/openai-agents-python", "tracks": ["agent_eng"]},
+        {"repo": "anthropics/claude-agent-sdk-python", "tracks": ["agent_eng"]},
+        {"repo": "google/adk-python", "tracks": ["agent_eng"]},
+        {"repo": "langchain-ai/langgraph", "tracks": ["agent_eng"], "tag_pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        {"repo": "modelcontextprotocol/modelcontextprotocol", "tracks": ["agent_eng"]},
+        {"repo": "modelcontextprotocol/python-sdk", "tracks": ["agent_eng"]},
+        {"repo": "a2aproject/A2A", "tracks": ["agent_eng"]},
+        {"repo": "CoplayDev/unity-mcp", "tracks": ["3d_agent"]},
+        {"repo": "mrdoob/three.js", "tracks": ["toolchain"]},
+        {"repo": "PixarAnimationStudios/OpenUSD", "tracks": ["toolchain"]},
+        {"repo": "playcanvas/supersplat", "tracks": ["toolchain"]},
+        {"repo": "nerfstudio-project/gsplat", "tracks": ["3d_gen"]},
+        {"repo": "godotengine/godot", "tracks": ["toolchain"]}
+      ],
+      "filter": "all",
+      "max_items": 6
+    },
+
+    {
+      "id": "openai_news",
+      "name": "OpenAI 官方",
+      "type": "rss",
+      "url": "https://openai.com/news/rss.xml",
+      "kind": "official",
+      "reliability": "official",
+      "score": 85,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 6
+    },
+    {
+      "id": "anthropic_news",
+      "name": "Anthropic 官方",
+      "type": "anthropic_news",
+      "kind": "official",
+      "reliability": "official",
+      "score": 85,
+      "paths": ["news", "engineering"],
+      "max_age_hours": 72,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 4
+    },
+    {
+      "id": "deepmind_blog",
+      "name": "Google DeepMind 博客",
+      "type": "rss",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "kind": "official",
+      "reliability": "official",
+      "score": 85,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 4
+    },
+    {
+      "id": "google_ai_blog",
+      "name": "Google AI 博客",
+      "type": "rss",
+      "url": "https://blog.google/technology/ai/rss/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 75,
+      "filter": "any",
+      "default_tracks": ["foundation"],
+      "max_items": 4
+    },
+    {
+      "id": "nvidia_dev_blog",
+      "name": "NVIDIA 技术博客",
+      "type": "rss",
+      "url": "https://developer.nvidia.com/blog/feed",
+      "kind": "official",
+      "reliability": "official",
+      "score": 60,
+      "filter": ["3d_agent", "3d_gen", "visual_world", "toolchain"],
+      "max_items": 4
+    },
+    {
+      "id": "nvidia_blog",
+      "name": "NVIDIA 博客",
+      "type": "rss",
+      "url": "https://blogs.nvidia.com/feed/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 60,
+      "filter": ["3d_agent", "3d_gen", "visual_world", "toolchain", "foundation"],
+      "max_items": 4
+    },
+    {
+      "id": "hf_blog",
+      "name": "Hugging Face 博客",
+      "type": "rss",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "kind": "official",
+      "reliability": "high",
+      "score": 60,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 4
+    },
+    {
+      "id": "msr_blog",
+      "name": "微软研究院博客",
+      "type": "rss",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 55,
+      "filter": ["3d_agent", "3d_gen", "visual_world", "agent_eng"],
+      "max_items": 3
+    },
+    {
+      "id": "apple_ml",
+      "name": "Apple 机器学习研究",
+      "type": "rss",
+      "url": "https://machinelearning.apple.com/rss.xml",
+      "kind": "official",
+      "reliability": "official",
+      "score": 60,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 3
+    },
+    {
+      "id": "unity_blog",
+      "name": "Unity 博客",
+      "type": "rss",
+      "url": "https://unity.com/blog/rss",
+      "kind": "official",
+      "reliability": "official",
+      "score": 55,
+      "filter": "all",
+      "require": "@ai_related",
+      "default_tracks": ["toolchain"],
+      "max_items": 3
+    },
+    {
+      "id": "blender_news",
+      "name": "Blender 官方",
+      "type": "rss",
+      "url": "https://www.blender.org/feed/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 55,
+      "filter": "all",
+      "default_tracks": ["toolchain"],
+      "max_items": 2
+    },
+    {
+      "id": "blender_dev",
+      "name": "Blender 开发者博客",
+      "type": "rss",
+      "url": "https://code.blender.org/feed/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 50,
+      "filter": "all",
+      "default_tracks": ["toolchain"],
+      "max_items": 2
+    },
+
+    {
+      "id": "techcrunch_ai",
+      "name": "TechCrunch",
+      "type": "rss",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "kind": "media",
+      "reliability": "high",
+      "score": 55,
+      "filter": "any",
+      "default_tracks": ["industry"],
+      "max_items": 8
+    },
+    {
+      "id": "theverge_ai",
+      "name": "The Verge",
+      "type": "rss",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "kind": "media",
+      "reliability": "high",
+      "score": 50,
+      "filter": "any",
+      "default_tracks": ["industry"],
+      "max_items": 5
+    },
+    {
+      "id": "the_decoder",
+      "name": "The Decoder",
+      "type": "rss",
+      "url": "https://the-decoder.com/feed/",
+      "kind": "media",
+      "reliability": "high",
+      "score": 50,
+      "filter": "any",
+      "default_tracks": ["foundation"],
+      "max_items": 6
+    },
+    {
+      "id": "80lv",
+      "name": "80 Level",
+      "type": "rss",
+      "url": "https://80.lv/feed",
+      "kind": "media",
+      "reliability": "high",
+      "score": 50,
+      "filter": "all",
+      "require": "@ai_related",
+      "default_tracks": ["industry"],
+      "max_items": 4
+    },
+    {
+      "id": "cgchannel",
+      "name": "CG Channel",
+      "type": "rss",
+      "url": "https://www.cgchannel.com/feed/",
+      "kind": "media",
+      "reliability": "high",
+      "score": 45,
+      "filter": "all",
+      "require": "@ai_related",
+      "default_tracks": ["toolchain"],
+      "max_items": 3
+    },
+    {
+      "id": "roadtovr",
+      "name": "Road to VR",
+      "type": "rss",
+      "url": "https://www.roadtovr.com/feed/",
+      "kind": "media",
+      "reliability": "high",
+      "score": 40,
+      "filter": ["3d_agent", "3d_gen", "industry"],
+      "require": "@ai_related",
+      "default_tracks": ["industry"],
+      "max_items": 2
+    },
+    {
+      "id": "qbitai",
+      "name": "量子位",
+      "type": "rss",
+      "url": "https://www.qbitai.com/feed",
+      "kind": "media",
+      "reliability": "high",
+      "score": 50,
+      "filter": "any",
+      "default_tracks": ["industry"],
+      "max_items": 5
+    },
+    {
+      "id": "latent_space",
+      "name": "Latent Space / AINews",
+      "type": "rss",
+      "url": "https://www.latent.space/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 65,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 2
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects（Nathan Lambert）",
+      "type": "rss",
+      "url": "https://www.interconnects.ai/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 60,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 2
+    },
+    {
+      "id": "simonw",
+      "name": "Simon Willison",
+      "type": "rss",
+      "url": "https://simonwillison.net/atom/entries/",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 55,
+      "filter": "any",
+      "default_tracks": ["agent_eng"],
+      "max_items": 2
+    },
+    {
+      "id": "import_ai",
+      "name": "Import AI（Jack Clark）",
+      "type": "rss",
+      "url": "https://importai.substack.com/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 50,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 1
+    },
+
+    {
+      "id": "hackernews",
+      "name": "Hacker News",
+      "type": "hackernews",
+      "kind": "community",
+      "reliability": "high",
+      "score": 40,
+      "max_age_hours": 36,
+      "min_points": 80,
+      "filter": ["3d_agent", "3d_gen", "visual_world", "toolchain", "agent_eng", "foundation"],
+      "max_items": 10
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit",
+      "type": "reddit",
+      "kind": "community",
+      "reliability": "medium",
+      "score": 35,
+      "retries": 1,
+      "subreddits": [
+        {"name": "LocalLLaMA", "listing": "top", "t": "day", "take": 6, "filter": "all", "tracks": ["foundation"]},
+        {"name": "StableDiffusion", "listing": "top", "t": "day", "take": 5, "filter": "all", "tracks": ["visual_world"]},
+        {"name": "GaussianSplatting", "listing": "top", "t": "week", "take": 3, "filter": "all", "tracks": ["3d_gen"]},
+        {"name": "blender", "listing": "top", "t": "day", "take": 3, "filter": "all", "require": "@ai_related", "tracks": ["toolchain"]}
+      ],
+      "max_items": 12
+    },
+
+    {
+      "id": "twitter",
+      "name": "X (Twitter)",
+      "type": "twitter",
+      "enabled": true,
+      "kind": "kol",
+      "reliability": "high",
+      "score": 60,
+      "retries": 0,
+      "api_provider": {
+        "name": "twitterapi.io",
+        "base_url": "https://api.twitterapi.io",
+        "api_key_env": "TWITTERAPI_IO_KEY"
+      },
+      "nitter_instances": ["https://nitter.net", "https://nitter.perennialte.ch"],
+      "max_age_hours": 36,
+      "account_groups": {
+        "papers": {
+          "name": "论文推荐",
+          "filter": "any",
+          "score": 60,
+          "accounts": ["_akhaliq"]
+        },
+        "labs": {
+          "name": "模型实验室",
+          "filter": "all",
+          "tracks": ["foundation"],
+          "score": 75,
+          "accounts": ["OpenAI", "GoogleDeepMind", "AIatMeta", "Alibaba_Qwen", "deepseek_ai", "Kimi_Moonshot", "TencentHunyuan"]
+        },
+        "3d_world": {
+          "name": "3D 与世界模型",
+          "filter": "all",
+          "tracks": ["3d_gen"],
+          "score": 70,
+          "accounts": ["theworldlabs", "LumaLabsAI", "MeshyAI"]
+        },
+        "people": {
+          "name": "研究者与博主",
+          "filter": "any",
+          "score": 55,
+          "accounts": ["drfeifei", "karpathy", "jon_barron", "swyx", "simonw"]
+        }
+      },
+      "max_items": 15
+    }
+  ],
+
+  "feishu": {
+    "mode": "webhook",
+    "chat_id": "",
+    "admin_user_ids": []
+  }
+}

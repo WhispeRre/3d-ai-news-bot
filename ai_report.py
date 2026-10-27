@@ -1,0 +1,230 @@
+#!/usr/bin/env python3
+"""
+AI 整理（首选）：用 Cursor SDK 的本地无头代理阅读 output/raw_news_YYYYMMDD.json，
+按编辑规则挑选并撰写日报 output/news_YYYYMMDD.md。
+
+需要环境变量 CURSOR_API_KEY（Cursor Dashboard → Integrations 生成）。
+退出码：0 成功或今天没有候选；1 代理启动失败（鉴权、网络）；2 运行失败或产出不合格；3 未配置 API Key。
+非 0 时由调用方降级到 generate_report.py（模板整理）。
+"""
+
+from __future__ import annotations
+
+import os
+import re
+import sys
+import time
+from typing import List
+
+from common import (BASE_DIR, TOPICS_FILE, item_key, load_config, load_env_var, raw_path, read_json,
+                    report_path, today_str)
+
+MAX_ATTEMPTS = 2      # 1 次正式 + 1 次重试
+RETRY_DELAY = 30
+URL_RE = re.compile(r'https?://[^\s)\]>"]+')
+# 报告里出现几个候选数据之外的链接就判定为编造，降级到模板整理
+MAX_UNKNOWN_URLS = 2
+
+
+def load_recent_topics(date: str) -> str:
+    """近几天已推送的条目标题（mark_seen.py 维护），用于跨天事件去重"""
+    days = read_json(TOPICS_FILE, {}).get('days', {})
+    lines = []
+    for d in sorted(days, reverse=True):
+        if d >= date:  # 同一天重跑时，不把当天条目当历史
+            continue
+        lines.extend(f'- [{d[:4]}-{d[4:6]}-{d[6:]}] {title}' for title in days[d])
+    return '\n'.join(lines)
+
+
+def build_prompt(config: dict, raw: dict, date: str, recent_block: str) -> str:
+    report = config.get('report', {})
+    name = config.get('name', '每日资讯')
+    tracks = config['tracks']
+    sections = config['sections']
+    top_n = report.get('top_picks', 3)
+    per_section = max(s.get('max_items', 3) for s in sections)
+    total = len(raw.get('items', []))
+    raw_rel = os.path.relpath(raw_path(date), BASE_DIR)
+    out_rel = os.path.relpath(report_path(date), BASE_DIR)
+
+    section_lines = '\n'.join(
+        f"- `## {s['title']}`：" + '；'.join(f"{tracks[t]['name']}——{tracks[t]['description']}" for t in s['tracks'])
+        for s in sections
+    )
+    section_titles = '、'.join(f"`## {s['title']}`" for s in sections)
+
+    dedup_rule = dedup_section = ''
+    if recent_block:
+        dedup_rule = (
+            '\n9. **跨天不重复**：文末「近几天已推送」里报道过的事件，只有今天出现实质新进展'
+            '（正式发布、开源、重要数据更新等）时才能再报，并在说明里点明是跟进'
+            '（例如"10 月 25 日曾报道预告，今天正式开源"）；没有实质增量就跳过。同一事件原则上只上一次 TOP')
+        dedup_section = f'\n## 近几天已推送（判断"是否报道过"以此为准）\n{recent_block}\n'
+
+    return f"""你是「{name}」的主编。请阅读 `{raw_rel}`（今天采集的 {total} 条候选资讯，JSON），挑选并撰写今天的中文日报，\
+写入 `{out_rel}`（UTF-8 Markdown，会被转成飞书消息卡片推送到群里）。
+
+## 读者
+{config.get('reader_profile', '')}
+不少读者不是技术岗：每条先用大白话讲清楚"这是什么"，再讲"为什么值得看"。少用术语，必须用的术语顺手补半句解释，\
+例如"高斯泼溅（用大量半透明小椭球表示 3D 场景的技术）"。
+
+## 候选数据怎么读
+- 每条有 title、url、source、kind、reliability、summary、published_at、score、tracks、section、meta
+- kind：official 官方发布 / paper 论文 / model 模型 / repo 开源仓库 / release 版本发布 / media 媒体报道 / kol 博主 / community 社区帖子
+- score 是采集时按信源权重和热度估的分，只作参考；tracks、section 是关键词自动匹配的，经常不准，以你的判断为准
+- meta 里的热度信号：upvotes（HF 论文点赞）、likes（HF 模型点赞）、stars（GitHub 星数）、points（Hacker News 分数）；\
+also_in 表示同一内容还出现在其他信源，说明关注度更高
+
+## 板块与方向（决定每条放进哪个板块）
+{section_lines}
+
+## 输出格式（严格遵守，推送脚本按这个格式解析）
+```markdown
+# 📰 {name} · {date[:4]}-{date[4:6]}-{date[6:]}
+
+一句话导语，概括今天最值得关注的动向（不超过 50 字）
+
+## 🏆 今日 TOP {top_n}
+
+**标题**
+两三句话：是什么；为什么重要、对做 3D 生成和 3D Agent 的我们意味着什么。
+🔗 [来源名](链接)
+
+## 板块标题
+
+**标题**
+一句话：是什么 + 为什么值得看（不超过 60 字）
+🔗 [来源名](链接)
+
+---
+📊 本期从 {total} 条候选中精选 X 条 · 🤖 {config.get('bot_name', '资讯机器人')}自动生成
+```
+- 板块依次为 {section_titles}，每个板块最多 {per_section} 条；板块之间、条目之间各空一行
+- 标题独占一行并整行加粗，写成中文的"谁做了什么"，产品名、模型名保留原文；论文、开源项目、新模型在标题开头分别加【论文】【开源】【模型】
+- 链接原样复制 JSON 里的 url，不得改动或自己拼接；来源名用 source 字段或更易懂的叫法
+- 页脚的 X 换成实际入选条数（含 TOP）
+
+## 编辑原则
+1. **宁缺毋滥**：没有值得推荐内容的板块整块省略；TOP 不足 {top_n} 条就少放
+2. **择优**：按重要性、时效性、影响面和与读者工作的相关度挑选，不按 score 机械排序；TOP 尽量兼顾技术和商业
+3. **总量**：全文最多 {report.get('max_items_total', 15)} 条（含 TOP）；论文合计最多 {report.get('max_papers', 3)} 篇，放进对应板块，\
+优先选点赞高或与 3D、Agent 直接相关的，用大白话讲清楚"做了什么、效果如何"
+4. **同一事件只出现一次**：多个信源报道同一件事时只保留一条，链接选最权威的（官方 > 媒体 > 社区）；入选 TOP 的不再出现在下面的板块
+5. **社区帖子**（Reddit、Hacker News）只在有实质信息时入选（重要开源发布、实测对比、行业爆料），纯讨论、求助、吐槽不选
+6. **不报 Claude Code 的日常版本更新**（同事另有 Claude Code 日报覆盖）；Anthropic 发布新模型等重大事件照常报
+7. 事实必须来自 JSON，不得编造内容、数字或链接
+8. 如果 items 为空，或没有任何值得推送的内容，**不要创建文件**，直接结束并说明原因（当天跳过推送）{dedup_rule}
+{dedup_section}
+只创建或覆盖 `{out_rel}` 这一个文件，不要修改其他任何文件。"""
+
+
+def allowed_urls(raw: dict) -> set:
+    keys = set()
+    for item in raw.get('items', []):
+        meta = item.get('meta') or {}
+        for url in (item.get('url'), meta.get('link_url'), meta.get('discussion_url'), meta.get('github_repo')):
+            if url:
+                keys.add(item_key(url))
+    return keys
+
+
+def check_report(config: dict, raw: dict, content: str) -> List[str]:
+    problems = []
+    first = content.lstrip().splitlines()[0] if content.strip() else ''
+    if not first.startswith(f"# 📰 {config.get('name', '')}"):
+        problems.append(f'标题行不符合格式：{first[:60]!r}')
+    if len(content) < 300:
+        problems.append(f'内容过短（{len(content)} 字符）')
+    known = allowed_urls(raw)
+    unknown = [u for u in URL_RE.findall(content) if item_key(u.rstrip('.,;，。')) not in known]
+    if unknown:
+        print(f'⚠️ 报告里有 {len(unknown)} 个链接不在候选数据中：{unknown[:5]}')
+    if len(unknown) > MAX_UNKNOWN_URLS:
+        problems.append(f'{len(unknown)} 个链接不在候选数据中，疑似编造')
+    return problems
+
+
+def describe(result) -> str:
+    parts = [f"status={getattr(result, 'status', '?')}"]
+    for attr in ('id', 'agent_id', 'duration_ms', 'model'):
+        value = getattr(result, attr, None)
+        if value:
+            parts.append(f'{attr}={value}')
+    text = (getattr(result, 'result', '') or '').strip()
+    if text:
+        parts.append(f'result={text[:500]}')
+    return ' | '.join(parts)
+
+
+def main() -> int:
+    config = load_config()
+    date = today_str(config)
+    raw_file, out_file = raw_path(date), report_path(date)
+    if not os.path.exists(raw_file):
+        print(f'❌ 找不到原始数据 {raw_file}，请先运行 fetch_news.py')
+        return 1
+    raw = read_json(raw_file, {})
+    # 先删掉旧报告，避免把之前的产物当成本次结果推送
+    if os.path.exists(out_file):
+        os.remove(out_file)
+    if not raw.get('items'):
+        print('ℹ️ 今天没有候选资讯，跳过日报生成')
+        return 0
+
+    api_key = load_env_var('CURSOR_API_KEY')
+    if not api_key:
+        print('⚠️ 未配置 CURSOR_API_KEY，跳过 AI 整理')
+        return 3
+
+    from cursor_sdk import Agent, AgentOptions, CursorAgentError, LocalAgentOptions
+
+    recent = load_recent_topics(date)
+    if recent:
+        print(f'🧠 注入近几天已推送的 {len(recent.splitlines())} 个条目标题，用于跨天去重')
+    prompt = build_prompt(config, raw, date, recent)
+    model = config.get('report', {}).get('model', 'auto')
+    print(f"🤖 启动 Cursor 无头代理整理日报（模型 {model}，候选 {len(raw['items'])} 条）...")
+
+    started = time.time()
+    result = None
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        try:
+            result = Agent.prompt(prompt, AgentOptions(api_key=api_key, model=model,
+                                                       local=LocalAgentOptions(cwd=BASE_DIR)))
+            if result.status == 'finished':
+                break
+            print(f'❌ 代理运行失败（第 {attempt}/{MAX_ATTEMPTS} 次）：{describe(result)}')
+        except CursorAgentError as e:
+            result = None
+            print(f'❌ 代理启动失败（第 {attempt}/{MAX_ATTEMPTS} 次）：{e!r}')
+            if not getattr(e, 'is_retryable', True):
+                break
+        if attempt < MAX_ATTEMPTS:
+            print(f'⏳ {RETRY_DELAY} 秒后重试...')
+            time.sleep(RETRY_DELAY)
+
+    if result is None:
+        return 1
+    if result.status != 'finished':
+        if os.path.exists(out_file):
+            os.remove(out_file)
+        return 2
+    if not os.path.exists(out_file):
+        print(f'❌ AI 没有生成日报：{describe(result)}')
+        return 2
+
+    with open(out_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+    problems = check_report(config, raw, content)
+    if problems:
+        print('❌ AI 日报不合格：' + '；'.join(problems))
+        os.rename(out_file, out_file + '.rejected')
+        return 2
+    print(f'✅ AI 整理完成：{os.path.relpath(out_file, BASE_DIR)}（{len(content)} 字符，用时 {time.time() - started:.0f}s）')
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
