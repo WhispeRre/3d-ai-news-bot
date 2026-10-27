@@ -1,21 +1,21 @@
 {
-  "updated_at": "2026-10-27T16:21:29+08:00",
+  "updated_at": "2026-10-27T19:51:49+08:00",
   "days": {
     "20261027": [
-      "Anthropic 向 SEC 提交 S-1，拟 IPO",
-      "OpenAI 发布 GPT-6.1 Terra：更快的电脑操控，价格更低",
-      "腾讯混元开源 Hy-Nomas：朝向自由形态的交互世界生成",
-      "Meshy 接入 Hermes Agent，对话即可生成带纹理 3D 并导出 GLB",
-      "PlayCanvas SuperSplat v3.7.0 加入原生 WebMCP 工具",
-      "video-to-blender：参考视频/图一键变成可编辑 Blender 节点",
-      "Apple 发布 GHARP：少图即可实时驱动高斯人头动画",
-      "Hi3D v1.0：基于 Sparc3D 的高分辨率几何精修",
-      "牛津综述：用「世界模型」统一视频理解、生成与交互",
-      "Anthropic：模型够强时，单 Agent 往往优于多子 Agent",
-      "DeepSeek-V4.1-Flash：多模态 Flash 模型登顶 HF 热榜",
-      "Trajectory2Gym：用「决策接地」的组合交互合成改进工具调用训练",
-      "Nvidia 开源 Flora：机器人视频标注成本约为 GPT-6 Astra 的 1/125",
-      "Meta 确认 Quest 销量下滑，称新 VR 头显需「重大突破」"
+      "OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏操作」模型进 API 与 Codex",
+      "Anthropic 递交 IPO 招股书：上半年营收约 163 亿美元，账面净亏损约 807 亿美元",
+      "aigc3d 发布 World-in-Context：用上下文条件做交互式视频世界模型",
+      "画数 CAD：用自然语言生成可编辑户型与机械装配，并附 Agent Skill",
+      "NewbimAI 开源本地 CAD 看图工具，图纸不出本机并带 Agent 命令行 Skill",
+      "Easy-3Dfy：先单独生成物体再几何拼合，改善单图 3D 场景重建",
+      "HiP3R：用分层位姿图把局部视频重建拼成全局一致三维",
+      "LichtFeld Studio 社区贡献 SteadySplats 等能力，已进 nightly 构建",
+      "Google 推出 Gemini API CLI：可挂到现有编码 Agent 上调用多模态能力",
+      "MiniMax M3.1 Flash 经 Unsloth 压成约 144GB 的 2-bit GGUF，降低自托管门槛",
+      "Nous Research 的 Hermes Agent 支持为每个子 Agent 选不同模型与配置",
+      "Hi3D 谈 AI 3D 下半场：开源模型 + 创作 Agent，瞄准可进产线的资产",
+      "Nvidia 向 Meta 注资约 30 亿美元，Meta 计划把更多 AI Agent 跑在 Nvidia 硬件上",
+      "Manus 发布 2.0 方向：用 Manus 改造 Manus，工程侧已常态并行十几个 Agent 会话"
     ]
   }
 }
