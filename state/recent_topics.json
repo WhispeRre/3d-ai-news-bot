@@ -1,0 +1,21 @@
+{
+  "updated_at": "2026-10-27T16:21:29+08:00",
+  "days": {
+    "20261027": [
+      "Anthropic 向 SEC 提交 S-1，拟 IPO",
+      "OpenAI 发布 GPT-6.1 Terra：更快的电脑操控，价格更低",
+      "腾讯混元开源 Hy-Nomas：朝向自由形态的交互世界生成",
+      "Meshy 接入 Hermes Agent，对话即可生成带纹理 3D 并导出 GLB",
+      "PlayCanvas SuperSplat v3.7.0 加入原生 WebMCP 工具",
+      "video-to-blender：参考视频/图一键变成可编辑 Blender 节点",
+      "Apple 发布 GHARP：少图即可实时驱动高斯人头动画",
+      "Hi3D v1.0：基于 Sparc3D 的高分辨率几何精修",
+      "牛津综述：用「世界模型」统一视频理解、生成与交互",
+      "Anthropic：模型够强时，单 Agent 往往优于多子 Agent",
+      "DeepSeek-V4.1-Flash：多模态 Flash 模型登顶 HF 热榜",
+      "Trajectory2Gym：用「决策接地」的组合交互合成改进工具调用训练",
+      "Nvidia 开源 Flora：机器人视频标注成本约为 GPT-6 Astra 的 1/125",
+      "Meta 确认 Quest 销量下滑，称新 VR 头显需「重大突破」"
+    ]
+  }
+}
