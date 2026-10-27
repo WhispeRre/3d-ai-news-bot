@@ -71,6 +71,7 @@
         "codex", "claude code", "cursor", "devin", "gemini cli",
         "swe-bench", "osworld", "terminal-bench", "tau-bench", "τ-bench",
         "context engineering", "harness engineering", "agent harness",
+        "agentic rl", "grpo", "rlvr", "reward model*", "post-training", "rl environment*",
         "智能体", "多智能体"
       ]
     },
@@ -388,6 +389,54 @@
       "max_items": 4
     },
     {
+      "id": "mistral_news",
+      "name": "Mistral 官方",
+      "type": "rss",
+      "url": "https://mistral.ai/news/rss",
+      "kind": "official",
+      "reliability": "official",
+      "score": 80,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 3
+    },
+    {
+      "id": "openai_devs",
+      "name": "OpenAI 开发者社区公告",
+      "type": "rss",
+      "url": "https://community.openai.com/c/announcements/6.rss",
+      "kind": "official",
+      "reliability": "official",
+      "score": 70,
+      "filter": "all",
+      "default_tracks": ["agent_eng"],
+      "max_items": 3
+    },
+    {
+      "id": "google_research",
+      "name": "Google Research 博客",
+      "type": "rss",
+      "url": "https://research.google/blog/rss/",
+      "kind": "official",
+      "reliability": "official",
+      "score": 70,
+      "filter": "any",
+      "default_tracks": ["foundation"],
+      "max_items": 3
+    },
+    {
+      "id": "ai2_blog",
+      "name": "Ai2 博客",
+      "type": "rss",
+      "url": "https://allenai.org/rss.xml",
+      "kind": "official",
+      "reliability": "official",
+      "score": 70,
+      "filter": "any",
+      "default_tracks": ["foundation"],
+      "max_items": 2
+    },
+    {
       "id": "google_ai_blog",
       "name": "Google AI 博客",
       "type": "rss",
@@ -584,6 +633,32 @@
       "max_items": 5
     },
     {
+      "id": "geekpark",
+      "name": "极客公园",
+      "type": "rss",
+      "url": "https://www.geekpark.net/rss",
+      "kind": "media",
+      "reliability": "high",
+      "score": 45,
+      "filter": "any",
+      "require": "@ai_related",
+      "default_tracks": ["industry"],
+      "max_items": 4
+    },
+    {
+      "id": "infoq_cn",
+      "name": "InfoQ 中文",
+      "type": "rss",
+      "url": "https://www.infoq.cn/feed",
+      "kind": "media",
+      "reliability": "high",
+      "score": 45,
+      "filter": "any",
+      "require": "@ai_related",
+      "default_tracks": ["agent_eng"],
+      "max_items": 3
+    },
+    {
       "id": "latent_space",
       "name": "Latent Space / AINews",
       "type": "rss",
@@ -608,14 +683,27 @@
       "max_items": 2
     },
     {
+      "id": "raschka",
+      "name": "Sebastian Raschka（Ahead of AI）",
+      "type": "rss",
+      "url": "https://magazine.sebastianraschka.com/feed",
+      "kind": "kol",
+      "reliability": "high",
+      "score": 55,
+      "filter": "all",
+      "default_tracks": ["foundation"],
+      "max_items": 1
+    },
+    {
       "id": "simonw",
       "name": "Simon Willison",
       "type": "rss",
-      "url": "https://simonwillison.net/atom/entries/",
+      "url": "https://simonwillison.net/atom/everything/",
       "kind": "kol",
       "reliability": "high",
       "score": 55,
       "filter": "any",
+      "exclude_titles": ["quoting"],
       "default_tracks": ["agent_eng"],
       "max_items": 2
     },
@@ -682,30 +770,43 @@
           "name": "论文推荐",
           "filter": "any",
           "score": 60,
-          "accounts": ["_akhaliq"]
+          "accounts": ["_akhaliq", "janusch_patas"]
         },
         "labs": {
           "name": "模型实验室",
           "filter": "all",
           "tracks": ["foundation"],
           "score": 75,
-          "accounts": ["OpenAI", "GoogleDeepMind", "AIatMeta", "Alibaba_Qwen", "deepseek_ai", "Kimi_Moonshot", "TencentHunyuan"]
+          "accounts": [
+            "OpenAI", "GoogleDeepMind", "AIatMeta", "Alibaba_Qwen", "deepseek_ai", "Kimi_Moonshot", "TencentHunyuan",
+            "MistralAI", "Zai_org", "MiniMax_AI", "StepFun_ai", "XiaomiMiMo", "allen_ai", "NousResearch"
+          ]
+        },
+        "dev_platforms": {
+          "name": "开发者平台",
+          "filter": "all",
+          "tracks": ["agent_eng"],
+          "score": 70,
+          "accounts": ["OpenAIDevs"]
         },
         "3d_world": {
           "name": "3D 与世界模型",
           "filter": "all",
           "tracks": ["3d_gen"],
           "score": 70,
-          "accounts": ["theworldlabs", "LumaLabsAI", "MeshyAI"]
+          "accounts": ["theworldlabs", "LumaLabsAI", "MeshyAI", "DeemosTech", "csm_ai", "NVIDIAOmniverse"]
         },
         "people": {
           "name": "研究者与博主",
           "filter": "any",
           "score": 55,
-          "accounts": ["drfeifei", "karpathy", "jon_barron", "swyx", "simonw"]
+          "accounts": [
+            "drfeifei", "karpathy", "jon_barron", "swyx", "simonw", "DrJimFan", "bilawalsidhu",
+            "OfficialLoganK", "omarsar0", "hwchase17", "_philschmid", "HamelHusain", "rasbt"
+          ]
         }
       },
-      "max_items": 15
+      "max_items": 25
     }
   ],
 

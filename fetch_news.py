@@ -76,9 +76,11 @@ def filter_items(items: List[NewsItem], src: dict, ctx: CollectContext) -> List[
     方向匹配 + 信源级过滤：
     - filter: "all" 全收；"any" 命中任一方向才收；方向列表则命中其中之一才收
     - require: 额外要求命中的关键词（可用 @集合名）
+    - exclude_titles: 标题命中这些关键词就丢弃
     采集器已自行过滤的条目（prefiltered）和强制保留的条目（force_keep）跳过信源级过滤
     """
     require = ctx.keywords(src.get('require'))
+    exclude_titles = ctx.keywords(src.get('exclude_titles'))
     filt = src.get('filter', 'all')
     defaults = src.get('default_tracks', [])
     kept = []
@@ -87,6 +89,8 @@ def filter_items(items: List[NewsItem], src: dict, ctx: CollectContext) -> List[
         matched = ctx.matcher.match(text)
         preset = list(item.tracks)
         if not (item.meta.get('prefiltered') or item.meta.get('force_keep')):
+            if exclude_titles and exclude_titles.search(item.title):
+                continue
             if require and not require.search(text):
                 continue
             if filt == 'any' and not matched:
