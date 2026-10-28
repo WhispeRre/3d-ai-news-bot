@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T19:51:49+08:00",
+  "updated_at": "2026-10-28T12:01:58+08:00",
   "days": {
     "20261027": [
       "OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏操作」模型进 API 与 Codex",
@@ -16,6 +16,18 @@
       "Hi3D 谈 AI 3D 下半场：开源模型 + 创作 Agent，瞄准可进产线的资产",
       "Nvidia 向 Meta 注资约 30 亿美元，Meta 计划把更多 AI Agent 跑在 Nvidia 硬件上",
       "Manus 发布 2.0 方向：用 Manus 改造 Manus，工程侧已常态并行十几个 Agent 会话"
+    ],
+    "20261028": [
+      "Google DeepMind 发布 Genie 4：更逼真的实时可交互世界模型",
+      "Deemos 为 WorldGen 推出 Agentic Mode：单图生成可编辑完整 3D 场景",
+      "Meshy 接入 MCP for Blender：Agent 可把带纹理模型直接放进场景",
+      "腾讯混元提出 Hy-Nomas：多轮指令驱动的交互式世界生成",
+      "Hi3D 发布 V1.0：用参考图给粗糙网格补细节（跟进）",
+      "ChronoReplay：按时间回放空间监督，缓解空间模型接口锁定",
+      "Liquid AI 发布 LFM3：约 2B 的多模态与决策小模型族",
+      "Anthropic：分析师与编程 Agent 协作时约 86% 跟从 Agent 偏好",
+      "Ling-3.1-flash-1019 权重开源，并放出 base 模型",
+      "General Compute 完成约 1 亿美元 A 轮，押注非 Nvidia 推理芯片"
     ]
   }
 }
