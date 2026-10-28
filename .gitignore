@@ -2,6 +2,8 @@
 .ref/
 output/
 .env
+.dev.vars
+.wrangler/
 __pycache__/
 *.pyc
 .DS_Store

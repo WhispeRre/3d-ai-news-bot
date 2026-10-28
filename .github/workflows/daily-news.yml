@@ -2,11 +2,17 @@ name: 每日资讯
 
 on:
   schedule:
-    # GitHub 的定时触发在高峰期会延迟甚至丢失，所以排两次：北京时间 09:07 为主、11:07 为备份。
-    # 当天已经成功跑过时，后面的定时触发会在 guard 里跳过
+    # 主触发是 Cloudflare Worker（trigger-worker/）在北京时间 09:07 准点调用 workflow_dispatch；
+    # GitHub 自带的定时常延迟数小时甚至丢失，这里的 09:07、11:07 只作备份。
+    # 定时触发和 auto 触发在当天已经成功跑过时会在 guard 里跳过；手动触发总会执行
     - cron: '7 1 * * *'
     - cron: '7 3 * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      auto:
+        description: '定时触发：当天已成功推送过就跳过'
+        type: boolean
+        default: false
 
 permissions:
   contents: write   # 推送成功后把 state/ 里的去重记录提交回仓库
@@ -29,7 +35,7 @@ jobs:
         run: |
           last=$(python3 -c "import json; print(json.load(open('state/seen.json')).get('updated_at', '')[:10])" 2>/dev/null || echo "")
           today=$(TZ=Asia/Shanghai date +%F)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$last" = "$today" ]; then
+          if { [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.auto }}" = "true" ]; } && [ "$last" = "$today" ]; then
             echo "proceed=false" >> "$GITHUB_OUTPUT"
             echo "ℹ️ 今天（$today）已经成功运行过，跳过"
           else

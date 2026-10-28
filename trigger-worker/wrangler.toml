@@ -1,0 +1,13 @@
+name = "news-bot-trigger"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+# 只用定时触发，不开放任何 HTTP 地址
+workers_dev = false
+
+# UTC 时间：北京时间 08:27 触发 Agent 每日学习，09:07 触发 3D 每日资讯。
+# 改时间时同步改 src/index.js 里的 SCHEDULES
+[triggers]
+crons = ["27 0 * * *", "7 1 * * *"]
+
+[vars]
+GITHUB_REPO = "WhispeRre/3d-ai-news-bot"
