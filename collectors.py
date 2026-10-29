@@ -17,10 +17,11 @@ import time
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from typing import Callable, Dict, List, Optional
+from urllib.parse import quote
 
 import requests
 
-from common import (ARXIV_ID_RE, NewsItem, TrackMatcher, clean_text, clip, compile_keywords,
+from common import (ARXIV_ID_RE, NewsItem, TrackMatcher, call_with_retry, clean_text, clip, compile_keywords,
                     entry_datetime, fetch_feed, http_get, iso, load_env_var, parse_iso,
                     resolve_keywords, utcnow, within_hours)
 
@@ -281,25 +282,97 @@ def _repo_item(src, ctx, repo: dict) -> NewsItem:
     )
 
 
-def collect_github_search(src, ctx, log):
-    """搜索近几天新建、星数过线的仓库；搜索接口限流严格，所有搜索请求全局串行"""
-    since = (utcnow() - timedelta(days=src.get('created_within_days', 7))).date().isoformat()
+def _search_repos(ctx, params: dict) -> dict:
+    """搜索接口限流严格，所有搜索请求全局串行"""
     spacing = 2.2 if ctx.github_token else 6.5  # 有 token 30 次/分钟，无 token 10 次/分钟
-    items, seen = [], set()
+    with _search_lock:
+        wait = _last_search_at[0] + spacing - time.time()
+        if wait > 0:
+            time.sleep(wait)
+        _last_search_at[0] = time.time()
+        return github_get(ctx, '/search/repositories', params)
+
+
+def collect_github_search(src, ctx, log):
+    """搜索近几天新建、星数过线的仓库。单个查询出错时重试一次，仍失败就跳过它，全部失败才算信源失败"""
+    since = (utcnow() - timedelta(days=src.get('created_within_days', 7))).date().isoformat()
+    items, seen, failed = [], set(), []
     for query in src['queries']:
-        with _search_lock:
-            wait = _last_search_at[0] + spacing - time.time()
-            if wait > 0:
-                time.sleep(wait)
-            _last_search_at[0] = time.time()
-            data = github_get(ctx, '/search/repositories', {
-                'q': f'{query} created:>={since} stars:>={src.get("min_stars", 10)}',
-                'sort': 'stars', 'order': 'desc', 'per_page': src.get('per_query', 8),
-            })
+        label = f'"{query}"' if query else '不限主题'
+        params = {'q': f'{query} created:>={since} stars:>={src.get("min_stars", 10)}',
+                  'sort': 'stars', 'order': 'desc', 'per_page': src.get('per_query', 8)}
+        try:
+            data = call_with_retry(_search_repos, ctx, params, retries=1, delay=5)
+        except Exception as e:
+            failed.append(label)
+            log(f'{label}：失败（{type(e).__name__}: {e}）'[:200])
+            continue
         new = [r for r in data.get('items', []) if r['full_name'] not in seen and not r.get('fork')]
         seen.update(r['full_name'] for r in new)
         items.extend(_repo_item(src, ctx, r) for r in new)
-        log(f'"{query}"：{data.get("total_count", 0)} 个结果，取 {len(new)} 个')
+        log(f'{label}：{data.get("total_count", 0)} 个结果，取 {len(new)} 个')
+    if failed and len(failed) == len(src['queries']):
+        raise RuntimeError('所有搜索都失败了')
+    return items
+
+
+_TRENDING_ROW_RE = re.compile(r'<article class="Box-row">(.*?)</article>', re.S)
+_TRENDING_REPO_RE = re.compile(r'<h2[^>]*>\s*<a[^>]*href="/([\w.-]+/[\w.-]+)"')
+_TRENDING_DESC_RE = re.compile(r'<p class="col-9[^"]*">(.*?)</p>', re.S)
+_TRENDING_LANG_RE = re.compile(r'itemprop="programmingLanguage">([^<]+)<')
+_TRENDING_STARS_RE = re.compile(r'/stargazers"[^>]*>.*?([\d,]+)\s*</a>', re.S)
+_TRENDING_GAIN_RE = re.compile(r'([\d,]+) stars (?:today|this week)')
+# 榜单周期 → （榜单名，新增星数记在 meta 的哪个字段）
+_TRENDING_PERIODS = {'daily': ('日榜', 'stars_today'), 'weekly': ('周榜', 'stars_week')}
+
+
+def collect_github_trending(src, ctx, log):
+    """
+    GitHub Trending 榜单（没有官方接口，抓页面）：总榜按 periods 抓日榜、周榜，languages 里的语言各抓日榜。
+    同一仓库上了多个榜时合并成一条，记下上了哪些榜，以及今日 / 本周新增星数
+    """
+    pages = [(period, '') for period in src.get('periods', ['daily'])]
+    pages += [('daily', lang) for lang in src.get('languages', [])]
+    repos: Dict[str, dict] = {}
+    for i, (period, lang) in enumerate(pages):
+        if i:
+            time.sleep(1)
+        label, gain_key = _TRENDING_PERIODS[period]
+        label = f'{lang} {label}' if lang else label
+        path = f"/{quote(lang.lower(), safe='')}" if lang else ''
+        page = http_get(f'https://github.com/trending{path}', params={'since': period}, timeout=25).text
+        rows = _TRENDING_ROW_RE.findall(page)
+        for row in rows:
+            name = _TRENDING_REPO_RE.search(row)
+            if not name:
+                continue
+            info = repos.setdefault(name.group(1), {'lists': []})
+            info['lists'].append(label)
+            for key, regex in (('desc', _TRENDING_DESC_RE), ('language', _TRENDING_LANG_RE)):
+                m = regex.search(row)
+                if m:
+                    info[key] = clean_text(m.group(1))
+            stars, gain = _TRENDING_STARS_RE.search(row), _TRENDING_GAIN_RE.search(row)
+            if stars:
+                info['stars'] = int(stars.group(1).replace(',', ''))
+            if gain:
+                info[gain_key] = max(info.get(gain_key, 0), int(gain.group(1).replace(',', '')))
+        log(f'{label}：{len(rows)} 个')
+    if not repos:
+        raise RuntimeError('榜单页面没解析出仓库，页面结构可能变了')
+
+    items = []
+    for full, info in repos.items():
+        heat = info.get('stars_today') or info.get('stars_week', 0) / 7
+        facts = [f"⭐ {info['stars']:,}" if 'stars' in info else '',
+                 f"今日 +{info['stars_today']:,}" if info.get('stars_today') else '',
+                 f"本周 +{info['stars_week']:,}" if info.get('stars_week') else '', info.get('language', '')]
+        meta = {k: info[k] for k in ('stars', 'language', 'stars_today', 'stars_week') if info.get(k)}
+        meta['trending'] = info['lists']
+        items.append(make_item(
+            src, ctx, title=f"{full}：{info['desc']}" if info.get('desc') else full, url=f'https://github.com/{full}',
+            summary=' · '.join(f for f in facts if f), score_bonus=min(int(heat) // 40, 30), meta=meta,
+        ))
     return items
 
 
@@ -421,11 +494,12 @@ def collect_anthropic_news(src, ctx, log):
 # ---------------------------------------------------------------- 社区
 
 def collect_hackernews(src, ctx, log):
-    """Algolia 搜索 API：一次请求拿到时间窗口内、分数过线的全部热帖，再按方向关键词过滤"""
+    """Algolia 搜索 API：一次请求拿到时间窗口内、分数过线的全部热帖，再按方向关键词过滤。
+    tags 选帖子类型：story 是全部帖子（默认），show_hn 只要作者展示自己作品的 Show HN"""
     hours = src.get('max_age_hours', 36)
     since = int(time.time()) - hours * 3600
     data = http_get('https://hn.algolia.com/api/v1/search', params={
-        'tags': 'story', 'hitsPerPage': 300,
+        'tags': src.get('tags', 'story'), 'hitsPerPage': 300,
         'numericFilters': f'created_at_i>{since},points>={src.get("min_points", 80)}',
     }, timeout=20).json()
     items = []
@@ -447,6 +521,8 @@ def collect_hackernews(src, ctx, log):
 
 # RSS 内容里 [link] 指向帖子分享的外部链接（自发帖则指回 Reddit 本身）
 _REDDIT_LINK_RE = re.compile(r'<a href="([^"]+)">\[link\]</a>')
+# 晒项目的帖子常把配图当分享链接，GitHub 地址写在正文里
+_GITHUB_HREF_RE = re.compile(r'href="(https?://(?:www\.)?github\.com/[^"]+)"')
 _REDDIT_HOSTS_RE = re.compile(r'^https?://([a-z0-9-]+\.)?(reddit\.com|redd\.it)/', re.I)
 _REDDIT_SUB_RE = re.compile(r'/r/([A-Za-z0-9_]+)/')
 
@@ -526,6 +602,9 @@ def _reddit_sub_items(src, ctx, log, sub: dict, entries: list) -> List[NewsItem]
         link = _REDDIT_LINK_RE.search(content)
         if link and not _REDDIT_HOSTS_RE.match(html.unescape(link.group(1))):
             meta['link_url'] = html.unescape(link.group(1))
+        github_links = list(dict.fromkeys(html.unescape(u) for u in _GITHUB_HREF_RE.findall(content)))
+        if github_links:
+            meta['github_links'] = github_links[:3]
         items.append(make_item(
             src, ctx, title=title, url=entry.get('link', ''), summary=text,
             published=entry_datetime(entry), score_bonus=max(15 - rank * 2, 0),
@@ -662,6 +741,7 @@ COLLECTORS: Dict[str, Callable] = {
     'hf_models': collect_hf_models,
     'hf_author_models': collect_hf_author_models,
     'github_search': collect_github_search,
+    'github_trending': collect_github_trending,
     'github_new_repos': collect_github_new_repos,
     'github_releases': collect_github_releases,
     'anthropic_news': collect_anthropic_news,

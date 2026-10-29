@@ -24,7 +24,7 @@ import requests
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # NEWS_PROFILE 选择跑哪份日报：留空是 3D × AI 日报（config.json，产物和状态在 output/、state/）；
-# 填 agent 这类名字时读 config.agent.json，产物和状态放 output/agent/、state/agent/，各自独立去重
+# 填 agent、github 这类名字时读 config.agent.json、config.github.json，产物和状态放 output/<名字>/、state/<名字>/，各自独立去重
 PROFILE = os.environ.get('NEWS_PROFILE', '').strip()
 CONFIG_FILE = os.path.join(BASE_DIR, f'config.{PROFILE}.json' if PROFILE else 'config.json')
 
@@ -275,8 +275,10 @@ class TrackMatcher:
 OUTPUT_DIR = os.path.join(BASE_DIR, 'output', *([PROFILE] if PROFILE else []))
 STATE_DIR = os.path.join(BASE_DIR, 'state', *([PROFILE] if PROFILE else []))
 SEEN_FILE = os.path.join(STATE_DIR, 'seen.json')
+PUSHED_FILE = os.path.join(STATE_DIR, 'pushed.json')
 TOPICS_FILE = os.path.join(STATE_DIR, 'recent_topics.json')
 CURRICULUM_FILE = os.path.join(STATE_DIR, 'curriculum.json')
+DEFAULT_SEEN_DAYS = 60
 
 
 def raw_path(date: str) -> str:
@@ -304,9 +306,23 @@ def write_json(path: str, data: Any) -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def load_seen_keys() -> set:
-    """已进入过候选的条目键（item_key），由 mark_seen.py 在推送成功后维护"""
-    return set(read_json(SEEN_FILE, {}).get('items', {}))
+def load_seen_keys(config: dict) -> set:
+    """
+    采集时要跳过的条目键（item_key），由 mark_seen.py 在推送成功后维护：
+    - 最近 memory.seen_days 天（默认 60）进过候选的条目。设得短就是"冷却期"，过了冷却期没入选的条目可以再回到候选里
+    - 最近 memory.pushed_days 天推送过的条目（没配就不记）
+    """
+    memory = config.get('memory', {})
+    now = local_now(config)
+
+    def recent(path: str, days: int) -> set:
+        cutoff = (now - timedelta(days=days)).strftime('%Y%m%d')
+        return {k for k, d in read_json(path, {}).get('items', {}).items() if d >= cutoff}
+
+    keys = recent(SEEN_FILE, memory.get('seen_days', DEFAULT_SEEN_DAYS))
+    if memory.get('pushed_days'):
+        keys |= recent(PUSHED_FILE, memory['pushed_days'])
+    return keys
 
 
 def pick_topic(config: dict, date: str) -> Optional[dict]:

@@ -96,7 +96,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "chore: 更新去重记录 [skip ci]"
-            # Agent 学习简报的工作流也会往 main 提交 state/agent/，先合并它可能刚推的提交（改的文件不同，不会冲突）
+            # 另外两份日报的工作流也会往 main 提交 state/ 下各自的目录，先合并它们可能刚推的提交（改的文件不同，不会冲突）
             git pull --rebase -q
             git push
           fi

@@ -10,6 +10,7 @@
 const SCHEDULES = {
   '27 0 * * *': 'agent-learning.yml', // 北京时间 08:27
   '7 1 * * *': 'daily-news.yml', // 北京时间 09:07
+  '17 4 * * *': 'github-picks.yml', // 北京时间 12:17
 };
 
 export default {

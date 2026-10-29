@@ -3,6 +3,7 @@
 资讯采集入口：并发采集 config.sources 里启用的信源，统一做方向匹配与过滤、历史去重、
 跨源去重和数量截断，输出 output/raw_news_YYYYMMDD.json，
 供 ai_report.py（AI 整理，首选）或 generate_report.py（模板整理，降级）使用。
+配置里有 collect.repos 时（GitHub 精选），条目统一成仓库，再用 GitHub API 补全、筛选、打分（见 repos.py）。
 
 调试用法：
   python3 fetch_news.py --only hf_papers,arxiv_3d --dry-run --show 5
@@ -23,9 +24,10 @@ from collectors import COLLECTORS, CollectContext
 from common import (RELIABILITY_RANK, NewsItem, TrackMatcher, call_with_retry, item_key, load_config,
                     load_env_var, load_seen_keys, local_now, raw_path, title_key, today_str, write_json)
 from feishu import send_alert
+from repos import as_repo_items, prepare_repos
 
 # 只在采集阶段使用的内部字段，不写进原始数据
-INTERNAL_META = ('match_text', 'force_keep', 'prefiltered')
+INTERNAL_META = ('match_text', 'force_keep', 'prefiltered', 'github_links')
 
 
 def github_token() -> str:
@@ -120,7 +122,8 @@ def dedupe(items: List[NewsItem]) -> List[NewsItem]:
             also = dup.meta.setdefault('also_in', [])
             if item.source != dup.source and item.source not in also:
                 also.append(item.source)
-            for k in ('upvotes', 'points', 'stars', 'likes', 'discussion_url'):
+            for k in ('upvotes', 'points', 'stars', 'likes', 'discussion_url', 'stars_today', 'stars_week',
+                      'trending', 'post_title'):
                 if k in item.meta and k not in dup.meta:
                     dup.meta[k] = item.meta[k]
             dup.tracks += [t for t in item.tracks if t not in dup.tracks]
@@ -161,7 +164,8 @@ def main() -> int:
         print('❌ 没有要采集的信源')
         return 1
 
-    seen = set() if args.no_seen else load_seen_keys()
+    seen = set() if args.no_seen else load_seen_keys(config)
+    repo_cfg = collect_cfg.get('repos')
     print(f"🚀 {config.get('name', '每日资讯')}：采集 {len(sources)} 个信源"
           f"（历史记录 {len(seen)} 条，GitHub token {'已配置' if ctx.github_token else '未配置'}）")
 
@@ -182,6 +186,8 @@ def main() -> int:
         src = r['src']
         fetched = r['items']
         kept = filter_items(fetched, src, ctx)
+        if repo_cfg is not None:
+            kept = as_repo_items(kept)
         fresh = [i for i in kept if item_key(i.url) not in seen]
         fresh.sort(key=lambda x: x.score, reverse=True)
         fresh = fresh[:src.get('max_items', 10)]
@@ -201,7 +207,18 @@ def main() -> int:
         for item in fresh[:args.show]:
             print(f"     → [{item.score}] {item.title[:90]}  {','.join(item.tracks[:3])}")
 
-    items = dedupe(candidates)
+    deduped = dedupe(candidates)
+    items = deduped
+    if repo_cfg is not None:
+        print(f'\n🔎 跨源去重后 {len(deduped)} 个仓库，用 GitHub API 补全筛选：')
+        reserve = {s['id']: s['reserve'] for s in sources if s.get('reserve')}
+        try:
+            items = prepare_repos(deduped, ctx, seen, repo_cfg, collect_cfg.get('max_total_items', 40), reserve,
+                                  lambda line: print(f'     · {line}'))
+        except RuntimeError as e:
+            print(f'❌ {e}')
+            send_alert(config, '仓库详情补全失败', str(e))
+            return 1
     items.sort(key=lambda x: x.score, reverse=True)
     items = items[:collect_cfg.get('max_total_items', 220)]
     section_order = {sec['key']: i for i, sec in enumerate(config['sections'])}
@@ -211,8 +228,9 @@ def main() -> int:
             item.meta.pop(k, None)
 
     failed = [s for s in stats.values() if s['error']]
-    print(f"\n🔍 候选 {len(candidates)} 条 → 跨源去重后 {len(items)} 条；"
-          f"失败信源 {len(failed)}/{len(stats)}；总耗时 {time.time() - started:.0f}s")
+    print(f"\n🔍 候选 {len(candidates)} 条 → 跨源去重后 {len(deduped)} 条"
+          + (f" → 补全筛选后 {len(items)} 个" if repo_cfg is not None else '')
+          + f"；失败信源 {len(failed)}/{len(stats)}；总耗时 {time.time() - started:.0f}s")
     by_section: Dict[str, int] = {}
     for item in items:
         by_section[item.section] = by_section.get(item.section, 0) + 1

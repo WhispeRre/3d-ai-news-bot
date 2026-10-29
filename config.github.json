@@ -1,0 +1,212 @@
+{
+  "name": "GitHub 每日精选",
+  "bot_name": "GitHub 精选助手",
+  "reader_profile": "读者在一支做 3D 生成模型和 3D Agent 的团队里做 Agent 产品研发，有工程背景。每天花几分钟看完，想发现真正好用、有新意、能借鉴的开源项目：Agent 与 AI 编程相关的、提升效率的工具、设计与 3D 创意相关的、本地 AI 相关的，以及好玩硬核的项目，而不是又一份热榜。",
+  "timezone": "Asia/Shanghai",
+
+  "tracks": {
+    "design": {
+      "name": "设计、3D 与创意",
+      "tag": "设计",
+      "description": "3D 建模、渲染与 Web 3D（Blender、Three.js、WebGPU、着色器）、高斯泼溅等新表示、图像视频与动画工具、设计工具和创意编程",
+      "keywords": [
+        "3d", "blender", "three.js", "threejs", "webgpu", "webgl", "shader*", "gaussian splat*", "3dgs", "nerf",
+        "3d mesh*", "mesh generation", "point cloud*", "cad", "voxel*", "3d rendering", "neural rendering",
+        "ray tracing", "ray tracer", "path tracing", "path tracer", "rasteriz*", "procedural generation", "openusd", "gltf",
+        "animation", "motion graphics", "image editing", "image editor", "photo editor", "video editing", "video editor",
+        "comfyui", "stable diffusion", "image generation", "text-to-image", "text-to-3d", "image-to-3d",
+        "figma", "svg", "vector graphics", "design tool*", "design system*", "creative coding", "generative art",
+        "pixel art", "game engine", "godot", "unity", "unreal engine",
+        "3D 生成", "建模", "渲染"
+      ]
+    },
+    "local_ai": {
+      "name": "本地 AI 与模型工具",
+      "tag": "本地 AI",
+      "description": "在自己的电脑或服务器上跑模型：推理引擎与量化、本地大模型客户端、语音识别与合成、OCR、端侧模型、训练与微调工具",
+      "keywords": [
+        "local llm*", "local ai", "local model*", "ollama", "llama.cpp", "gguf", "mlx", "vllm", "sglang",
+        "inference engine", "inference server", "llm inference", "model serving", "quantiz*", "on-device", "edge ai",
+        "lm studio", "whisper", "speech-to-text", "speech recognition", "asr", "text-to-speech", "tts", "voice clon*",
+        "ocr", "fine-tun*", "finetun*", "lora", "distill*", "embedding model*", "small language model*",
+        "vision language model*", "vlm", "open-weight*", "open weight*",
+        "本地部署", "本地运行", "语音识别", "语音合成", "微调"
+      ]
+    },
+    "agent": {
+      "name": "Agent 与 AI 编程",
+      "tag": "Agent",
+      "description": "AI Agent 框架与应用、编程 Agent 及其周边（MCP、Skills、规则与上下文管理、多 Agent 协作）、浏览器与电脑操作 Agent、Agent 记忆、评测与可观测性",
+      "keywords": [
+        "agent*", "agentic", "multi-agent", "subagent*", "mcp", "model context protocol", "agent skill*", "claude skill*",
+        "skill.md", "agents.md", "claude code", "codex", "gemini cli", "copilot", "opencode", "aider", "cline",
+        "roo code", "kilo code", "cursor rules", "cursorrules", "cursor ide", "vibe coding", "ai coding",
+        "coding assistant*", "computer use", "computer-use", "browser automation", "browser-use",
+        "context engineering", "prompt engineering", "rag", "llm", "llms", "chatgpt", "claude", "gemini", "openai",
+        "anthropic", "智能体", "AI 编程"
+      ]
+    },
+    "fun": {
+      "name": "好玩与硬核",
+      "tag": "好玩",
+      "description": "让人眼前一亮的项目：游戏与模拟器、从零实现的操作系统、编译器、数据库和浏览器引擎、硬件与嵌入式、机器人、可视化与创意小玩具",
+      "keywords": [
+        "game", "games", "emulator*", "retro", "ascii", "demoscene", "from scratch", "toy", "operating system",
+        "kernel", "compiler", "interpreter", "virtual machine", "bytecode", "esp32", "raspberry pi", "arduino",
+        "firmware", "hardware", "fpga", "risc-v", "microcontroller*", "robot*", "drone*", "simulation", "simulator",
+        "physics engine", "visualiz*", "doom", "minecraft", "chess",
+        "游戏", "模拟器", "硬件"
+      ]
+    },
+    "tools": {
+      "name": "效率与开发者工具",
+      "tag": "工具",
+      "description": "提升效率的命令行和终端工具、macOS 与桌面小工具、笔记与知识管理、编辑器和开发调试、数据库、部署与运维工具",
+      "keywords": [
+        "cli", "command line", "command-line", "tui", "terminal", "shell", "zsh", "git", "macos", "menubar",
+        "menu bar", "desktop app", "productivity", "launcher", "clipboard", "screenshot", "window manager",
+        "note-taking", "notes", "markdown", "obsidian", "knowledge base", "neovim", "vim", "vscode", "emacs", "editor",
+        "debugger", "profiler", "devtools", "developer tool*", "docker", "kubernetes", "self-hosted", "database",
+        "sqlite", "postgres*", "api", "testing", "monitoring", "dashboard",
+        "效率", "工具"
+      ]
+    }
+  },
+
+  "keyword_sets": {
+    "repo_noise": [
+      "crack", "cracked", "keygen", "kms activator", "windows activator", "office activator",
+      "cheats", "game cheat*", "cheat engine", "aimbot", "wallhack", "triggerbot", "spoofer", "robux",
+      "nulled", "warez", "mod apk", "premium unlocked",
+      "jailbreak*", "uncensor*", "abliterat*", "censorship removal",
+      "airdrop farm*", "airdrop bot*", "airdrop claim*", "airdrop hunt*", "memecoin*", "meme coin*", "pump.fun",
+      "sniper bot*", "mev bot*", "wallet drainer"
+    ]
+  },
+
+  "sections": [
+    {
+      "key": "picks",
+      "title": "今日精选",
+      "tracks": ["design", "local_ai", "agent", "fun", "tools"],
+      "max_items": 5
+    }
+  ],
+
+  "report": {
+    "style": "repos",
+    "title_emoji": "🐙",
+    "max_items_total": 5,
+    "max_per_track": 2,
+    "max_giants": 1,
+    "model": "auto"
+  },
+
+  "memory": {
+    "seen_days": 5,
+    "pushed_days": 180
+  },
+
+  "collect": {
+    "default_max_age_hours": 72,
+    "summary_chars": 280,
+    "max_total_items": 40,
+    "retries": 2,
+    "retry_delay": 3,
+    "workers": 6,
+    "alert_failed_ratio": 0.3,
+    "repos": {
+      "enrich_limit": 200,
+      "min_stars": 20,
+      "readme_chars": 1500,
+      "giant_stars": 20000,
+      "giant_age_days": 180,
+      "exclude": "@repo_noise"
+    }
+  },
+
+  "sources": [
+    {
+      "id": "gh_trending",
+      "name": "GitHub Trending",
+      "type": "github_trending",
+      "kind": "repo",
+      "reliability": "high",
+      "score": 50,
+      "periods": ["daily", "weekly"],
+      "languages": ["Python", "TypeScript", "Rust", "Go"],
+      "filter": "all",
+      "max_items": 60,
+      "reserve": 15
+    },
+    {
+      "id": "gh_new_hot",
+      "name": "GitHub 新仓库（不限主题）",
+      "type": "github_search",
+      "kind": "repo",
+      "reliability": "high",
+      "score": 50,
+      "queries": [""],
+      "created_within_days": 7,
+      "min_stars": 200,
+      "per_query": 30,
+      "filter": "all",
+      "max_items": 30
+    },
+    {
+      "id": "gh_new_topics",
+      "name": "GitHub 新仓库（按主题）",
+      "type": "github_search",
+      "kind": "repo",
+      "reliability": "high",
+      "score": 45,
+      "queries": [
+        "topic:cli", "topic:tui", "topic:terminal", "topic:macos", "topic:blender", "topic:threejs", "topic:webgpu",
+        "topic:3d", "topic:gaussian-splatting", "topic:local-llm", "topic:ollama", "topic:mcp", "topic:claude-code",
+        "topic:ocr", "topic:tts", "topic:emulator", "topic:game"
+      ],
+      "created_within_days": 14,
+      "min_stars": 50,
+      "per_query": 5,
+      "filter": "all",
+      "max_items": 40,
+      "reserve": 5
+    },
+    {
+      "id": "show_hn",
+      "name": "Show HN",
+      "type": "hackernews",
+      "tags": "show_hn",
+      "kind": "community",
+      "reliability": "high",
+      "score": 45,
+      "max_age_hours": 72,
+      "min_points": 10,
+      "filter": "all",
+      "max_items": 15,
+      "reserve": 2
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit",
+      "type": "reddit",
+      "kind": "community",
+      "reliability": "medium",
+      "score": 40,
+      "retries": 1,
+      "subreddits": [
+        {"name": "coolgithubprojects", "listing": "top", "t": "day", "take": 10, "filter": "all"},
+        {"name": "commandline", "listing": "top", "t": "day", "take": 5, "filter": "all"}
+      ],
+      "max_items": 10,
+      "reserve": 2
+    }
+  ],
+
+  "feishu": {
+    "mode": "app",
+    "user_ids": ["ou_7d3e402835860e7d9ce336306a57bde9"],
+    "admin_user_ids": ["ou_7d3e402835860e7d9ce336306a57bde9"],
+    "card_color": "green"
+  }
+}

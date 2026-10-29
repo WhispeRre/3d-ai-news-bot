@@ -1,0 +1,122 @@
+name: GitHub 每日精选
+
+on:
+  schedule:
+    # 主触发是 Cloudflare Worker（trigger-worker/）在北京时间 12:17 准点调用 workflow_dispatch；
+    # GitHub 自带的定时常延迟数小时甚至丢失，这里的 12:17、14:17 只作备份。
+    # 定时触发和 auto 触发在当天已经成功跑过时会在 guard 里跳过；手动触发总会执行
+    - cron: '17 4 * * *'
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+    inputs:
+      auto:
+        description: '定时触发：当天已成功推送过就跳过'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # 推送成功后把 state/github/ 里的去重和推荐记录提交回仓库
+
+concurrency:
+  group: github-picks
+  cancel-in-progress: false
+
+env:
+  NEWS_PROFILE: github   # 读 config.github.json，产物和状态放 output/github/、state/github/
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - id: check
+        run: |
+          last=$(python3 -c "import json; print(json.load(open('state/github/seen.json')).get('updated_at', '')[:10])" 2>/dev/null || echo "")
+          today=$(TZ=Asia/Shanghai date +%F)
+          if { [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.auto }}" = "true" ]; } && [ "$last" = "$today" ]; then
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ 今天（$today）已经成功运行过，跳过"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  # AI 整理时会读到任意仓库的 README（可能藏着提示词注入），所以密钥只给用得到的步骤，
+  # checkout 也不保存凭证，到最后提交记录时才用 token 推送
+  daily:
+    needs: guard
+    if: needs.guard.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 采集
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FEISHU_ALERT_WEBHOOK_URL: ${{ secrets.FEISHU_ALERT_WEBHOOK_URL }}
+          FEISHU_ALERT_WEBHOOK_SECRET: ${{ secrets.FEISHU_ALERT_WEBHOOK_SECRET }}
+          LARK_APP_ID: ${{ secrets.LARK_APP_ID }}
+          LARK_APP_SECRET: ${{ secrets.LARK_APP_SECRET }}
+        run: python fetch_news.py
+
+      - name: 整理精选（AI 优先，失败自动降级为模板）
+        id: report
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+        run: |
+          python ai_report.py || python generate_report.py
+          if ls output/github/news_*.md >/dev/null 2>&1; then
+            echo "has_report=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_report=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ 今天没有精选，跳过推送"
+          fi
+
+      - name: 私信推送到飞书
+        if: steps.report.outputs.has_report == 'true'
+        env:
+          FEISHU_ALERT_WEBHOOK_URL: ${{ secrets.FEISHU_ALERT_WEBHOOK_URL }}
+          FEISHU_ALERT_WEBHOOK_SECRET: ${{ secrets.FEISHU_ALERT_WEBHOOK_SECRET }}
+          LARK_APP_ID: ${{ secrets.LARK_APP_ID }}
+          LARK_APP_SECRET: ${{ secrets.LARK_APP_SECRET }}
+        run: python push_to_feishu.py
+
+      - name: 更新去重和推荐记录
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python mark_seen.py
+          git add state/github/
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: 更新 GitHub 精选记录 [skip ci]"
+            git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+            # 另外两份日报的工作流也会往 main 提交 state/，先合并它们可能刚推的提交（改的文件不同，不会冲突）
+            git pull --rebase -q
+            git push
+          fi
+
+      - name: 归档当天产物
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-picks-${{ github.run_id }}
+          path: output/github/
+          retention-days: 14
+          if-no-files-found: ignore

@@ -96,7 +96,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "chore: 更新 Agent 学习记录 [skip ci]"
-            # 3D 日报的工作流也会往 main 提交 state/，先合并它可能刚推的提交（改的文件不同，不会冲突）
+            # 另外两份日报的工作流也会往 main 提交 state/，先合并它们可能刚推的提交（改的文件不同，不会冲突）
             git pull --rebase -q
             git push
           fi
