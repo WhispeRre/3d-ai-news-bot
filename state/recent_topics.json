@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T12:01:58+08:00",
+  "updated_at": "2026-10-29T09:10:20+08:00",
   "days": {
     "20261027": [
       "OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏操作」模型进 API 与 Codex",
@@ -28,6 +28,21 @@
       "Anthropic：分析师与编程 Agent 协作时约 86% 跟从 Agent 偏好",
       "Ling-3.1-flash-1019 权重开源，并放出 base 模型",
       "General Compute 完成约 1 亿美元 A 轮，押注非 Nvidia 推理芯片"
+    ],
+    "20261029": [
+      "Google DeepMind 发布 Gemini 4 Carbon：长程 Agent 与编程能力再升级",
+      "Meshy 演示 Hermes Agent 一条指令端到端产出游戏级 3D 资产",
+      "Microsoft 披露与 OpenAI 合作单季收入约 100 亿美元",
+      "Google 向第三方 AI Agent 开放 Android Studio",
+      "LabWorld：学习可交互的 4D 实验室世界，服务科学实验 Agent",
+      "ScIntBench：评测 3D 室内场景在「交互时」是否物理靠谱",
+      "Any3R：任意相机类型的前馈式三维重建",
+      "即梦把剧本、分镜、视频生成与剪辑放进同一工作室",
+      "Mistral 推出面向 Agent 的 Responses API（公测）",
+      "MiniMax 公开 mcode-stack：团队自用的工作流与 Agent Skills",
+      "OpenAI：ChatGPT Pro / Business 用户可每月领取最高 500 美元 API 积分",
+      "Anthropic 推出企业 AI 花费洞察工具",
+      "Microsoft 首次公布 Azure 季度营收约 332 亿美元"
     ]
   }
 }
