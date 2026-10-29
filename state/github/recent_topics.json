@@ -1,0 +1,12 @@
+{
+  "updated_at": "2026-10-29T17:14:05+08:00",
+  "days": {
+    "20261029": [
+      "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
+      "deepopen-com/deepopen-3d-webs：单图驱动的三维场景生成系统",
+      "JetBrains/thinkrail：围绕编程 Agent 的自适应 IDE",
+      "nightly-labs/openbot：本地优先的多 Agent 桌面工作台",
+      "OpenBMB/MiniCPM-OCR：带正误评估的高效文档 OCR"
+    ]
+  }
+}
