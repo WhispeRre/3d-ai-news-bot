@@ -124,11 +124,9 @@ def _reject_reason(repo: dict, owner: Optional[dict], shady, cfg: dict, now: dat
     return ''
 
 
-def _flags(repo: dict, owner: Optional[dict], license_id: str, now: datetime) -> List[str]:
-    """不至于剔除、但推荐时要提醒读者的问题"""
+def _flags(repo: dict, owner: Optional[dict], now: datetime) -> List[str]:
+    """不至于剔除、但推荐时要提醒读者的问题；许可证不明确已经写在数据行里，这里不重复"""
     flags = []
-    if not license_id:
-        flags.append('许可证不明确')
     pushed = _days_since(repo.get('pushed_at'), now)
     if pushed > 60:
         flags.append(f'{pushed} 天没有提交')
@@ -234,7 +232,7 @@ def _fill(item: NewsItem, repo: dict, owner: Optional[dict], ctx: CollectContext
     })
     m['heat'] = round(_heat(m))
     m['giant'] = m['stars'] >= cfg.get('giant_stars', 20000) and m['age_days'] >= cfg.get('giant_age_days', 180)
-    flags = _flags(repo, owner, license_id, now)
+    flags = _flags(repo, owner, now)
     if flags:
         m['flags'] = flags
 

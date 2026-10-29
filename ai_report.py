@@ -40,7 +40,7 @@ REPO_DATA_GUIDE = """- 每条是一个 GitHub 仓库：title 是"owner/repo：�
 age_days 是创建了多少天；pushed_days 是多少天前有过提交；giant 为 true 表示老牌大项目（星多且创建超过半年）；\
 trending 是上了哪些榜；points 是 Show HN 的分数；post_title 是分享它的社区帖子标题；license 为空表示许可证不明确；\
 homepage 是官网或在线体验地址
-- meta.flags 是需要提醒读者的问题，例如许可证不明确、很久没有提交、作者账号刚注册、README 很简略"""
+- meta.flags 是需要提醒读者的问题，例如很久没有提交、作者账号刚注册、README 很简略"""
 
 
 def load_recent_topics(date: str) -> str:
@@ -278,7 +278,7 @@ def build_repos_prompt(config: dict, raw: dict, date: str, recent_block: str) ->
 - **是什么**：用大白话讲它做什么、解决什么问题
 - **为什么值得看**：新在哪里、比同类好在哪；和读者的工作能联系上就点一句，不要硬凑
 - **怎么上手**：最快的体验方式，例如安装命令、在线体验地址或最少的配置步骤
-⚠️ 需要提醒读者的问题（没有就整行删掉，不留空行）
+⚠️ 需要提醒读者的问题（没有就整行删掉，不留空行；许可证情况已经在下面的数据行里，这里不要再写）
 这一行原样复制该仓库的 summary 字段（以 ⭐ 开头）
 🔗 [GitHub](链接)
 

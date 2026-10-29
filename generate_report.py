@@ -50,10 +50,8 @@ def repo_parts(config: dict, items: List[dict]) -> Tuple[List[str], int]:
         meta = item.get('meta') or {}
         tag = f'【{tags[meta["primary_track"]]}】' if meta.get('primary_track') in tags else ''
         parts += ['', f"## {i}.{tag}{clip(item['title'], 100)}", item.get('summary') or '']
-        # 许可证不明确已经写在数据行里
-        flags = [f for f in meta.get('flags', []) if f != '许可证不明确']
-        if flags:
-            parts.append('⚠️ ' + '、'.join(flags))
+        if meta.get('flags'):
+            parts.append('⚠️ ' + '、'.join(meta['flags']))
         parts.append(f"🔗 [GitHub]({item['url']})")
     return parts, len(chosen)
 
