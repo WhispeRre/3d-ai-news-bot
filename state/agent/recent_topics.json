@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:30:40+08:00",
+  "updated_at": "2026-10-30T08:30:09+08:00",
   "days": {
     "20261027": [
       "花椒直播拆出四层 Agent 平台，落地约 30 个业务应用",
@@ -36,6 +36,18 @@
       "Legora 打造法律工作的 Agent 操作系统：审查更快，分析更宽",
       "Google 向 Android Studio 开放第三方 Coding Agent，并强化 Agent 侧工具链",
       "Latent Space：为何 Agent「偏爱」Supabase 这类后端"
+    ],
+    "20261030": [
+      "Anthropic Applied AI：企业多 Agent 常照抄组织架构，应按上下文拆分并用评测决定去留",
+      "Spawn：用 Fable 级模型 swarm 做游戏世界，Agents 直改线上代码并小时级交付",
+      "AgentBaton：长程任务先用强模型开局，学到合适点再一次性交给便宜模型",
+      "OpenAI 公开前沿模型错位监测：多层探针与调查 Agent，在沙箱逃逸后尽快告警",
+      "Thoughtworks CTO：优秀开发者警惕 Agent 开发，是因为「写出来」≠「生产里扛得住」",
+      "Managed Deep Agents 0.10 公测：浏览器操作与异步子 Agent",
+      "whatsmyagentdoing：把本机 Claude Code / Codex Agent 活干可视化成「小办公室」",
+      "Claude Code 为刷新状态栏，定期把每个后台 Agent 的完整 transcript 再送给模型摘要",
+      "Skyworks 用 LangGraph + LangSmith 做根因分析：人工约 20 天，首版 Agent 压到约 10 天",
+      "诊所语音预约 Agent 最贵的 bug 不是胡言乱语，而是「声称已约上」"
     ]
   }
 }
