@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T09:10:20+08:00",
+  "updated_at": "2026-10-30T09:10:01+08:00",
   "days": {
     "20261027": [
       "OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏操作」模型进 API 与 Codex",
@@ -43,6 +43,23 @@
       "OpenAI：ChatGPT Pro / Business 用户可每月领取最高 500 美元 API 积分",
       "Anthropic 推出企业 AI 花费洞察工具",
       "Microsoft 首次公布 Azure 季度营收约 332 亿美元"
+    ],
+    "20261030": [
+      "Mistral 开源 Large 4（Le Chonk）权重：万亿参数多模态，主打编程",
+      "NVIDIA：开发者用前沿 AI Agent + Omniverse，把想法做成可跑仿真",
+      "前 Palantir 高管创办 Dream，获 a16z 约 1700 万美元做建筑世界模型",
+      "topopt：把拓扑优化做成 MCP，Agent 可直接吐更轻的可打印 STL",
+      "construct：一句话描述，Agent 产出全息、3D 模型与部件清单",
+      "eyeproof：给编程 Agent 装无头「眼睛」，能看截图、测游戏、审 Blender 渲染",
+      "Idol：单图前馈成 3D 高斯泼溅，连照片没拍到的侧面也能补上",
+      "Pika H3 Flex：面向专业迭代的图生视频开源权重",
+      "StableGen 0.4.0：Blender 插件本地跑通「提示词 → 贴图网格 → 绑骨 → Unreal」",
+      "OpenAI 更新 Model Spec：用五项核心价值约束更强模型的判断与服从",
+      "Kimi 接入 Gmail、Google Drive 与 Calendar：用 OAuth 代读邮件、找文件、排日程",
+      "OpenAI 将各付费档用量上限翻倍，Pro 100 到 Pro 500 全线上调",
+      "Wabi 再融资约 5500 万美元，估值约 12.5 亿美元，定位个人 Agent",
+      "OpenAI 支持的 Thrive Holdings 以约 153 亿美元收购安防巨头 ADT",
+      "美国司法部审查 Nvidia 收购 Hugging Face 交易及销售做法"
     ]
   }
 }
