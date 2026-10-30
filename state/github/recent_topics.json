@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T17:14:05+08:00",
+  "updated_at": "2026-10-30T12:21:14+08:00",
   "days": {
     "20261029": [
       "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
@@ -7,6 +7,13 @@
       "JetBrains/thinkrail：围绕编程 Agent 的自适应 IDE",
       "nightly-labs/openbot：本地优先的多 Agent 桌面工作台",
       "OpenBMB/MiniCPM-OCR：带正误评估的高效文档 OCR"
+    ],
+    "20261030": [
+      "patch-gg/trompe：用图像模型给灰模关卡批量贴纹理",
+      "sloemo01/diorama：像素风微缩场景的 Three.js 技能包",
+      "ZiChuanLan/agent-purge：一份人设同步喂给多家编程 Agent",
+      "magnitudedev/magnitude：按硬件调优内核的本地推理引擎",
+      "hydro-project/infinity：可休眠、海量并发的 Agent 运行时"
     ]
   }
 }
