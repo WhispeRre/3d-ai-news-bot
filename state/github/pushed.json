@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T12:21:14+08:00",
+  "updated_at": "2026-10-31T12:20:31+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -10,6 +10,11 @@
     "https://github.com/hydro-project/infinity": "20261030",
     "https://github.com/magnitudedev/magnitude": "20261030",
     "https://github.com/ZiChuanLan/agent-purge": "20261030",
-    "https://github.com/patch-gg/trompe": "20261030"
+    "https://github.com/patch-gg/trompe": "20261030",
+    "https://github.com/anomalyco/hex": "20261031",
+    "https://github.com/gokayfem/gaussian-splat-to-blender-nodes": "20261031",
+    "https://github.com/wangzan101/Mika": "20261031",
+    "https://github.com/heydamir/unslop": "20261031",
+    "https://github.com/dbreunig/nesformer": "20261031"
   }
 }

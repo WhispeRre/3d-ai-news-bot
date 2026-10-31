@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T12:21:14+08:00",
+  "updated_at": "2026-10-31T12:20:31+08:00",
   "days": {
     "20261029": [
       "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
@@ -14,6 +14,13 @@
       "ZiChuanLan/agent-purge：一份人设同步喂给多家编程 Agent",
       "magnitudedev/magnitude：按硬件调优内核的本地推理引擎",
       "hydro-project/infinity：可休眠、海量并发的 Agent 运行时"
+    ],
+    "20261031": [
+      "gokayfem/gaussian-splat-to-blender-nodes：高斯泼溅重建成可编辑 Blender 节点",
+      "wangzan101/Mika：安卓端侧 AI 助理，后台屏操 App",
+      "heydamir/unslop：把 AI 味 UI 改回有设计感的界面",
+      "anomalyco/hex：本地优先的跨平台语音听写",
+      "dbreunig/nesformer：把 NES CPU 编进 Qwen 模型权重"
     ]
   }
 }
