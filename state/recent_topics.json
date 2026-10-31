@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T09:10:01+08:00",
+  "updated_at": "2026-10-31T09:09:57+08:00",
   "days": {
     "20261027": [
       "OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏操作」模型进 API 与 Codex",
@@ -60,6 +60,20 @@
       "Wabi 再融资约 5500 万美元，估值约 12.5 亿美元，定位个人 Agent",
       "OpenAI 支持的 Thrive Holdings 以约 153 亿美元收购安防巨头 ADT",
       "美国司法部审查 Nvidia 收购 Hugging Face 交易及销售做法"
+    ],
+    "20261031": [
+      "Kimi 推出 3D Make：对接 Blender 与 CAD，可建模、拼场景与做游戏",
+      "Blender 官方推进高斯泼溅原生支持，并公布后续开发计划",
+      "DeepSeek 完成约 1055 亿元融资，估值约 6155 亿元",
+      "3DCodeEdit：给「按自然语言改 3D 程序」做评测基准",
+      "PhysAg3D：串联 3D 生成与 Agent，产出可物理交互的资产",
+      "WorldProbe：长程空间探索下，视频世界模型容易「散架」",
+      "Unity 发布 Industry 2026：Studio、管线自动化与 AI 工作流等更新",
+      "英伟达团队基于 MiniMax H3 开源最高支持 4K 的视频增强方案",
+      "Claude Code 扩展疑似遭后门植入，HN 热议 Agent 供应链风险",
+      "微软 Mage-VL-Cowork：公开混合 Computer-use 完整训练配方",
+      "Hugging Face safeagents：用任意编程 harness 安全运行 Agent",
+      "苹果官宣国行 Apple 智能接入阿里千问，11 月起开放测试"
     ]
   }
 }
