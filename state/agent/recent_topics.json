@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T08:30:09+08:00",
+  "updated_at": "2026-10-31T08:29:30+08:00",
   "days": {
     "20261027": [
       "花椒直播拆出四层 Agent 平台，落地约 30 个业务应用",
@@ -48,6 +48,18 @@
       "Claude Code 为刷新状态栏，定期把每个后台 Agent 的完整 transcript 再送给模型摘要",
       "Skyworks 用 LangGraph + LangSmith 做根因分析：人工约 20 天，首版 Agent 压到约 10 天",
       "诊所语音预约 Agent 最贵的 bug 不是胡言乱语，而是「声称已约上」"
+    ],
+    "20261031": [
+      "社区复盘：怎样做真正提升 Agent 的 harness",
+      "毕玄谈垂类 Agent：长程任务与通用工具撑不起长期竞争力",
+      "Anthropic 等：预训练投毒约 0.1% 可在 CLI Agent 植入远程代码执行后门",
+      "谷歌 EnvHarness：按智能体短板动态改造训练环境，而不是只改提示词",
+      "Microsoft Agent Framework python-1.24.0：运行中压缩上下文并可卸载 Skill",
+      "Pydantic AI v2.64.0：Memory/Skills 产物扫描，失败回退后可粘住可用模型",
+      "Photoshop MCP 服务器用 83 个工具把失败调用压到约 1.7%",
+      "Cursor 扩展市场遭投毒：仿冒 Claude Code 扩展最多影响约 5000 用户",
+      "Chainguard 推出面向编码 Agent 的安全工作区与 Checks",
+      "开发者用留言板取代编排器，Claude Code / Codex / Copilot 自行协作"
     ]
   }
 }
