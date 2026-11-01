@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T12:20:31+08:00",
+  "updated_at": "2026-11-01T12:19:56+08:00",
   "days": {
     "20261029": [
       "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
@@ -21,6 +21,13 @@
       "heydamir/unslop：把 AI 味 UI 改回有设计感的界面",
       "anomalyco/hex：本地优先的跨平台语音听写",
       "dbreunig/nesformer：把 NES CPU 编进 Qwen 模型权重"
+    ],
+    "20261101": [
+      "deepseek-ai/dsh-superagent-prototype：面向单仓的主动编程 Agent 原型",
+      "D3voz/openjutsu：本地一键视频角色/物体替换",
+      "patch-gg/pixelfx：244 个像素特效加 Claude 创作技能",
+      "xiaoxiao150/vram-switcher：一张 12GB 卡上的本地陪伴显存调度",
+      "kerlenton/bootgpt：住在启动扇区里的语言模型"
     ]
   }
 }
