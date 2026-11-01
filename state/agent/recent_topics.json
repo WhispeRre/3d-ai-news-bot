@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T08:29:30+08:00",
+  "updated_at": "2026-11-01T08:30:12+08:00",
   "days": {
     "20261027": [
       "花椒直播拆出四层 Agent 平台，落地约 30 个业务应用",
@@ -60,6 +60,17 @@
       "Cursor 扩展市场遭投毒：仿冒 Claude Code 扩展最多影响约 5000 用户",
       "Chainguard 推出面向编码 Agent 的安全工作区与 Checks",
       "开发者用留言板取代编排器，Claude Code / Codex / Copilot 自行协作"
+    ],
+    "20261101": [
+      "Arca 做长周期财富管理：Agent 催人决策，人握最终拍板",
+      "IBM 提出 JevAct：在工具执行前插入运行时决策门控",
+      "Meta FAIR 用路由式记忆替代全局历史做持续学习",
+      "社区开源熔断器：卡住 Agent 死循环与账单失控",
+      "斯坦福 CS329Z Engineering AI Agents 中文笔记上线",
+      "自建 Gmail MCP：多邮箱分拣，且每次改动可撤销",
+      "云栖讨论：Agent Sandbox 为何成生产标配",
+      "Anthropic 用 Claude Agent 自动挖「看起来无害却致偏」的训练数据",
+      "Pi-Remote：手机浏览器远程盯本机 Coding Agent"
     ]
   }
 }
