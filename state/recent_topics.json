@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T09:09:45+08:00",
+  "updated_at": "2026-11-02T09:10:00+08:00",
   "days": {
     "20261027": [
       "OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏操作」模型进 API 与 Codex",
@@ -89,6 +89,17 @@
       "GPT-5.6 Sol 在和平模式通关 Factorio，展示长程规划能力",
       "Utopai Studios 完成约 6000 万美元融资，估值约 10 亿美元",
       "Google 承认 AI Mode 拖累搜索收入，市值大幅回撤"
+    ],
+    "20261102": [
+      "Adobe Research 推出 EditAgent：像专业修图师一样选工具并核验结果",
+      "OpenAI 合并 Chat 与 Work，Plus/Pro/Business 将共用 token 额度",
+      "L3G-World：用潜空间三维高斯记忆做实时可探索世界生成",
+      "Minecraft 里 50 个 Agent 组队建文明，最终陷进官僚瘫痪",
+      "清华姚期智团队提出代数世界模型 AWM：从试错走向可证明的规律",
+      "Memdoor：5 个 Qwen3.8-27B 组队在 LiveCodeBench Hard 超过 Fable 5",
+      "Anthropic 在 Opus 系统提示中加规则：禁止用 Claude 复刻特定游戏",
+      "西湖大学成立世界模型研究中心，孵化公司 Awomo 已获超亿元早期融资",
+      "蚂蚁灵光 2.0 实测：个人助理卡在跨平台权限与责任边界"
     ]
   }
 }
