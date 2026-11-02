@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T12:19:56+08:00",
+  "updated_at": "2026-11-02T12:20:48+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -20,6 +20,11 @@
     "https://github.com/patch-gg/pixelfx": "20261101",
     "https://github.com/xiaoxiao150/vram-switcher": "20261101",
     "https://github.com/deepseek-ai/dsh-superagent-prototype": "20261101",
-    "https://github.com/D3voz/openjutsu": "20261101"
+    "https://github.com/D3voz/openjutsu": "20261101",
+    "https://github.com/Arjun-Ingole/hop": "20261102",
+    "https://github.com/Belluxx/Aleph": "20261102",
+    "https://github.com/NiazMorshed2007/reanimate": "20261102",
+    "https://github.com/storytold/craft-anything": "20261102",
+    "https://github.com/elvarofficial/teardown": "20261102"
   }
 }

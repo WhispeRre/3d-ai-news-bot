@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T12:19:56+08:00",
+  "updated_at": "2026-11-02T12:20:48+08:00",
   "days": {
     "20261029": [
       "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
@@ -28,6 +28,13 @@
       "patch-gg/pixelfx：244 个像素特效加 Claude 创作技能",
       "xiaoxiao150/vram-switcher：一张 12GB 卡上的本地陪伴显存调度",
       "kerlenton/bootgpt：住在启动扇区里的语言模型"
+    ],
+    "20261102": [
+      "elvarofficial/teardown：把任意机器做成可拆 3D 模拟器",
+      "storytold/craft-anything：研究软件并用 Agent 干净室复刻",
+      "NiazMorshed2007/reanimate：逐帧反推动画并验真复刻",
+      "Belluxx/Aleph：给大模型装上卫星影像与三维地形",
+      "Arjun-Ingole/hop：不用 U 盘在 Windows 旁装 Linux"
     ]
   }
 }
