@@ -1,11 +1,12 @@
 {
-  "updated_at": "2026-11-01T08:30:12+08:00",
+  "updated_at": "2026-11-02T08:30:05+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
     "20261029": "workflow_patterns",
     "20261030": "planning",
     "20261031": "reflection",
-    "20261101": "tool_calling"
+    "20261101": "tool_calling",
+    "20261102": "tool_design"
   }
 }

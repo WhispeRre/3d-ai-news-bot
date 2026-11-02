@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T08:30:12+08:00",
+  "updated_at": "2026-11-02T08:30:05+08:00",
   "days": {
     "20261027": [
       "花椒直播拆出四层 Agent 平台，落地约 30 个业务应用",
@@ -71,6 +71,18 @@
       "云栖讨论：Agent Sandbox 为何成生产标配",
       "Anthropic 用 Claude Agent 自动挖「看起来无害却致偏」的训练数据",
       "Pi-Remote：手机浏览器远程盯本机 Coding Agent"
+    ],
+    "20261102": [
+      "Simon Budziak 总结 LangGraph 生产落地的五道控制",
+      "DeepSeek 公开 Super-agent：Router 调度、Worker 并行的主动 Agent 底座",
+      "Adobe 与 UCSD 提出 EditAgent：专用工具并行候选，用验证记录当裁判",
+      "Minecraft 实验：50 个 Agent 建文明，陷入任命「施肥专员」的官僚病",
+      "Google 等提出 StreamVibe：视频助理要学会何时开口、何时闭嘴",
+      "web-shooter：MCP 网页阅读只回相关段落，约 1k tokens 对约 25k",
+      "uncut：约 7 MB 的无损 Coding Agent harness，禁止静默截断上下文",
+      "product-engineering：用 Agent Skills 把想法一路推到付费用户",
+      "极客公园实测灵光 2.0：个人助理卡在权限、责任与忠诚",
+      "巴西劳工法院制裁律师：诉状中藏白字 Prompt Injection"
     ]
   }
 }
