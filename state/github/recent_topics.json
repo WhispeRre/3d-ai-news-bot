@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T12:20:48+08:00",
+  "updated_at": "2026-11-03T12:21:11+08:00",
   "days": {
     "20261029": [
       "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
@@ -35,6 +35,13 @@
       "NiazMorshed2007/reanimate：逐帧反推动画并验真复刻",
       "Belluxx/Aleph：给大模型装上卫星影像与三维地形",
       "Arjun-Ingole/hop：不用 U 盘在 Windows 旁装 Linux"
+    ],
+    "20261103": [
+      "hyz317/HairDeck：单图生成可动画发型卡片",
+      "islandmed/SculptForge：开源跨平台数字雕刻",
+      "Balanov/uncut：无损无头编程 Agent 壳",
+      "vercel-labs/agent-desktop：无障碍树桌面操控 CLI",
+      "CNCKitchen/ScanRuler：浏览器里量三维扫描"
     ]
   }
 }

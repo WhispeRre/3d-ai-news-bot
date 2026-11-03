@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T12:20:48+08:00",
+  "updated_at": "2026-11-03T12:21:11+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -25,6 +25,11 @@
     "https://github.com/Belluxx/Aleph": "20261102",
     "https://github.com/NiazMorshed2007/reanimate": "20261102",
     "https://github.com/storytold/craft-anything": "20261102",
-    "https://github.com/elvarofficial/teardown": "20261102"
+    "https://github.com/elvarofficial/teardown": "20261102",
+    "https://github.com/vercel-labs/agent-desktop": "20261103",
+    "https://github.com/CNCKitchen/ScanRuler": "20261103",
+    "https://github.com/Balanov/uncut": "20261103",
+    "https://github.com/hyz317/HairDeck": "20261103",
+    "https://github.com/islandmed/SculptForge": "20261103"
   }
 }
