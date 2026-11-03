@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T08:30:05+08:00",
+  "updated_at": "2026-11-03T08:29:38+08:00",
   "days": {
     "20261027": [
       "花椒直播拆出四层 Agent 平台，落地约 30 个业务应用",
@@ -83,6 +83,18 @@
       "product-engineering：用 Agent Skills 把想法一路推到付费用户",
       "极客公园实测灵光 2.0：个人助理卡在权限、责任与忠诚",
       "巴西劳工法院制裁律师：诉状中藏白字 Prompt Injection"
+    ],
+    "20261103": [
+      "Legora CTO：法律 Agent 看不见任何轨迹，仍要做评测与产品",
+      "InfiniFlow：把上下文当基础设施，BM25 + grep 也能撑起检索 Agent",
+      "Philipp Schmid：Agent 工具会收成「一个 Code Mode」吗",
+      "社区长文：Agent Graph Engineering 第 2–7 部讲清生产级 LangGraph",
+      "Mastra @mastra/core@1.81.0：MCP Tasks 撑住可重启的长任务",
+      "Kitsune：把真实 Firefox/Zen 浏览器共享给编程 Agent 的 MCP",
+      "shim：零依赖的本地优先 Agent harness",
+      "OpenAI 自研 Pando：为 Codex 规模下的 Git 推拉建新后端",
+      "高盛收回交易员与银行家的 AI 编程工具，只留给工程师",
+      "Qodo 把公司知识与编码规范打进 Codex 做代码审查"
     ]
   }
 }
