@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-03T08:29:38+08:00",
+  "updated_at": "2026-11-04T08:30:57+08:00",
   "days": {
-    "20261027": [
-      "花椒直播拆出四层 Agent 平台，落地约 30 个业务应用",
-      "Trajectory2Gym：不为「成功轨迹」而造交互，为可学决策造数据",
-      "DynaFlow：主 Agent 按需合成可执行工作流编排子 Agent",
-      "TraceTrial-Bench：任务做成了，也不等于 harness 可靠",
-      "Cursor 发布 Agent SDK：代码定义 Agent，并内置评测",
-      "Pydantic AI v2.62.0：对话中改思考力度，子 Agent 可后台控任务",
-      "tstack：可日用的 Agent Skills，适配 Claude Code 与 Codex",
-      "Manus 用自家 Agent 改造组织：人从环内补洞变为环上监管",
-      "Greptile 用 GPT-6 Astra 做应用级验收，MCP 知识库降返工",
-      "投研 Agent 两年：模型好换，搜索与信源才是长痛"
-    ],
     "20261028": [
       "Anthropic 随机对照实验：分析师做关键抉择时，86% 跟着 Agent 的倾向",
       "Latent Space：Anthropic 把 Managed Agents 的「脑」与「手」拆开",
@@ -95,6 +83,17 @@
       "OpenAI 自研 Pando：为 Codex 规模下的 Git 推拉建新后端",
       "高盛收回交易员与银行家的 AI 编程工具，只留给工程师",
       "Qodo 把公司知识与编码规范打进 Codex 做代码审查"
+    ],
+    "20261104": [
+      "阿里提出 SPAR：情景记忆与因果归因驱动销售 Agent 自进化",
+      "Google 用 Agent 蜂群检修 XLA:TPU 编译器，已解超 142 个静默错误",
+      "扩展 Agent Skill 库常会盖住旧技能，路由失败才是主因",
+      "优化 Agent harness 时，成本偏好应留到搜索末尾再施加",
+      "Pydantic AI v2.65.0：ConversationStore 把对话存成一次写入的消息日志",
+      "schemagate：离线挑表，Text-to-SQL 少塞约九成 schema tokens",
+      "agent-memory-mcp：零依赖 SQLite 记忆，专治编程 Agent 失忆与调试死循环",
+      "OpenAI 用 GPT-6 Astra 在一周内从零设计对接 Codex 的硬件设备",
+      "InfoQ：从模型调用到任务交付，MaaS 如何走进 Agent 生产"
     ]
   }
 }

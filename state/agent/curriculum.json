@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T08:29:38+08:00",
+  "updated_at": "2026-11-04T08:30:57+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
@@ -8,6 +8,7 @@
     "20261031": "reflection",
     "20261101": "tool_calling",
     "20261102": "tool_design",
-    "20261103": "context_engineering"
+    "20261103": "context_engineering",
+    "20261104": "long_context_failures"
   }
 }
