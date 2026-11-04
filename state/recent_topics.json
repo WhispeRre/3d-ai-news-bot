@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-11-03T09:10:10+08:00",
+  "updated_at": "2026-11-04T09:11:33+08:00",
   "days": {
-    "20261027": [
-      "OpenAI 发布 GPT-6.1 Terra：更便宜的「看屏操作」模型进 API 与 Codex",
-      "Anthropic 递交 IPO 招股书：上半年营收约 163 亿美元，账面净亏损约 807 亿美元",
-      "aigc3d 发布 World-in-Context：用上下文条件做交互式视频世界模型",
-      "画数 CAD：用自然语言生成可编辑户型与机械装配，并附 Agent Skill",
-      "NewbimAI 开源本地 CAD 看图工具，图纸不出本机并带 Agent 命令行 Skill",
-      "Easy-3Dfy：先单独生成物体再几何拼合，改善单图 3D 场景重建",
-      "HiP3R：用分层位姿图把局部视频重建拼成全局一致三维",
-      "LichtFeld Studio 社区贡献 SteadySplats 等能力，已进 nightly 构建",
-      "Google 推出 Gemini API CLI：可挂到现有编码 Agent 上调用多模态能力",
-      "MiniMax M3.1 Flash 经 Unsloth 压成约 144GB 的 2-bit GGUF，降低自托管门槛",
-      "Nous Research 的 Hermes Agent 支持为每个子 Agent 选不同模型与配置",
-      "Hi3D 谈 AI 3D 下半场：开源模型 + 创作 Agent，瞄准可进产线的资产",
-      "Nvidia 向 Meta 注资约 30 亿美元，Meta 计划把更多 AI Agent 跑在 Nvidia 硬件上",
-      "Manus 发布 2.0 方向：用 Manus 改造 Manus，工程侧已常态并行十几个 Agent 会话"
-    ],
     "20261028": [
       "Google DeepMind 发布 Genie 4：更逼真的实时可交互世界模型",
       "Deemos 为 WorldGen 推出 Agentic Mode：单图生成可编辑完整 3D 场景",
@@ -112,6 +96,22 @@
       "腾讯混元推出 Hyra 2.0：研究型 Agent 从「解题」转向「沉淀可复用工具」",
       "Anthropic 更新 S-1：三季度营收约 170 亿美元，算力承诺约 8950 亿美元（跟进）",
       "Grok Bot 因成本「难以为继」被马斯克限流额度"
+    ],
+    "20261104": [
+      "OpenAI 分享用 ChatGPT 与 Codex 加速物理世界工程的进展",
+      "Meshy 上线 N1 Texture：缝更少、约 20 秒出 2K 底色",
+      "Fal 完成约 13 亿美元融资，估值翻倍至约 160 亿美元",
+      "Atta：面向 LLM 的参数化 CAD 内核，规格驱动几何并经 Blender 交付",
+      "Parametric CAD Bench v3：从文本与工程图评测 Agent 写参数化 CAD",
+      "CRAFT：多 Agent 纠错框架提升文生参数化 CAD 的稳健性",
+      "SeMo3D：用选择性建模统一 3D 生成、局部编辑与补全",
+      "Sparseal 发布 CozyBlanket Pro：Windows/macOS 上的 AI 辅助重拓扑",
+      "Luma 上线 Expression Sheet：先铺角色表情表再定表演方向",
+      "Allen AI 发布 StateBench：前沿模型在长文状态追踪上准确率可跌至约 13%",
+      "Anthropic 推出 Message Threads：长对话首 token 延迟约降 35%",
+      "社区跟进：Astra「读写权重抬高 Qwen」解读被指易误导",
+      "费莫一科技获近亿美元融资，做开放动态真实世界的「行动伙伴」",
+      "国行 Apple 智能开发者测试开启，部分能力接入阿里千问（跟进）"
     ]
   }
 }
