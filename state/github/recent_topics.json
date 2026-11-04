@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T12:21:11+08:00",
+  "updated_at": "2026-11-04T12:21:14+08:00",
   "days": {
     "20261029": [
       "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
@@ -42,6 +42,13 @@
       "Balanov/uncut：无损无头编程 Agent 壳",
       "vercel-labs/agent-desktop：无障碍树桌面操控 CLI",
       "CNCKitchen/ScanRuler：浏览器里量三维扫描"
+    ],
+    "20261104": [
+      "KKKKhazix/agent-autoloop：命令行 Agent 后台自治中台",
+      "speridlabs/idol-sdk：单图生成物体级 3DGS",
+      "artemnovitckii/claude-animation-skills：六套无素材 Reel 动画技能",
+      "wquguru/cicada：Mac 本地会议字幕与同传",
+      "khanh020905/my-office：Claude 会话的 3D 办公室"
     ]
   }
 }

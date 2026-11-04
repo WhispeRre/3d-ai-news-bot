@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T12:21:11+08:00",
+  "updated_at": "2026-11-04T12:21:14+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -30,6 +30,11 @@
     "https://github.com/CNCKitchen/ScanRuler": "20261103",
     "https://github.com/Balanov/uncut": "20261103",
     "https://github.com/hyz317/HairDeck": "20261103",
-    "https://github.com/islandmed/SculptForge": "20261103"
+    "https://github.com/islandmed/SculptForge": "20261103",
+    "https://github.com/wquguru/cicada": "20261104",
+    "https://github.com/khanh020905/my-office": "20261104",
+    "https://github.com/artemnovitckii/claude-animation-skills": "20261104",
+    "https://github.com/speridlabs/idol-sdk": "20261104",
+    "https://github.com/KKKKhazix/agent-autoloop": "20261104"
   }
 }
