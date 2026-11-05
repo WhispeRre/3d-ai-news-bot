@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-04T09:11:33+08:00",
+  "updated_at": "2026-11-05T09:21:14+08:00",
   "days": {
-    "20261028": [
-      "Google DeepMind 发布 Genie 4：更逼真的实时可交互世界模型",
-      "Deemos 为 WorldGen 推出 Agentic Mode：单图生成可编辑完整 3D 场景",
-      "Meshy 接入 MCP for Blender：Agent 可把带纹理模型直接放进场景",
-      "腾讯混元提出 Hy-Nomas：多轮指令驱动的交互式世界生成",
-      "Hi3D 发布 V1.0：用参考图给粗糙网格补细节（跟进）",
-      "ChronoReplay：按时间回放空间监督，缓解空间模型接口锁定",
-      "Liquid AI 发布 LFM3：约 2B 的多模态与决策小模型族",
-      "Anthropic：分析师与编程 Agent 协作时约 86% 跟从 Agent 偏好",
-      "Ling-3.1-flash-1019 权重开源，并放出 base 模型",
-      "General Compute 完成约 1 亿美元 A 轮，押注非 Nvidia 推理芯片"
-    ],
     "20261029": [
       "Google DeepMind 发布 Gemini 4 Carbon：长程 Agent 与编程能力再升级",
       "Meshy 演示 Hermes Agent 一条指令端到端产出游戏级 3D 资产",
@@ -112,6 +100,21 @@
       "社区跟进：Astra「读写权重抬高 Qwen」解读被指易误导",
       "费莫一科技获近亿美元融资，做开放动态真实世界的「行动伙伴」",
       "国行 Apple 智能开发者测试开启，部分能力接入阿里千问（跟进）"
+    ],
+    "20261105": [
+      "腾讯混元发布 Hy4，能看图并面向游戏开发",
+      "月之暗面公开 Kimi K3.1 Pro 的模型权重",
+      "OpenAI 发布 Images 2.6，出图更快并能做动图",
+      "AnyKit 用 Agent 按风格参考做成套 3D 道具",
+      "渲染图好看之外，研究 3D 资产能不能真用",
+      "Deemos 发布 HYPER3D Rigging，用一句话就能改绑骨",
+      "Idol Turbo 把单图高斯泼溅加速到约 0.75 秒",
+      "FlowRig 用同一套方法给静止和动态网格绑骨",
+      "OpenAI 将收购 Pierre，扩展 Codex 的代码工具",
+      "MolmoAct 2 在真实机械臂测试中位列第二",
+      "Ricursive 预览 Ripple-65B，瞄准智能体编程",
+      "Meta 收购 AI 编程公司 Conductor",
+      "Uber：上季度最忙的一周只有 4 人用 Agent 叫车"
     ]
   }
 }
