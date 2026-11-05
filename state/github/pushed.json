@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T12:21:14+08:00",
+  "updated_at": "2026-11-05T12:26:38+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -35,6 +35,11 @@
     "https://github.com/khanh020905/my-office": "20261104",
     "https://github.com/artemnovitckii/claude-animation-skills": "20261104",
     "https://github.com/speridlabs/idol-sdk": "20261104",
-    "https://github.com/KKKKhazix/agent-autoloop": "20261104"
+    "https://github.com/KKKKhazix/agent-autoloop": "20261104",
+    "https://github.com/kevinroast/phoria2": "20261105",
+    "https://github.com/govijr/terminal-mac": "20261105",
+    "https://github.com/gauge-sh/gauge-cli": "20261105",
+    "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio": "20261105",
+    "https://github.com/flitai-io/gpuworks": "20261105"
   }
 }
