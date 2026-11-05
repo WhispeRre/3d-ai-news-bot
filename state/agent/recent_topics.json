@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-04T08:30:57+08:00",
+  "updated_at": "2026-11-05T08:40:15+08:00",
   "days": {
-    "20261028": [
-      "Anthropic 随机对照实验：分析师做关键抉择时，86% 跟着 Agent 的倾向",
-      "Latent Space：Anthropic 把 Managed Agents 的「脑」与「手」拆开",
-      "Thinking-in-Bets：用户吐槽前，先把已验证主张写成私密清单",
-      "阿里与康奈尔：独立评审层比 completion gate 更划算",
-      "ProAS：多轮 Agent RL 按进度重塑优势，而不是整条轨迹均摊",
-      "Pydantic AI v2.63.0：DetectLoops 打断重复行动，评测可设单任务超时",
-      "LangSmith 开始按线程追踪 Agent 的 LLM 缓存命中率",
-      "LangChain 开源 Content Studio：Slack 里的品牌设计 Agent，产物全用代码表示",
-      "Cursor design mode 新增 Annotate：框选、涂鸦，把视觉意图直接交给 Agent",
-      "Box Agent：父 Agent 直办简单请求，复杂再派生子 Agent，调用面保持统一"
-    ],
     "20261029": [
       "Surge AI 发布 DAYJOB: Tax：用 50 个真实税务场景测 Agent 专业判断力",
       "InfoQ：别再只写提示词，开始真正「雇用」企业智能体",
@@ -94,6 +82,18 @@
       "agent-memory-mcp：零依赖 SQLite 记忆，专治编程 Agent 失忆与调试死循环",
       "OpenAI 用 GPT-6 Astra 在一周内从零设计对接 Codex 的硬件设备",
       "InfoQ：从模型调用到任务交付，MaaS 如何走进 Agent 生产"
+    ],
+    "20261105": [
+      "NVIDIA 发现频繁压缩上下文后，长程任务准确率大体还在",
+      "Open Athena 的 David Hall：Agent 后训练还没有可重复任务的公地",
+      "UC San Diego 发现长上下文检索失准，主因是冲突证据抢走注意力",
+      "密歇根大学发布 CloudOpsBench，云运维 Agent 多数失败在范围判断",
+      "Mastra 发布 @mastra/core@1.82.0，知识库改成可检索的页面树",
+      "Pydantic AI v2.66.0 加入自托管沙箱，并把指令变更改成追加",
+      "谷歌正式发布 Data Agent Kit，把数据操作的劝告和强制拦截分开",
+      "OpenAI 收购 Pierre，接着把 Codex 的代码审阅和存储做深",
+      "Ricursive 发布 Ripple-65B Preview，TerminalBench 2.1 拿到美国开源权重最高分",
+      "openJiuwen 按真实事件为 Agent 整理长视频记忆"
     ]
   }
 }
