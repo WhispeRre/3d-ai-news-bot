@@ -1,21 +1,6 @@
 {
-  "updated_at": "2026-11-05T09:21:14+08:00",
+  "updated_at": "2026-11-06T09:18:13+08:00",
   "days": {
-    "20261029": [
-      "Google DeepMind 发布 Gemini 4 Carbon：长程 Agent 与编程能力再升级",
-      "Meshy 演示 Hermes Agent 一条指令端到端产出游戏级 3D 资产",
-      "Microsoft 披露与 OpenAI 合作单季收入约 100 亿美元",
-      "Google 向第三方 AI Agent 开放 Android Studio",
-      "LabWorld：学习可交互的 4D 实验室世界，服务科学实验 Agent",
-      "ScIntBench：评测 3D 室内场景在「交互时」是否物理靠谱",
-      "Any3R：任意相机类型的前馈式三维重建",
-      "即梦把剧本、分镜、视频生成与剪辑放进同一工作室",
-      "Mistral 推出面向 Agent 的 Responses API（公测）",
-      "MiniMax 公开 mcode-stack：团队自用的工作流与 Agent Skills",
-      "OpenAI：ChatGPT Pro / Business 用户可每月领取最高 500 美元 API 积分",
-      "Anthropic 推出企业 AI 花费洞察工具",
-      "Microsoft 首次公布 Azure 季度营收约 332 亿美元"
-    ],
     "20261030": [
       "Mistral 开源 Large 4（Le Chonk）权重：万亿参数多模态，主打编程",
       "NVIDIA：开发者用前沿 AI Agent + Omniverse，把想法做成可跑仿真",
@@ -115,6 +100,22 @@
       "Ricursive 预览 Ripple-65B，瞄准智能体编程",
       "Meta 收购 AI 编程公司 Conductor",
       "Uber：上季度最忙的一周只有 4 人用 Agent 叫车"
+    ],
+    "20261106": [
+      "World Labs 发布 Frameboy，优化版 Atlas 可以实时逛世界",
+      "谷歌上线 Gemini Omni Flash 1.2，视频更长、更稳也更便宜",
+      "美国中期选举后芯片股重挫，民主党推动《禁止人工智能法案》",
+      "CCORE 发布 GLB-3D-Coder，用 Qwen3.5-4B 把文字写成可改场景",
+      "Luma 推出 MCP，把成套出图流程接进 Claude 和 ChatGPT",
+      "NVIDIA 发布 Cosmos 3 开放模型，面向可交互世界仿真",
+      "RouTex 用多张参考图给三维模型贴表面",
+      "RDT-3D 拆开训练和出图的精细度，兼顾外形与细节",
+      "OpenAI 发布 GPT-6 Cyber，在授权范围内找漏洞并写修复",
+      "百度开源文心 5.5 Flash Base，预训练后不做微调",
+      "SemiAnalysis 新榜 GDPx：真实办公任务上没有 Agent 超过 12%",
+      "Meshy 上线照片转 3D 浮雕，可按深浅导出并打印",
+      "Nexus Mods 要求 Mod 作者说明如何使用了 AI",
+      "Meta 在美国上线 Muse 实时虚拟形象，语音助手变成可互动化身"
     ]
   }
 }
