@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T12:26:38+08:00",
+  "updated_at": "2026-11-06T12:32:06+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -40,6 +40,11 @@
     "https://github.com/govijr/terminal-mac": "20261105",
     "https://github.com/gauge-sh/gauge-cli": "20261105",
     "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio": "20261105",
-    "https://github.com/flitai-io/gpuworks": "20261105"
+    "https://github.com/flitai-io/gpuworks": "20261105",
+    "https://github.com/AGGIB/Stroq": "20261106",
+    "https://github.com/exoteric33/ps2-native-recomp": "20261106",
+    "https://github.com/tembo/voxl": "20261106",
+    "https://github.com/tester-army/e2e": "20261106",
+    "https://github.com/Sandflow-ai/sand3d": "20261106"
   }
 }

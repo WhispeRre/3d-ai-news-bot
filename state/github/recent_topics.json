@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-05T12:26:38+08:00",
+  "updated_at": "2026-11-06T12:32:06+08:00",
   "days": {
-    "20261029": [
-      "patch-gg/anymove：一条 AI 视频给任意生物做动捕",
-      "deepopen-com/deepopen-3d-webs：单图驱动的三维场景生成系统",
-      "JetBrains/thinkrail：围绕编程 Agent 的自适应 IDE",
-      "nightly-labs/openbot：本地优先的多 Agent 桌面工作台",
-      "OpenBMB/MiniCPM-OCR：带正误评估的高效文档 OCR"
-    ],
     "20261030": [
       "patch-gg/trompe：用图像模型给灰模关卡批量贴纹理",
       "sloemo01/diorama：像素风微缩场景的 Three.js 技能包",
@@ -56,6 +49,13 @@
       "gauge-sh/gauge-cli：把产品磨到 Agent 会用",
       "flitai-io/gpuworks：四十兆的混卡模型服务",
       "JiaFeiMiao-K-Cat/DiscImageStudio：把图片刻上光盘盘面"
+    ],
+    "20261106": [
+      "Sandflow-ai/sand3d：给模型写的可装配三维程序",
+      "AGGIB/Stroq：本地审计编程 Agent 做过什么",
+      "tester-army/e2e：能回放的自然语言端到端测试",
+      "tembo/voxl：浏览器里的低延迟远程桌面",
+      "exoteric33/ps2-native-recomp：把 PS2 光盘重编译成原生程序"
     ]
   }
 }
