@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-05T08:40:15+08:00",
+  "updated_at": "2026-11-06T08:43:16+08:00",
   "days": {
-    "20261029": [
-      "Surge AI 发布 DAYJOB: Tax：用 50 个真实税务场景测 Agent 专业判断力",
-      "InfoQ：别再只写提示词，开始真正「雇用」企业智能体",
-      "Amazon 等提出自改进多 Agent 系统，强调可验证的情景记忆",
-      "Harrison Chase 点赞 Hex 4.0：用代码当 Agent 骨架，而不是堆 YAML",
-      "Mastra @mastra/core@1.80.0：按终端用户隔离 OAuth 连接",
-      "亚马逊云科技开源 Strands Decider 2B 与 Strands Box：轻量决策器 + 策略沙箱",
-      "LangChain：Managed Deep Agents 超七成运行来自定时调度，而非人工打字",
-      "Legora 打造法律工作的 Agent 操作系统：审查更快，分析更宽",
-      "Google 向 Android Studio 开放第三方 Coding Agent，并强化 Agent 侧工具链",
-      "Latent Space：为何 Agent「偏爱」Supabase 这类后端"
-    ],
     "20261030": [
       "Anthropic Applied AI：企业多 Agent 常照抄组织架构，应按上下文拆分并用评测决定去留",
       "Spawn：用 Fable 级模型 swarm 做游戏世界，Agents 直改线上代码并小时级交付",
@@ -94,6 +82,18 @@
       "OpenAI 收购 Pierre，接着把 Codex 的代码审阅和存储做深",
       "Ricursive 发布 Ripple-65B Preview，TerminalBench 2.1 拿到美国开源权重最高分",
       "openJiuwen 按真实事件为 Agent 整理长视频记忆"
+    ],
+    "20261106": [
+      "腾讯轻量云开源 LoopForge，把单机 Coding Agent 收成团队流水线",
+      "Kadhar 复盘多 Agent 的三种拆法，并把失败放到整条链路上看",
+      "FireFlash 公开配方：64 张 B300、不到 5 天，用试错奖励训出 300B 模型，终端基准对齐 Fable 5 与 GPT-6 Sol",
+      "SemiAnalysis 发布 GDPx，把 Agent 放进专业软件做知识工作，没有模型超过 12%",
+      "微软发布 MCP C# SDK 2.0，给模型接工具的 HTTP 默认改为无状态",
+      "oxus 用 Spotlight 给 Agent 查 Mac 上的文件",
+      "社区把浏览器 Agent 拆开用：重复点击写成脚本，乱状态才留给模型",
+      "Anthropic 分析 20.7 万段科研会话：科学家把 Claude 用在好核对的任务上",
+      "Claude Code 检索网页时把用户邮箱写进请求头，官方加上确定性拦截",
+      "OpenAI 发布 GPT-6 Cyber，把留在授权范围内单独训练成一项能力"
     ]
   }
 }
