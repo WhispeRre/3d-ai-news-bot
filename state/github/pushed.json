@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T12:32:06+08:00",
+  "updated_at": "2026-11-07T12:21:33+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -45,6 +45,11 @@
     "https://github.com/exoteric33/ps2-native-recomp": "20261106",
     "https://github.com/tembo/voxl": "20261106",
     "https://github.com/tester-army/e2e": "20261106",
-    "https://github.com/Sandflow-ai/sand3d": "20261106"
+    "https://github.com/Sandflow-ai/sand3d": "20261106",
+    "https://github.com/libracoder/kiri": "20261107",
+    "https://github.com/ZSeven-W/dsh-game-studio": "20261107",
+    "https://github.com/FigureSultanLast/roblox-ai-studio-agent": "20261107",
+    "https://github.com/voyager-so/vork": "20261107",
+    "https://github.com/blixvip/BlendClone": "20261107"
   }
 }

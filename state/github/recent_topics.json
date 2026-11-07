@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-06T12:32:06+08:00",
+  "updated_at": "2026-11-07T12:21:33+08:00",
   "days": {
-    "20261030": [
-      "patch-gg/trompe：用图像模型给灰模关卡批量贴纹理",
-      "sloemo01/diorama：像素风微缩场景的 Three.js 技能包",
-      "ZiChuanLan/agent-purge：一份人设同步喂给多家编程 Agent",
-      "magnitudedev/magnitude：按硬件调优内核的本地推理引擎",
-      "hydro-project/infinity：可休眠、海量并发的 Agent 运行时"
-    ],
     "20261031": [
       "gokayfem/gaussian-splat-to-blender-nodes：高斯泼溅重建成可编辑 Blender 节点",
       "wangzan101/Mika：安卓端侧 AI 助理，后台屏操 App",
@@ -56,6 +49,13 @@
       "tester-army/e2e：能回放的自然语言端到端测试",
       "tembo/voxl：浏览器里的低延迟远程桌面",
       "exoteric33/ps2-native-recomp：把 PS2 光盘重编译成原生程序"
+    ],
+    "20261107": [
+      "voyager-so/vork：给 Agent 用的无头三维渲染内核",
+      "blixvip/BlendClone：把参考视频编译成可编辑 Blender",
+      "FigureSultanLast/roblox-ai-studio-agent：终端里搭 Roblox 三维场景的 Agent",
+      "ZSeven-W/dsh-game-studio：一句话生成可试玩的小游戏",
+      "libracoder/kiri：跨平台轻量容器运行时"
     ]
   }
 }
