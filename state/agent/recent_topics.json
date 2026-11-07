@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-06T08:43:16+08:00",
+  "updated_at": "2026-11-07T08:30:51+08:00",
   "days": {
-    "20261030": [
-      "Anthropic Applied AI：企业多 Agent 常照抄组织架构，应按上下文拆分并用评测决定去留",
-      "Spawn：用 Fable 级模型 swarm 做游戏世界，Agents 直改线上代码并小时级交付",
-      "AgentBaton：长程任务先用强模型开局，学到合适点再一次性交给便宜模型",
-      "OpenAI 公开前沿模型错位监测：多层探针与调查 Agent，在沙箱逃逸后尽快告警",
-      "Thoughtworks CTO：优秀开发者警惕 Agent 开发，是因为「写出来」≠「生产里扛得住」",
-      "Managed Deep Agents 0.10 公测：浏览器操作与异步子 Agent",
-      "whatsmyagentdoing：把本机 Claude Code / Codex Agent 活干可视化成「小办公室」",
-      "Claude Code 为刷新状态栏，定期把每个后台 Agent 的完整 transcript 再送给模型摘要",
-      "Skyworks 用 LangGraph + LangSmith 做根因分析：人工约 20 天，首版 Agent 压到约 10 天",
-      "诊所语音预约 Agent 最贵的 bug 不是胡言乱语，而是「声称已约上」"
-    ],
     "20261031": [
       "社区复盘：怎样做真正提升 Agent 的 harness",
       "毕玄谈垂类 Agent：长程任务与通用工具撑不起长期竞争力",
@@ -94,6 +82,18 @@
       "Anthropic 分析 20.7 万段科研会话：科学家把 Claude 用在好核对的任务上",
       "Claude Code 检索网页时把用户邮箱写进请求头，官方加上确定性拦截",
       "OpenAI 发布 GPT-6 Cyber，把留在授权范围内单独训练成一项能力"
+    ],
+    "20261107": [
+      "Anthropic 拆解 Agent 记忆：笔记、显著性判断与「做梦」整理",
+      "LinkedIn 复盘智能体 Harness：从链、图到代码化执行",
+      "开发者用 Markdown 知识图谱替代向量 RAG，支撑复杂 ERP Agent",
+      "社区开源长跑 Agent 工作流指南：抗上下文膨胀与状态丢失",
+      "DigitalOcean 推出 Learning 与 Data 服务，给 Agent「思考—执行—改进」闭环",
+      "devvm：一项目一隔离沙箱，人或 Coding Agent 即开即写",
+      "roblox-studio-mcp：把对象树、改脚本与安全试玩接到 Claude / Cursor",
+      "Anthropic 让 Claude 在 EVE 里交易与组队：利润策略、脚手架与背刺检测",
+      "OpenAI 发布 BioBasicsBench：100 道湿实验任务测 Agent 读原始数据",
+      "Cult.fit 用 Codex 统一研发生命周期，业务团队自建 20+ 内部应用"
     ]
   }
 }
