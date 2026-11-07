@@ -1,23 +1,6 @@
 {
-  "updated_at": "2026-11-06T09:18:13+08:00",
+  "updated_at": "2026-11-07T09:12:35+08:00",
   "days": {
-    "20261030": [
-      "Mistral 开源 Large 4（Le Chonk）权重：万亿参数多模态，主打编程",
-      "NVIDIA：开发者用前沿 AI Agent + Omniverse，把想法做成可跑仿真",
-      "前 Palantir 高管创办 Dream，获 a16z 约 1700 万美元做建筑世界模型",
-      "topopt：把拓扑优化做成 MCP，Agent 可直接吐更轻的可打印 STL",
-      "construct：一句话描述，Agent 产出全息、3D 模型与部件清单",
-      "eyeproof：给编程 Agent 装无头「眼睛」，能看截图、测游戏、审 Blender 渲染",
-      "Idol：单图前馈成 3D 高斯泼溅，连照片没拍到的侧面也能补上",
-      "Pika H3 Flex：面向专业迭代的图生视频开源权重",
-      "StableGen 0.4.0：Blender 插件本地跑通「提示词 → 贴图网格 → 绑骨 → Unreal」",
-      "OpenAI 更新 Model Spec：用五项核心价值约束更强模型的判断与服从",
-      "Kimi 接入 Gmail、Google Drive 与 Calendar：用 OAuth 代读邮件、找文件、排日程",
-      "OpenAI 将各付费档用量上限翻倍，Pro 100 到 Pro 500 全线上调",
-      "Wabi 再融资约 5500 万美元，估值约 12.5 亿美元，定位个人 Agent",
-      "OpenAI 支持的 Thrive Holdings 以约 153 亿美元收购安防巨头 ADT",
-      "美国司法部审查 Nvidia 收购 Hugging Face 交易及销售做法"
-    ],
     "20261031": [
       "Kimi 推出 3D Make：对接 Blender 与 CAD，可建模、拼场景与做游戏",
       "Blender 官方推进高斯泼溅原生支持，并公布后续开发计划",
@@ -116,6 +99,22 @@
       "Meshy 上线照片转 3D 浮雕，可按深浅导出并打印",
       "Nexus Mods 要求 Mod 作者说明如何使用了 AI",
       "Meta 在美国上线 Muse 实时虚拟形象，语音助手变成可互动化身"
+    ],
+    "20261107": [
+      "Thinking Machines 发布 Inkling 2 Small，并冲刺约 400 亿美元估值融资",
+      "voyager-so 发布 vork：面向 Agent 的无头 3D 与特效引擎（研究预览）",
+      "Anthropic 公开 Agent 记忆组件：用「做梦」整理经验、纠正错误",
+      "Anthropic 启动 Project EVE：让 Claude 在 MMORPG 里练市场与协作",
+      "make-short：Claude Code Skill 在 Blender 三维世界里做动画短视频",
+      "Bri3D：用「场景锚点」弥合单图生 3D 里物体与场景的鸿沟",
+      "ArtCrafter：前馈生成带关节的可动三维物体",
+      "腾讯 ARC 开源 OREO：边渲染边编辑，抬高 3D 生成保真度",
+      "Google ADK Python 发布 v2.14.0：A2A、评测与运行时模块转正",
+      "腾讯混元 Hy4 称登顶 Agent Arena 中文第一、APEX-Agents 开源权重第一（跟进）",
+      "Meta 为 Muse 推出 Spaces：团队协作调用同一 Agent（跟进）",
+      "Physicl 融资约 1000 万美元：把电商级数字资产做成机器人能用的仿真",
+      "OpenAI 再传增募约 110 亿美元，估值约 1.25 万亿美元（跟进）",
+      "Anthropic 约 1.5 万亿美元 IPO 估值遭投资者抵制"
     ]
   }
 }
