@@ -1,20 +1,6 @@
 {
-  "updated_at": "2026-11-07T09:12:35+08:00",
+  "updated_at": "2026-11-08T09:11:49+08:00",
   "days": {
-    "20261031": [
-      "Kimi 推出 3D Make：对接 Blender 与 CAD，可建模、拼场景与做游戏",
-      "Blender 官方推进高斯泼溅原生支持，并公布后续开发计划",
-      "DeepSeek 完成约 1055 亿元融资，估值约 6155 亿元",
-      "3DCodeEdit：给「按自然语言改 3D 程序」做评测基准",
-      "PhysAg3D：串联 3D 生成与 Agent，产出可物理交互的资产",
-      "WorldProbe：长程空间探索下，视频世界模型容易「散架」",
-      "Unity 发布 Industry 2026：Studio、管线自动化与 AI 工作流等更新",
-      "英伟达团队基于 MiniMax H3 开源最高支持 4K 的视频增强方案",
-      "Claude Code 扩展疑似遭后门植入，HN 热议 Agent 供应链风险",
-      "微软 Mage-VL-Cowork：公开混合 Computer-use 完整训练配方",
-      "Hugging Face safeagents：用任意编程 harness 安全运行 Agent",
-      "苹果官宣国行 Apple 智能接入阿里千问，11 月起开放测试"
-    ],
     "20261101": [
       "DeepSeek 公布 Super Agent 架构并开源原型仓库",
       "OpenAI 最新一轮融资约募得 110 亿美元，不及 300 亿目标",
@@ -115,6 +101,18 @@
       "Physicl 融资约 1000 万美元：把电商级数字资产做成机器人能用的仿真",
       "OpenAI 再传增募约 110 亿美元，估值约 1.25 万亿美元（跟进）",
       "Anthropic 约 1.5 万亿美元 IPO 估值遭投资者抵制"
+    ],
+    "20261108": [
+      "银湖资本与沙特基金据报出价约 250 亿美元收购 Unity",
+      "METR：Anthropic 用 AI 加速自身研发，模型迭代约快一倍",
+      "Viggle 开源 Remake：Agent 一句话重拍整段视频",
+      "resolve-ai-workflow：达芬奇接三套 MCP，无头 Blender 跑字幕管线",
+      "NVIDIA：Hugging Face 上 SimReady 仿真资产下载破 100 万",
+      "xmimic：约一分钟完成 Unitree G1 全身动作跟踪",
+      "Into the Unknown：9 个 Agent 攻国家实验室开放题，135 份无一过关",
+      "Harness Leaderboard：Kimi Code、Claude Code、Codex 等编程外壳横向对比",
+      "Claude Code「Don't Ask Again」致 1122 个公开仓库泄露密码",
+      "Anthropic 接受约 1.25–1.75 万亿美元估值，感恩节前冲刺 IPO（跟进）"
     ]
   }
 }
