@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-07T08:30:51+08:00",
+  "updated_at": "2026-11-08T08:31:22+08:00",
   "days": {
-    "20261031": [
-      "社区复盘：怎样做真正提升 Agent 的 harness",
-      "毕玄谈垂类 Agent：长程任务与通用工具撑不起长期竞争力",
-      "Anthropic 等：预训练投毒约 0.1% 可在 CLI Agent 植入远程代码执行后门",
-      "谷歌 EnvHarness：按智能体短板动态改造训练环境，而不是只改提示词",
-      "Microsoft Agent Framework python-1.24.0：运行中压缩上下文并可卸载 Skill",
-      "Pydantic AI v2.64.0：Memory/Skills 产物扫描，失败回退后可粘住可用模型",
-      "Photoshop MCP 服务器用 83 个工具把失败调用压到约 1.7%",
-      "Cursor 扩展市场遭投毒：仿冒 Claude Code 扩展最多影响约 5000 用户",
-      "Chainguard 推出面向编码 Agent 的安全工作区与 Checks",
-      "开发者用留言板取代编排器，Claude Code / Codex / Copilot 自行协作"
-    ],
     "20261101": [
       "Arca 做长周期财富管理：Agent 催人决策，人握最终拍板",
       "IBM 提出 JevAct：在工具执行前插入运行时决策门控",
@@ -94,6 +82,18 @@
       "Anthropic 让 Claude 在 EVE 里交易与组队：利润策略、脚手架与背刺检测",
       "OpenAI 发布 BioBasicsBench：100 道湿实验任务测 Agent 读原始数据",
       "Cult.fit 用 Codex 统一研发生命周期，业务团队自建 20+ 内部应用"
+    ],
+    "20261108": [
+      "Into the Unknown：九大 Agent 做国家实验室开放题，无一过专家门槛",
+      "Andy Hall 复盘用模型审计 Agent：能抓奖励黑客，却容易淹没人审",
+      "MCPHallu：在 36 个真实 MCP 服务上测幻觉，Agent 很少承认「做不到」",
+      "社区讨论：Browser MCP 还是 Playwright MCP？先问这活要不要 MCP",
+      "Google ADK Python v2.14.0：执行环境、A2A 与评测毕业为稳定能力",
+      "Microsoft Agent Framework python-1.25.0：MCP 工具发现可挂审批策略",
+      "社区实测：LangGraph 在数据库写入已提交后仍可能重放未完成任务",
+      "Apiiro：Claude Code「Don't Ask Again」相关配置出现在 1122 个公开 GitHub 文件中",
+      "量子位：AGENTS.md 正变成 Agent 时代的「文本病毒」",
+      "Perplexity 推出面向工作的 Teammates Agent"
     ]
   }
 }
