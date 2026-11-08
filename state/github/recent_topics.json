@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-07T12:21:33+08:00",
+  "updated_at": "2026-11-08T12:21:13+08:00",
   "days": {
-    "20261031": [
-      "gokayfem/gaussian-splat-to-blender-nodes：高斯泼溅重建成可编辑 Blender 节点",
-      "wangzan101/Mika：安卓端侧 AI 助理，后台屏操 App",
-      "heydamir/unslop：把 AI 味 UI 改回有设计感的界面",
-      "anomalyco/hex：本地优先的跨平台语音听写",
-      "dbreunig/nesformer：把 NES CPU 编进 Qwen 模型权重"
-    ],
     "20261101": [
       "deepseek-ai/dsh-superagent-prototype：面向单仓的主动编程 Agent 原型",
       "D3voz/openjutsu：本地一键视频角色/物体替换",
@@ -56,6 +49,13 @@
       "FigureSultanLast/roblox-ai-studio-agent：终端里搭 Roblox 三维场景的 Agent",
       "ZSeven-W/dsh-game-studio：一句话生成可试玩的小游戏",
       "libracoder/kiri：跨平台轻量容器运行时"
+    ],
+    "20261108": [
+      "Video-Rebirth/hyperflow-h3-flash：压缩后的本地音画同生视频模型",
+      "sarpstar/cinecode：用编程 Agent 把想法做成完整影片",
+      "lucas-martinic/polyfork-catalog：三千多个可编程低多边形 Web 三维资产",
+      "shanselman/gputaskman：看清 GPU 里到底是谁占了显存",
+      "Leviidev/Henge：在 iPhone / iPad 上跑真正的 macOS"
     ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T12:21:33+08:00",
+  "updated_at": "2026-11-08T12:21:13+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -50,6 +50,11 @@
     "https://github.com/ZSeven-W/dsh-game-studio": "20261107",
     "https://github.com/FigureSultanLast/roblox-ai-studio-agent": "20261107",
     "https://github.com/voyager-so/vork": "20261107",
-    "https://github.com/blixvip/BlendClone": "20261107"
+    "https://github.com/blixvip/BlendClone": "20261107",
+    "https://github.com/lucas-martinic/polyfork-catalog": "20261108",
+    "https://github.com/shanselman/gputaskman": "20261108",
+    "https://github.com/Leviidev/Henge": "20261108",
+    "https://github.com/Video-Rebirth/hyperflow-h3-flash": "20261108",
+    "https://github.com/sarpstar/cinecode": "20261108"
   }
 }
