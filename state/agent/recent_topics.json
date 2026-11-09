@@ -1,17 +1,6 @@
 {
-  "updated_at": "2026-11-08T08:31:22+08:00",
+  "updated_at": "2026-11-09T08:31:19+08:00",
   "days": {
-    "20261101": [
-      "Arca 做长周期财富管理：Agent 催人决策，人握最终拍板",
-      "IBM 提出 JevAct：在工具执行前插入运行时决策门控",
-      "Meta FAIR 用路由式记忆替代全局历史做持续学习",
-      "社区开源熔断器：卡住 Agent 死循环与账单失控",
-      "斯坦福 CS329Z Engineering AI Agents 中文笔记上线",
-      "自建 Gmail MCP：多邮箱分拣，且每次改动可撤销",
-      "云栖讨论：Agent Sandbox 为何成生产标配",
-      "Anthropic 用 Claude Agent 自动挖「看起来无害却致偏」的训练数据",
-      "Pi-Remote：手机浏览器远程盯本机 Coding Agent"
-    ],
     "20261102": [
       "Simon Budziak 总结 LangGraph 生产落地的五道控制",
       "DeepSeek 公开 Super-agent：Router 调度、Worker 并行的主动 Agent 底座",
@@ -94,6 +83,17 @@
       "Apiiro：Claude Code「Don't Ask Again」相关配置出现在 1122 个公开 GitHub 文件中",
       "量子位：AGENTS.md 正变成 Agent 时代的「文本病毒」",
       "Perplexity 推出面向工作的 Teammates Agent"
+    ],
+    "20261109": [
+      "阿里云 CIO 蒋林泉复盘三年实践：Agent 越多，企业为何仍不够 AI Native",
+      "LoreKit：Agent 记忆该有自己的 OpenTelemetry 时刻",
+      "Evolver：把 Agent 轨迹沉淀成可复用 Gene，不改模型也能进化",
+      "阿里等发布 Co-Design Bench：最强模型也只完整做对约四分之一真实改版",
+      "NVIDIA Auto Ontology：给 Text-to-SQL Agent 补上可认证的语义层",
+      "mini-harness：约 1400 行可读完的教学级 Agent harness",
+      "Agent Office：用 MCP 让 Claude Code / Codex / Cursor 互相委派",
+      "斯坦福 CS146S × Monaco：Coding Agent 能秒交作业后，课怎么上、团队怎么买工具",
+      "tinker-ai-skill：把自家 Claude Code 会话炼成可本地跑的 Agent 模型"
     ]
   }
 }

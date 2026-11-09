@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T08:31:22+08:00",
+  "updated_at": "2026-11-09T08:31:19+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
@@ -13,6 +13,7 @@
     "20261105": "prompt_caching",
     "20261106": "memory",
     "20261107": "agentic_rag",
-    "20261108": "mcp_basics"
+    "20261108": "mcp_basics",
+    "20261109": "mcp_advanced"
   }
 }
