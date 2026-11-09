@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-08T12:21:13+08:00",
+  "updated_at": "2026-11-09T12:21:26+08:00",
   "days": {
-    "20261101": [
-      "deepseek-ai/dsh-superagent-prototype：面向单仓的主动编程 Agent 原型",
-      "D3voz/openjutsu：本地一键视频角色/物体替换",
-      "patch-gg/pixelfx：244 个像素特效加 Claude 创作技能",
-      "xiaoxiao150/vram-switcher：一张 12GB 卡上的本地陪伴显存调度",
-      "kerlenton/bootgpt：住在启动扇区里的语言模型"
-    ],
     "20261102": [
       "elvarofficial/teardown：把任意机器做成可拆 3D 模拟器",
       "storytold/craft-anything：研究软件并用 Agent 干净室复刻",
@@ -56,6 +49,13 @@
       "lucas-martinic/polyfork-catalog：三千多个可编程低多边形 Web 三维资产",
       "shanselman/gputaskman：看清 GPU 里到底是谁占了显存",
       "Leviidev/Henge：在 iPhone / iPad 上跑真正的 macOS"
+    ],
+    "20261109": [
+      "DIYgod/pinky：人在环路的手机操控 Agent",
+      "SamG-Coder/solstice：浏览器里的 Nanite 级渲染",
+      "Moh4696/open-3d-skills：八套三维网页创作技能",
+      "jamesondh/chimera-vocal-synth：物理建模的浏览器人声合成",
+      "VoxelKei/SplatThumb：资源管理器里预览高斯泼溅"
     ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:21:13+08:00",
+  "updated_at": "2026-11-09T12:21:26+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -55,6 +55,11 @@
     "https://github.com/shanselman/gputaskman": "20261108",
     "https://github.com/Leviidev/Henge": "20261108",
     "https://github.com/Video-Rebirth/hyperflow-h3-flash": "20261108",
-    "https://github.com/sarpstar/cinecode": "20261108"
+    "https://github.com/sarpstar/cinecode": "20261108",
+    "https://github.com/jamesondh/chimera-vocal-synth": "20261109",
+    "https://github.com/VoxelKei/SplatThumb": "20261109",
+    "https://github.com/SamG-Coder/solstice": "20261109",
+    "https://github.com/DIYgod/pinky": "20261109",
+    "https://github.com/Moh4696/open-3d-skills": "20261109"
   }
 }
