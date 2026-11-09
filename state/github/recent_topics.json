@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-09T12:21:26+08:00",
+  "updated_at": "2026-11-10T00:21:02+08:00",
   "days": {
-    "20261102": [
-      "elvarofficial/teardown：把任意机器做成可拆 3D 模拟器",
-      "storytold/craft-anything：研究软件并用 Agent 干净室复刻",
-      "NiazMorshed2007/reanimate：逐帧反推动画并验真复刻",
-      "Belluxx/Aleph：给大模型装上卫星影像与三维地形",
-      "Arjun-Ingole/hop：不用 U 盘在 Windows 旁装 Linux"
-    ],
     "20261103": [
       "hyz317/HairDeck：单图生成可动画发型卡片",
       "islandmed/SculptForge：开源跨平台数字雕刻",
@@ -56,6 +49,13 @@
       "Moh4696/open-3d-skills：八套三维网页创作技能",
       "jamesondh/chimera-vocal-synth：物理建模的浏览器人声合成",
       "VoxelKei/SplatThumb：资源管理器里预览高斯泼溅"
+    ],
+    "20261110": [
+      "ooolabdev/ooosplat：本地一键出三维高斯泼溅",
+      "anteloc/ldraw-mecha：用 Agent 把乐高机构做成动画",
+      "chutingyean/Agent-Cockpit：给研究 Agent 的证据链白板",
+      "OmniJev/Flide：决策模型的极速本地推理",
+      "skingko/PastAi：带 Agent 的 macOS 剪贴板工具"
     ]
   }
 }

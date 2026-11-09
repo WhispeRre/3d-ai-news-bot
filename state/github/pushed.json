@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T12:21:26+08:00",
+  "updated_at": "2026-11-10T00:21:02+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -60,6 +60,11 @@
     "https://github.com/VoxelKei/SplatThumb": "20261109",
     "https://github.com/SamG-Coder/solstice": "20261109",
     "https://github.com/DIYgod/pinky": "20261109",
-    "https://github.com/Moh4696/open-3d-skills": "20261109"
+    "https://github.com/Moh4696/open-3d-skills": "20261109",
+    "https://github.com/ooolabdev/ooosplat": "20261110",
+    "https://github.com/chutingyean/Agent-Cockpit": "20261110",
+    "https://github.com/anteloc/ldraw-mecha": "20261110",
+    "https://github.com/skingko/PastAi": "20261110",
+    "https://github.com/OmniJev/Flide": "20261110"
   }
 }
