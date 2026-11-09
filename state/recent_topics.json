@@ -1,21 +1,6 @@
 {
-  "updated_at": "2026-11-08T09:11:49+08:00",
+  "updated_at": "2026-11-09T09:10:17+08:00",
   "days": {
-    "20261101": [
-      "DeepSeek 公布 Super Agent 架构并开源原型仓库",
-      "OpenAI 最新一轮融资约募得 110 亿美元，不及 300 亿目标",
-      "Anthropic 取消 Claude Ultra 的 5 小时使用窗口限制",
-      "anyscene：一段 brief，Agent 自动搭写实 Blender 场景",
-      "open-3d-skills：八套面向 3D 与动效网站的 Agent Skills",
-      "minecraft-ai-mod-builder：自然语言在 Minecraft 里搭建筑",
-      "HairDeck：单图生成可动画发型卡片并导出 VRM",
-      "Qwen-Image-2.1 两步 DMD2 蒸馏 LoRA 上线",
-      "社区作者为高斯泼溅设计「电影机」，整部短片在 splat 片场内拍成",
-      "Nace 开源 Drex Max：约 27B、可本地跑的多模态决策模型",
-      "GPT-5.6 Sol 在和平模式通关 Factorio，展示长程规划能力",
-      "Utopai Studios 完成约 6000 万美元融资，估值约 10 亿美元",
-      "Google 承认 AI Mode 拖累搜索收入，市值大幅回撤"
-    ],
     "20261102": [
       "Adobe Research 推出 EditAgent：像专业修图师一样选工具并核验结果",
       "OpenAI 合并 Chat 与 Work，Plus/Pro/Business 将共用 token 额度",
@@ -113,6 +98,20 @@
       "Harness Leaderboard：Kimi Code、Claude Code、Codex 等编程外壳横向对比",
       "Claude Code「Don't Ask Again」致 1122 个公开仓库泄露密码",
       "Anthropic 接受约 1.25–1.75 万亿美元估值，感恩节前冲刺 IPO（跟进）"
+    ],
+    "20261109": [
+      "gokayfem 发布 image-to-sculpt：单图对照雕刻并回放到 Blender",
+      "阿里发布 Co-Design Bench：顶尖编程 Agent 全解率约仅 26.4%",
+      "高盛撤回银行家与交易员手中的 Claude Code",
+      "社区推出 ComfyUI Readable Node：Agent Skill 把乱工作流理成可读节点图",
+      "KetchUp：用 Rust 与 WebGPU 做的开源 SketchUp 替代",
+      "浙大 00 后博士生交出「中国版 Cosmos」：十几种物理要素装进一个世界模型",
+      "Linum 放出 pjit-21k：约 2B 参数文生图，约 2.1 万美元算力训成",
+      "社区呼吁 Agent 记忆迎来「OpenTelemetry 时刻」：推动开放记忆格式",
+      "llama-modchip：64GB 内存、无 GPU 跑 284B 级 DeepSeek",
+      "Nous Research 为 Hermes Agent 上线官方 Security 插件",
+      "Apple 加码推进 Siri 更「像 Agent」：对标 OpenAI Dots 与 Meta Muse",
+      "量子位观察：资本正在撤离「世界模型」赛道"
     ]
   }
 }
