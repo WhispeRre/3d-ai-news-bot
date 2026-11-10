@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-09T08:31:19+08:00",
+  "updated_at": "2026-11-10T08:32:50+08:00",
   "days": {
-    "20261102": [
-      "Simon Budziak 总结 LangGraph 生产落地的五道控制",
-      "DeepSeek 公开 Super-agent：Router 调度、Worker 并行的主动 Agent 底座",
-      "Adobe 与 UCSD 提出 EditAgent：专用工具并行候选，用验证记录当裁判",
-      "Minecraft 实验：50 个 Agent 建文明，陷入任命「施肥专员」的官僚病",
-      "Google 等提出 StreamVibe：视频助理要学会何时开口、何时闭嘴",
-      "web-shooter：MCP 网页阅读只回相关段落，约 1k tokens 对约 25k",
-      "uncut：约 7 MB 的无损 Coding Agent harness，禁止静默截断上下文",
-      "product-engineering：用 Agent Skills 把想法一路推到付费用户",
-      "极客公园实测灵光 2.0：个人助理卡在权限、责任与忠诚",
-      "巴西劳工法院制裁律师：诉状中藏白字 Prompt Injection"
-    ],
     "20261103": [
       "Legora CTO：法律 Agent 看不见任何轨迹，仍要做评测与产品",
       "InfiniFlow：把上下文当基础设施，BM25 + grep 也能撑起检索 Agent",
@@ -94,6 +82,18 @@
       "Agent Office：用 MCP 让 Claude Code / Codex / Cursor 互相委派",
       "斯坦福 CS146S × Monaco：Coding Agent 能秒交作业后，课怎么上、团队怎么买工具",
       "tinker-ai-skill：把自家 Claude Code 会话炼成可本地跑的 Agent 模型"
+    ],
+    "20261110": [
+      "Anthropic 工程师 Addy Osmani：Coding Agent 让你变成管理者，关键是验证与判断",
+      "CodeRabbit 用 Codex 重做交付：同团队软件交付约提升 20 倍",
+      "Microsoft 等提出 BoxBox：长跑任务中热更新自身 harness",
+      "斯坦福等发布 Shepherd：把 Agent 执行做成可回放的 Git 轨迹",
+      "社区复现：Agent 记忆写回向量库可能丢掉 ACL，造成跨租户泄漏",
+      "Shuttle：为 Agent 改造 Chromium，身份隔离与内置 MCP",
+      "社区复盘：MCP 上架 Claude 与 ChatGPT 目录的硬性清单",
+      "Meta 发布 Muse Ember：专攻工具调用与路由等重复 Agent 活",
+      "千问办公 2.0 推出 Team Agent：多人与数字员工同场协作",
+      "ChatGPT Desktop 会把本机 SSH agent 转发到远程机器"
     ]
   }
 }
