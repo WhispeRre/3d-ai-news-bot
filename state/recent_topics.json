@@ -1,17 +1,6 @@
 {
-  "updated_at": "2026-11-09T09:10:17+08:00",
+  "updated_at": "2026-11-10T09:11:24+08:00",
   "days": {
-    "20261102": [
-      "Adobe Research 推出 EditAgent：像专业修图师一样选工具并核验结果",
-      "OpenAI 合并 Chat 与 Work，Plus/Pro/Business 将共用 token 额度",
-      "L3G-World：用潜空间三维高斯记忆做实时可探索世界生成",
-      "Minecraft 里 50 个 Agent 组队建文明，最终陷进官僚瘫痪",
-      "清华姚期智团队提出代数世界模型 AWM：从试错走向可证明的规律",
-      "Memdoor：5 个 Qwen3.8-27B 组队在 LiveCodeBench Hard 超过 Fable 5",
-      "Anthropic 在 Opus 系统提示中加规则：禁止用 Claude 复刻特定游戏",
-      "西湖大学成立世界模型研究中心，孵化公司 Awomo 已获超亿元早期融资",
-      "蚂蚁灵光 2.0 实测：个人助理卡在跨平台权限与责任边界"
-    ],
     "20261103": [
       "DyCraft：用 Agent 系统做长时程 4D 场景生成",
       "Astra 能直接读写神经网络权重，把 Qwen 数学成绩大幅抬高",
@@ -112,6 +101,22 @@
       "Nous Research 为 Hermes Agent 上线官方 Security 插件",
       "Apple 加码推进 Siri 更「像 Agent」：对标 OpenAI Dots 与 Meta Muse",
       "量子位观察：资本正在撤离「世界模型」赛道"
+    ],
+    "20261110": [
+      "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2",
+      "Meta 发布 Muse Ember：面向 Agent 日常执行的轻量模型",
+      "sozai-search-mcp：约 3.6 万免费 3D 资产做成 Agent 可搜 MCP",
+      "enginewright：Unreal 编辑器内 MCP，工具调用可校验可撤销",
+      "MCP_Image_to_3D：单图进、高斯泼溅出，自带 MCP 与预览",
+      "creator-generalist：让 Agent 具备专业级 2D/3D 技能包",
+      "OmniLatent：用统一潜空间做可编辑的 3D 部件建模",
+      "Align3D：单张室内照生成既忠于照片、又超出视野仍合理的 3D 布局",
+      "World Labs：Atlas 在相机运动指令榜夺冠（跟进）",
+      "Anthropic：Claude 能端到端设计电子原型，电路实测免改",
+      "OpenAI：Dots 可挂多台本地电脑并按任务选机执行",
+      "千问办公 2.0 发布：上线支持多人与 Agent 协作的 Team Agent",
+      "Deemos 开放 Hyper3D Rigging API（跟进）",
+      "Disney 携手 Adobe Firefly 定制品牌安全生成模型"
     ]
   }
 }
