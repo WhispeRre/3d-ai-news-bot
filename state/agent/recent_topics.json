@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-10T08:32:50+08:00",
+  "updated_at": "2026-11-11T08:30:59+08:00",
   "days": {
-    "20261103": [
-      "Legora CTO：法律 Agent 看不见任何轨迹，仍要做评测与产品",
-      "InfiniFlow：把上下文当基础设施，BM25 + grep 也能撑起检索 Agent",
-      "Philipp Schmid：Agent 工具会收成「一个 Code Mode」吗",
-      "社区长文：Agent Graph Engineering 第 2–7 部讲清生产级 LangGraph",
-      "Mastra @mastra/core@1.81.0：MCP Tasks 撑住可重启的长任务",
-      "Kitsune：把真实 Firefox/Zen 浏览器共享给编程 Agent 的 MCP",
-      "shim：零依赖的本地优先 Agent harness",
-      "OpenAI 自研 Pando：为 Codex 规模下的 Git 推拉建新后端",
-      "高盛收回交易员与银行家的 AI 编程工具，只留给工程师",
-      "Qodo 把公司知识与编码规范打进 Codex 做代码审查"
-    ],
     "20261104": [
       "阿里提出 SPAR：情景记忆与因果归因驱动销售 Agent 自进化",
       "Google 用 Agent 蜂群检修 XLA:TPU 编译器，已解超 142 个静默错误",
@@ -94,6 +82,19 @@
       "Meta 发布 Muse Ember：专攻工具调用与路由等重复 Agent 活",
       "千问办公 2.0 推出 Team Agent：多人与数字员工同场协作",
       "ChatGPT Desktop 会把本机 SSH agent 转发到远程机器"
+    ],
+    "20261111": [
+      "微软提出 LongCapHarness：不训模型，靠 harness 把长上下文推理抬了 64 分",
+      "Resend CEO 谈 Designing for Agents：文档与工具怎么写成 Agent 愿意用的形态",
+      "Meta 提出 AutoRefine：用合并/放弃等业务结果给代码 Judge 自动校准",
+      "UC Berkeley：改 harness 几乎不动准确率，成本却能差到 2.6 倍",
+      "社区实践：Stripe 密钥留给代理，退款等 Slack 点头再放行",
+      "browser-use 1.0：删掉八成代码，Agent 在持久 REPL 里写 Python 直连 CDP",
+      "DSPy 3.5：轻量 LM 层落地，ReAct 与 RLM/Flex/GEPA 毕业为正式能力",
+      "社区实测：MCP 接过 15 个后 Agent 变笨，6–8 个工具更稳",
+      "Cursor 重做 Projects：队友与各自 Agent 可在同一工作区协作",
+      "OpenAI 推出 ChatGPT Businesses：企业认领资料并可选 Business Agent 答客",
+      "Google Chrome 发布 modern-web-guidance：把 Coding Agent 从旧 JS 习惯拽回现代 Web 原语"
     ]
   }
 }
