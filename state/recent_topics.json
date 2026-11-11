@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-10T09:11:24+08:00",
+  "updated_at": "2026-11-11T09:10:51+08:00",
   "days": {
-    "20261103": [
-      "DyCraft：用 Agent 系统做长时程 4D 场景生成",
-      "Astra 能直接读写神经网络权重，把 Qwen 数学成绩大幅抬高",
-      "42AI 走出隐身：融资约 6250 万美元，主打能「预判人行为」的世界模型",
-      "NVIDIA 教你用 Cosmos 搭可交互仿真的世界模型",
-      "Coarse3D：让图生 3D 的「粗结构」更可控、更忠实",
-      "OpenAI 自研 Git 后端 Pando：推送延迟约降 80%，撑住 Agent 狂推代码",
-      "OpenAI 发布 LifeVal：用真实日常任务给个人助理打分",
-      "腾讯混元推出 Hyra 2.0：研究型 Agent 从「解题」转向「沉淀可复用工具」",
-      "Anthropic 更新 S-1：三季度营收约 170 亿美元，算力承诺约 8950 亿美元（跟进）",
-      "Grok Bot 因成本「难以为继」被马斯克限流额度"
-    ],
     "20261104": [
       "OpenAI 分享用 ChatGPT 与 Codex 加速物理世界工程的进展",
       "Meshy 上线 N1 Texture：缝更少、约 20 秒出 2K 底色",
@@ -117,6 +105,22 @@
       "千问办公 2.0 发布：上线支持多人与 Agent 协作的 Team Agent",
       "Deemos 开放 Hyper3D Rigging API（跟进）",
       "Disney 携手 Adobe Firefly 定制品牌安全生成模型"
+    ],
+    "20261111": [
+      "Blender 5.3 正式发布，原生支持高斯泼溅",
+      "Google 正式开放 Gemini 4 Carbon：偏长任务与多 Agent 协作",
+      "MiniMax 开源权重发布 H3-Image：约 10 秒出 4K 图",
+      "SurfScaff3D：用大模型同时啃几何与语义再生成 3D 物体",
+      "Meshy Agent 用 Skill：一张草图扩成同风格角色阵并批量转 3D",
+      "SoftPAT3D：文生 3D 场景时把布料绳索等做成可仿真软体",
+      "Unreal Engine 5.9 Preview 发布，官方称预览版本身用 AI 协助构建",
+      "Google DeepMind 发布 Gemini Robotics 2.5：工厂分拣实测约 96%",
+      "Anthropic 把 Claude 做成办公工作区：Sheets、白板，并推出会议 Agent",
+      "OpenAI 上线 ChatGPT「商家主页」与 Business Agent（测试）",
+      "NVIDIA 推出开源机器人模型 GR00T 2：可完全跑在机载算力上",
+      "TensorWorld 物原科技成立约四月、融资过亿美元，押注「物理真实」",
+      "Google 与 Adobe 加深整合：Drive 里改 PDF，Gemini 里用 Adobe AI",
+      "eBay 据报封堵第三方 AI Agent（含 Meta Muse）上站浏览"
     ]
   }
 }
