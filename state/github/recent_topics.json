@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-10T00:21:02+08:00",
+  "updated_at": "2026-11-11T12:21:45+08:00",
   "days": {
-    "20261103": [
-      "hyz317/HairDeck：单图生成可动画发型卡片",
-      "islandmed/SculptForge：开源跨平台数字雕刻",
-      "Balanov/uncut：无损无头编程 Agent 壳",
-      "vercel-labs/agent-desktop：无障碍树桌面操控 CLI",
-      "CNCKitchen/ScanRuler：浏览器里量三维扫描"
-    ],
     "20261104": [
       "KKKKhazix/agent-autoloop：命令行 Agent 后台自治中台",
       "speridlabs/idol-sdk：单图生成物体级 3DGS",
@@ -56,6 +49,13 @@
       "chutingyean/Agent-Cockpit：给研究 Agent 的证据链白板",
       "OmniJev/Flide：决策模型的极速本地推理",
       "skingko/PastAi：带 Agent 的 macOS 剪贴板工具"
+    ],
+    "20261111": [
+      "expo/exact：一套应用，Agent 跨端构建并验收",
+      "JuneYaooo/rea-video：逐镜拆解视频并给出复刻方案",
+      "WhiteTowerAI/ohmygame：一个人的开源 AI 游戏工作室",
+      "imxieyi/Kernarium：在 iOS 上原生跑 Linux 内核",
+      "jammaru/sakutto：本地大模型做的网页翻译扩展"
     ]
   }
 }

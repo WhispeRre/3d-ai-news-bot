@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T00:21:02+08:00",
+  "updated_at": "2026-11-11T12:21:45+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -65,6 +65,11 @@
     "https://github.com/chutingyean/Agent-Cockpit": "20261110",
     "https://github.com/anteloc/ldraw-mecha": "20261110",
     "https://github.com/skingko/PastAi": "20261110",
-    "https://github.com/OmniJev/Flide": "20261110"
+    "https://github.com/OmniJev/Flide": "20261110",
+    "https://github.com/expo/exact": "20261111",
+    "https://github.com/jammaru/sakutto": "20261111",
+    "https://github.com/imxieyi/Kernarium": "20261111",
+    "https://github.com/JuneYaooo/rea-video": "20261111",
+    "https://github.com/WhiteTowerAI/ohmygame": "20261111"
   }
 }
