@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-11-11T09:10:51+08:00",
+  "updated_at": "2026-11-12T09:12:02+08:00",
   "days": {
-    "20261104": [
-      "OpenAI 分享用 ChatGPT 与 Codex 加速物理世界工程的进展",
-      "Meshy 上线 N1 Texture：缝更少、约 20 秒出 2K 底色",
-      "Fal 完成约 13 亿美元融资，估值翻倍至约 160 亿美元",
-      "Atta：面向 LLM 的参数化 CAD 内核，规格驱动几何并经 Blender 交付",
-      "Parametric CAD Bench v3：从文本与工程图评测 Agent 写参数化 CAD",
-      "CRAFT：多 Agent 纠错框架提升文生参数化 CAD 的稳健性",
-      "SeMo3D：用选择性建模统一 3D 生成、局部编辑与补全",
-      "Sparseal 发布 CozyBlanket Pro：Windows/macOS 上的 AI 辅助重拓扑",
-      "Luma 上线 Expression Sheet：先铺角色表情表再定表演方向",
-      "Allen AI 发布 StateBench：前沿模型在长文状态追踪上准确率可跌至约 13%",
-      "Anthropic 推出 Message Threads：长对话首 token 延迟约降 35%",
-      "社区跟进：Astra「读写权重抬高 Qwen」解读被指易误导",
-      "费莫一科技获近亿美元融资，做开放动态真实世界的「行动伙伴」",
-      "国行 Apple 智能开发者测试开启，部分能力接入阿里千问（跟进）"
-    ],
     "20261105": [
       "腾讯混元发布 Hy4，能看图并面向游戏开发",
       "月之暗面公开 Kimi K3.1 Pro 的模型权重",
@@ -121,6 +105,23 @@
       "TensorWorld 物原科技成立约四月、融资过亿美元，押注「物理真实」",
       "Google 与 Adobe 加深整合：Drive 里改 PDF，Gemini 里用 Adobe AI",
       "eBay 据报封堵第三方 AI Agent（含 Meta Muse）上站浏览"
+    ],
+    "20261112": [
+      "阿里预告 Qwen4，Qwen4-Max 已可预览",
+      "Meshy 用 Fable 5.2 × 3D Agent：一对话做出可玩射击游戏",
+      "Adobe Max 实验：照片可变可逛 3D，还能「采访」角色",
+      "blender-ai-mcp-addon：Blender 里挂 AI 助手与 MCP",
+      "blockout-to-real：灰模一键变成照片级 PBR 场景",
+      "SuperSplat v3.8.0：WebMCP 增加时间轴与相机关键帧",
+      "SuperMimic：一个可微世界模型做人形全身动作跟踪",
+      "Luma 上线 Character Swap & Insert：同镜头换角、加物、删人",
+      "FlashMotion：超快生成长时间三维人体动作",
+      "Google 推出 Gemini Decisions API：一次评判最多约 1000 题",
+      "Anthropic 称用 AI 三天把 Claude 迁到 AMD，削弱 CUDA 护城河",
+      "Atuin Threads：多台机器上的 Agent 会话一处看齐",
+      "OpenAI 季度营收据报首次突破约 100 亿美元",
+      "字节跳动据报几周内推出类似 Meta Muse 的个人 AI 助手",
+      "Tripo 首届 3D World Hackathon：超 2000 队做出可玩世界与 VR"
     ]
   }
 }
