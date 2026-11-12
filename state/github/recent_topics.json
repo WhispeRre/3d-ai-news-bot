@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-11T12:21:45+08:00",
+  "updated_at": "2026-11-12T12:22:06+08:00",
   "days": {
-    "20261104": [
-      "KKKKhazix/agent-autoloop：命令行 Agent 后台自治中台",
-      "speridlabs/idol-sdk：单图生成物体级 3DGS",
-      "artemnovitckii/claude-animation-skills：六套无素材 Reel 动画技能",
-      "wquguru/cicada：Mac 本地会议字幕与同传",
-      "khanh020905/my-office：Claude 会话的 3D 办公室"
-    ],
     "20261105": [
       "govijr/terminal-mac：终端里的隔离 macOS 桌面",
       "kevinroast/phoria2：下午能看懂的网页三维",
@@ -56,6 +49,13 @@
       "WhiteTowerAI/ohmygame：一个人的开源 AI 游戏工作室",
       "imxieyi/Kernarium：在 iOS 上原生跑 Linux 内核",
       "jammaru/sakutto：本地大模型做的网页翻译扩展"
+    ],
+    "20261112": [
+      "klad-app/klad：人机共绘的笔画级动画画板",
+      "SsKanDon/blender-ai-mcp-addon：Blender 场景里的 MCP AI 助手",
+      "Tencent/LoopForge：自托管的编程 Agent 交付台",
+      "FrigadeHQ/yogurt：不上会机器人的私密会议笔记",
+      "muratozturkdev/homescape：可互动的智能家居 3D 娃娃屋"
     ]
   }
 }

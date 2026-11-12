@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T12:21:45+08:00",
+  "updated_at": "2026-11-12T12:22:06+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -70,6 +70,11 @@
     "https://github.com/jammaru/sakutto": "20261111",
     "https://github.com/imxieyi/Kernarium": "20261111",
     "https://github.com/JuneYaooo/rea-video": "20261111",
-    "https://github.com/WhiteTowerAI/ohmygame": "20261111"
+    "https://github.com/WhiteTowerAI/ohmygame": "20261111",
+    "https://github.com/SsKanDon/blender-ai-mcp-addon": "20261112",
+    "https://github.com/FrigadeHQ/yogurt": "20261112",
+    "https://github.com/muratozturkdev/homescape": "20261112",
+    "https://github.com/klad-app/klad": "20261112",
+    "https://github.com/Tencent/LoopForge": "20261112"
   }
 }
