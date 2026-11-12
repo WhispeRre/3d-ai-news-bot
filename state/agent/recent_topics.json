@@ -1,17 +1,6 @@
 {
-  "updated_at": "2026-11-11T08:30:59+08:00",
+  "updated_at": "2026-11-12T08:31:08+08:00",
   "days": {
-    "20261104": [
-      "阿里提出 SPAR：情景记忆与因果归因驱动销售 Agent 自进化",
-      "Google 用 Agent 蜂群检修 XLA:TPU 编译器，已解超 142 个静默错误",
-      "扩展 Agent Skill 库常会盖住旧技能，路由失败才是主因",
-      "优化 Agent harness 时，成本偏好应留到搜索末尾再施加",
-      "Pydantic AI v2.65.0：ConversationStore 把对话存成一次写入的消息日志",
-      "schemagate：离线挑表，Text-to-SQL 少塞约九成 schema tokens",
-      "agent-memory-mcp：零依赖 SQLite 记忆，专治编程 Agent 失忆与调试死循环",
-      "OpenAI 用 GPT-6 Astra 在一周内从零设计对接 Codex 的硬件设备",
-      "InfoQ：从模型调用到任务交付，MaaS 如何走进 Agent 生产"
-    ],
     "20261105": [
       "NVIDIA 发现频繁压缩上下文后，长程任务准确率大体还在",
       "Open Athena 的 David Hall：Agent 后训练还没有可重复任务的公地",
@@ -95,6 +84,17 @@
       "Cursor 重做 Projects：队友与各自 Agent 可在同一工作区协作",
       "OpenAI 推出 ChatGPT Businesses：企业认领资料并可选 Business Agent 答客",
       "Google Chrome 发布 modern-web-guidance：把 Coding Agent 从旧 JS 习惯拽回现代 Web 原语"
+    ],
+    "20261112": [
+      "AWS 发布 Emulator：Agent 写代码时，工程师的活变成规格、保真测试与合并门禁",
+      "JioStar 首席架构师复盘：5 亿用户级对话发现，先定护栏再扩 evals 飞轮",
+      "KAIST 提出 WikiTrace：外部记忆会让 Agent 做错「没记忆本会做对」的题",
+      "Snowflake 谈上下文膨胀：Harness 管进出，语义视图管「业务含义」",
+      "ARCI v2 给 LangChain create_agent 加故障注入回归门：作者预判 4B 可替 12B，实测被 BLOCK",
+      "Atuin Threads：把 Claude Code / Codex 等会话做成可搜索、可跨机 resume 的加密历史",
+      "个人用 48 个 Agent 扫 lidar，72 小时「再发现」一处玛雅遗址",
+      "Google DeepMind 的 AlphaProof Code：四周用 Agent 写出超 600 万行 Lean 证明，核验 Signal 密码核心",
+      "GitHub 负责人谈 Agent 时代：平台上 Agent 起草 PR 已过四成，流程要按场景可配置"
     ]
   }
 }
