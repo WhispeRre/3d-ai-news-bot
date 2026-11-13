@@ -1,21 +1,6 @@
 {
-  "updated_at": "2026-11-12T09:12:02+08:00",
+  "updated_at": "2026-11-13T09:22:40+08:00",
   "days": {
-    "20261105": [
-      "腾讯混元发布 Hy4，能看图并面向游戏开发",
-      "月之暗面公开 Kimi K3.1 Pro 的模型权重",
-      "OpenAI 发布 Images 2.6，出图更快并能做动图",
-      "AnyKit 用 Agent 按风格参考做成套 3D 道具",
-      "渲染图好看之外，研究 3D 资产能不能真用",
-      "Deemos 发布 HYPER3D Rigging，用一句话就能改绑骨",
-      "Idol Turbo 把单图高斯泼溅加速到约 0.75 秒",
-      "FlowRig 用同一套方法给静止和动态网格绑骨",
-      "OpenAI 将收购 Pierre，扩展 Codex 的代码工具",
-      "MolmoAct 2 在真实机械臂测试中位列第二",
-      "Ricursive 预览 Ripple-65B，瞄准智能体编程",
-      "Meta 收购 AI 编程公司 Conductor",
-      "Uber：上季度最忙的一周只有 4 人用 Agent 叫车"
-    ],
     "20261106": [
       "World Labs 发布 Frameboy，优化版 Atlas 可以实时逛世界",
       "谷歌上线 Gemini Omni Flash 1.2，视频更长、更稳也更便宜",
@@ -122,6 +107,19 @@
       "OpenAI 季度营收据报首次突破约 100 亿美元",
       "字节跳动据报几周内推出类似 Meta Muse 的个人 AI 助手",
       "Tripo 首届 3D World Hackathon：超 2000 队做出可玩世界与 VR"
+    ],
+    "20261113": [
+      "Google 发布 Gemini 4 Hydrogen：面向日常编码与 Agent 工作流的高速模型",
+      "World Labs 向所有人开放 Atlas，并提供应用与 API（跟进）",
+      "黄仁勋卸任 NVIDIA CEO，开源 AI 路线引发外界猜测",
+      "歸藏 Game Skill：一句话让 Agent 从零做出可玩的浏览器 3D 动作游戏",
+      "Hugging Face 发布 TRELLIS.2 三维生成模型 LoRA 微调权威指南",
+      "Google Antigravity 上线 Orchestrator：同一会话里动态切换 Carbon 与 Hydrogen",
+      "美国联合航空以网络安全为由，禁止客户用 AI Agent 订机票与管订单",
+      "Klad：编程 Agent 能直接驱动的画图应用（源码可用）",
+      "Anthropic 正式上线 IPO 页面，HN 热议破八百（跟进）",
+      "Meshy 预告 Z-Axis Awards：自称全球最大 3D 创作奖，奖金约 30 万美元",
+      "腾讯推出会「看你玩游戏」并给建议的 AI 游戏伴侣"
     ]
   }
 }
