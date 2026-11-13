@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T12:22:06+08:00",
+  "updated_at": "2026-11-13T12:23:15+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -75,6 +75,11 @@
     "https://github.com/FrigadeHQ/yogurt": "20261112",
     "https://github.com/muratozturkdev/homescape": "20261112",
     "https://github.com/klad-app/klad": "20261112",
-    "https://github.com/Tencent/LoopForge": "20261112"
+    "https://github.com/Tencent/LoopForge": "20261112",
+    "https://github.com/adventists-ai/sophon-realtime": "20261113",
+    "https://github.com/agentes-chat/agentes-chat": "20261113",
+    "https://github.com/simpsoka/zigzag": "20261113",
+    "https://github.com/op7418/guizang-game-skill": "20261113",
+    "https://github.com/HybridRobotics/supermimic": "20261113"
   }
 }
