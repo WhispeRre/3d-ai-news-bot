@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-12T08:31:08+08:00",
+  "updated_at": "2026-11-13T08:31:18+08:00",
   "days": {
-    "20261105": [
-      "NVIDIA 发现频繁压缩上下文后，长程任务准确率大体还在",
-      "Open Athena 的 David Hall：Agent 后训练还没有可重复任务的公地",
-      "UC San Diego 发现长上下文检索失准，主因是冲突证据抢走注意力",
-      "密歇根大学发布 CloudOpsBench，云运维 Agent 多数失败在范围判断",
-      "Mastra 发布 @mastra/core@1.82.0，知识库改成可检索的页面树",
-      "Pydantic AI v2.66.0 加入自托管沙箱，并把指令变更改成追加",
-      "谷歌正式发布 Data Agent Kit，把数据操作的劝告和强制拦截分开",
-      "OpenAI 收购 Pierre，接着把 Codex 的代码审阅和存储做深",
-      "Ricursive 发布 Ripple-65B Preview，TerminalBench 2.1 拿到美国开源权重最高分",
-      "openJiuwen 按真实事件为 Agent 整理长视频记忆"
-    ],
     "20261106": [
       "腾讯轻量云开源 LoopForge，把单机 Coding Agent 收成团队流水线",
       "Kadhar 复盘多 Agent 的三种拆法，并把失败放到整条链路上看",
@@ -95,6 +83,19 @@
       "个人用 48 个 Agent 扫 lidar，72 小时「再发现」一处玛雅遗址",
       "Google DeepMind 的 AlphaProof Code：四周用 Agent 写出超 600 万行 Lean 证明，核验 Signal 密码核心",
       "GitHub 负责人谈 Agent 时代：平台上 Agent 起草 PR 已过四成，流程要按场景可配置"
+    ],
+    "20261113": [
+      "InfoQ 拆解：把上下文做成控制平面，知识、记忆各管一摊",
+      "Amplitude 用 Wave：洞察到上线约 1–2 天，强推理与高频检查分模型跑",
+      "TRUST：自改进别见验证分涨就改，贪心门槛近半更新其实更差",
+      "JoMoHa：用同一任务结果 RL 联合训「写 harness」与「干活」两套策略",
+      "社区踩坑：Playwright MCP 每步回灌整页快照，长表单跑到一半上下文爆掉",
+      "Agno v3.2：Super Agent 直连工具干活，Company 任务可编排，A2A 升到 v1.0",
+      "Pydantic AI v2.68：跑中途可 RequestInput 问人，子 Agent 可挂成 durable 子工作流",
+      "agentes-chat：人和 Claude / Codex 等 Agent 同频道协作的自托管工作区",
+      "Google 发布 Gemini 4 Hydrogen：日常 coding 与 agentic 快环，可作多 Agent 执行层",
+      "Perplexity 红队自家 Computer Agent 沙箱：无人逃出宿主机，4 个模型绕过网络白名单",
+      "Expo 上线云端 iOS 模拟器：Coding Agent 改完先出截图和录像再找人审"
     ]
   }
 }

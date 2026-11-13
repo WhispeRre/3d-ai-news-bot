@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T08:31:08+08:00",
+  "updated_at": "2026-11-13T08:31:18+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
@@ -17,6 +17,7 @@
     "20261109": "mcp_advanced",
     "20261110": "a2a",
     "20261111": "agent_skills",
-    "20261112": "multi_agent_patterns"
+    "20261112": "multi_agent_patterns",
+    "20261113": "when_multi_agent"
   }
 }
