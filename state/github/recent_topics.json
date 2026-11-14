@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-13T12:23:15+08:00",
+  "updated_at": "2026-11-14T12:21:37+08:00",
   "days": {
-    "20261106": [
-      "Sandflow-ai/sand3d：给模型写的可装配三维程序",
-      "AGGIB/Stroq：本地审计编程 Agent 做过什么",
-      "tester-army/e2e：能回放的自然语言端到端测试",
-      "tembo/voxl：浏览器里的低延迟远程桌面",
-      "exoteric33/ps2-native-recomp：把 PS2 光盘重编译成原生程序"
-    ],
     "20261107": [
       "voyager-so/vork：给 Agent 用的无头三维渲染内核",
       "blixvip/BlendClone：把参考视频编译成可编辑 Blender",
@@ -56,6 +49,13 @@
       "HybridRobotics/supermimic：可微世界模型做的人形全身跟踪",
       "simpsoka/zigzag：带 MCP 的开源刺绣设计软件",
       "adventists-ai/sophon-realtime：能听语气的开源全双工语音"
+    ],
+    "20261114": [
+      "meshy-dev/ThreeRT：用 three.js 写法做硬件实时光追",
+      "berkantay/gpucanvas：WebGPU 无限画布上挂活 DOM",
+      "alexeyw/lot-map：Claude Code 旁的实时工作地图",
+      "google/elephant-goldfish-model：大象起草、金鱼审规格",
+      "KoljaB/RealtimeVAD：比 Silero 更早的停话信号"
     ]
   }
 }
