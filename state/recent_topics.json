@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-11-13T09:22:40+08:00",
+  "updated_at": "2026-11-14T09:11:08+08:00",
   "days": {
-    "20261106": [
-      "World Labs 发布 Frameboy，优化版 Atlas 可以实时逛世界",
-      "谷歌上线 Gemini Omni Flash 1.2，视频更长、更稳也更便宜",
-      "美国中期选举后芯片股重挫，民主党推动《禁止人工智能法案》",
-      "CCORE 发布 GLB-3D-Coder，用 Qwen3.5-4B 把文字写成可改场景",
-      "Luma 推出 MCP，把成套出图流程接进 Claude 和 ChatGPT",
-      "NVIDIA 发布 Cosmos 3 开放模型，面向可交互世界仿真",
-      "RouTex 用多张参考图给三维模型贴表面",
-      "RDT-3D 拆开训练和出图的精细度，兼顾外形与细节",
-      "OpenAI 发布 GPT-6 Cyber，在授权范围内找漏洞并写修复",
-      "百度开源文心 5.5 Flash Base，预训练后不做微调",
-      "SemiAnalysis 新榜 GDPx：真实办公任务上没有 Agent 超过 12%",
-      "Meshy 上线照片转 3D 浮雕，可按深浅导出并打印",
-      "Nexus Mods 要求 Mod 作者说明如何使用了 AI",
-      "Meta 在美国上线 Muse 实时虚拟形象，语音助手变成可互动化身"
-    ],
     "20261107": [
       "Thinking Machines 发布 Inkling 2 Small，并冲刺约 400 亿美元估值融资",
       "voyager-so 发布 vork：面向 Agent 的无头 3D 与特效引擎（研究预览）",
@@ -120,6 +104,23 @@
       "Anthropic 正式上线 IPO 页面，HN 热议破八百（跟进）",
       "Meshy 预告 Z-Axis Awards：自称全球最大 3D 创作奖，奖金约 30 万美元",
       "腾讯推出会「看你玩游戏」并给建议的 AI 游戏伴侣"
+    ],
+    "20261114": [
+      "OpenAI 推出 ChatGPT Wallet：Agent 代购需用户确认",
+      "VibePrevisBench：评测编程 Agent 在 Blender 里搭 4D 预演",
+      "Meshy 实测 AI 模型上真机打印：100 次打印看完整率",
+      "Meshy × Epic AI MegaJam：编程 Agent 用 Meshy 往 Unreal 塞道具",
+      "Anthropic 推出 Claude for Manufacturing：直连 Autodesk Fusion 等",
+      "blender-ai-copilot-flow：Blender 改动可审可停",
+      "Sprint3D：整条管线加速图生 3D 资产",
+      "Spatial Foundry：空间智能多模态数据集",
+      "社区约 600 次实验复盘 JEPA 世界模型",
+      "DeepSeek 把 App 能力开放到 API",
+      "llama.cpp 发布 v1.0.0：本地推理迎正式大版本",
+      "Brave Search API 接入 x402：Agent 可按次付费搜",
+      "LangChain 估值约 30 亿美元，LangSmith 称约 7000 客户",
+      "OpenAI 解散机器人专项团队：通用模型开始控机",
+      "Anthropic IPO 据报超认购约六倍（跟进）"
     ]
   }
 }
