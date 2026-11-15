@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-11-14T09:11:08+08:00",
+  "updated_at": "2026-11-15T09:13:41+08:00",
   "days": {
-    "20261107": [
-      "Thinking Machines 发布 Inkling 2 Small，并冲刺约 400 亿美元估值融资",
-      "voyager-so 发布 vork：面向 Agent 的无头 3D 与特效引擎（研究预览）",
-      "Anthropic 公开 Agent 记忆组件：用「做梦」整理经验、纠正错误",
-      "Anthropic 启动 Project EVE：让 Claude 在 MMORPG 里练市场与协作",
-      "make-short：Claude Code Skill 在 Blender 三维世界里做动画短视频",
-      "Bri3D：用「场景锚点」弥合单图生 3D 里物体与场景的鸿沟",
-      "ArtCrafter：前馈生成带关节的可动三维物体",
-      "腾讯 ARC 开源 OREO：边渲染边编辑，抬高 3D 生成保真度",
-      "Google ADK Python 发布 v2.14.0：A2A、评测与运行时模块转正",
-      "腾讯混元 Hy4 称登顶 Agent Arena 中文第一、APEX-Agents 开源权重第一（跟进）",
-      "Meta 为 Muse 推出 Spaces：团队协作调用同一 Agent（跟进）",
-      "Physicl 融资约 1000 万美元：把电商级数字资产做成机器人能用的仿真",
-      "OpenAI 再传增募约 110 亿美元，估值约 1.25 万亿美元（跟进）",
-      "Anthropic 约 1.5 万亿美元 IPO 估值遭投资者抵制"
-    ],
     "20261108": [
       "银湖资本与沙特基金据报出价约 250 亿美元收购 Unity",
       "METR：Anthropic 用 AI 加速自身研发，模型迭代约快一倍",
@@ -121,6 +105,21 @@
       "LangChain 估值约 30 亿美元，LangSmith 称约 7000 客户",
       "OpenAI 解散机器人专项团队：通用模型开始控机",
       "Anthropic IPO 据报超认购约六倍（跟进）"
+    ],
+    "20261115": [
+      "Runway 开源 Praxis-1：把视频 AI 知识做成机器人控制器",
+      "blender-ai-copilot-forge：用自然语言分步在 Blender 里搭场景",
+      "Deemos Hyper3D 参加 Unreal MEGAJAM，全角色自动绑骨与智能低模上线",
+      "blender-ai-copilot-assets：对话中搜资产库，确认后再导入",
+      "shred-kit：跟编程 Agent 对话定制 Blender 碎纸短视频模板",
+      "voyager-so/vauss：面向 Blender 与 Agent 的快速高斯泼溅重建",
+      "社区开源可在消费级显卡跑的 GTA 风格世界模型",
+      "InstantAMP：一块 RTX 5090 约 30 分钟训出人形机器人行走与起身",
+      "Anthropic 将 Claude Opus 5.5 设为付费默认，并更新提示词习惯",
+      "Agweb：专为 Agent 设计、尽量不挡路的浏览器",
+      "Unsloth 更新 Qwen3.8-27B 动态量化，HN 热度约 241 分",
+      "Anthropic CEO Amodei：IPO 前夕称明年高度不确定，算力采购是最深商业困境",
+      "GitLab 19.5：把智能体开发纳入可治理的 DevOps 平台能力"
     ]
   }
 }
