@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T12:21:37+08:00",
+  "updated_at": "2026-11-15T12:21:52+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -85,6 +85,11 @@
     "https://github.com/meshy-dev/ThreeRT": "20261114",
     "https://github.com/berkantay/gpucanvas": "20261114",
     "https://github.com/google/elephant-goldfish-model": "20261114",
-    "https://github.com/alexeyw/lot-map": "20261114"
+    "https://github.com/alexeyw/lot-map": "20261114",
+    "https://github.com/jhaizhou-ops/S2Arm": "20261115",
+    "https://github.com/opencoredev/islandcn": "20261115",
+    "https://github.com/caru-ini/stack-diagram": "20261115",
+    "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax": "20261115",
+    "https://github.com/paul-nameless/agweb": "20261115"
   }
 }

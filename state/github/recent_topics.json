@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-14T12:21:37+08:00",
+  "updated_at": "2026-11-15T12:21:52+08:00",
   "days": {
-    "20261107": [
-      "voyager-so/vork：给 Agent 用的无头三维渲染内核",
-      "blixvip/BlendClone：把参考视频编译成可编辑 Blender",
-      "FigureSultanLast/roblox-ai-studio-agent：终端里搭 Roblox 三维场景的 Agent",
-      "ZSeven-W/dsh-game-studio：一句话生成可试玩的小游戏",
-      "libracoder/kiri：跨平台轻量容器运行时"
-    ],
     "20261108": [
       "Video-Rebirth/hyperflow-h3-flash：压缩后的本地音画同生视频模型",
       "sarpstar/cinecode：用编程 Agent 把想法做成完整影片",
@@ -56,6 +49,13 @@
       "alexeyw/lot-map：Claude Code 旁的实时工作地图",
       "google/elephant-goldfish-model：大象起草、金鱼审规格",
       "KoljaB/RealtimeVAD：比 Silero 更早的停话信号"
+    ],
+    "20261115": [
+      "paul-nameless/agweb：专为编程 Agent 做的 macOS 浏览器",
+      "Vaibhaav-Tiwari/deepseek-v3-jax：190 行 JAX 复刻 DeepSeek V3",
+      "opencoredev/islandcn：shadcn 安装的 React 灵动岛",
+      "caru-ini/stack-diagram：一句话画出带官方 Logo 的架构图",
+      "jhaizhou-ops/S2Arm：把 Switch 游戏原生跑上苹果设备"
     ]
   }
 }
