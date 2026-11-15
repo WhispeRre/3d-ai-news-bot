@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T08:32:22+08:00",
+  "updated_at": "2026-11-15T08:40:50+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
@@ -19,6 +19,7 @@
     "20261111": "agent_skills",
     "20261112": "multi_agent_patterns",
     "20261113": "when_multi_agent",
-    "20261114": "subagents"
+    "20261114": "subagents",
+    "20261115": "evals_basics"
   }
 }

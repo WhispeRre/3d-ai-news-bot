@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-14T08:32:22+08:00",
+  "updated_at": "2026-11-15T08:40:50+08:00",
   "days": {
-    "20261107": [
-      "Anthropic 拆解 Agent 记忆：笔记、显著性判断与「做梦」整理",
-      "LinkedIn 复盘智能体 Harness：从链、图到代码化执行",
-      "开发者用 Markdown 知识图谱替代向量 RAG，支撑复杂 ERP Agent",
-      "社区开源长跑 Agent 工作流指南：抗上下文膨胀与状态丢失",
-      "DigitalOcean 推出 Learning 与 Data 服务，给 Agent「思考—执行—改进」闭环",
-      "devvm：一项目一隔离沙箱，人或 Coding Agent 即开即写",
-      "roblox-studio-mcp：把对象树、改脚本与安全试玩接到 Claude / Cursor",
-      "Anthropic 让 Claude 在 EVE 里交易与组队：利润策略、脚手架与背刺检测",
-      "OpenAI 发布 BioBasicsBench：100 道湿实验任务测 Agent 读原始数据",
-      "Cult.fit 用 Codex 统一研发生命周期，业务团队自建 20+ 内部应用"
-    ],
     "20261108": [
       "Into the Unknown：九大 Agent 做国家实验室开放题，无一过专家门槛",
       "Andy Hall 复盘用模型审计 Agent：能抓奖励黑客，却容易淹没人审",
@@ -97,6 +85,16 @@
       "OpenAI 推出 ChatGPT Wallet：Agent 代付不持真卡号，每笔仍要人批",
       "Cognition 发布 Devin Apps：在 Devin 云电脑上跑可分享的私有 Web 应用",
       "Brave Search API 接入 x402：Agent 按次付费搜，无需先开账号领密钥"
+    ],
+    "20261115": [
+      "Harrison Chase 与 Actively：用 Goal Engineering 把 Agent 目标切成「人好评」的形状",
+      "Anthropic 拆解 always-on Agent：收件箱、定时器、记忆、权限与发件箱五件套",
+      "MetaPI：把现成 Agent 基准自动改造成提示词注入评测集",
+      "Agent 记忆别只按语义相似召回：要问会不会改变下一步动作",
+      "社区扫描 15380 个 MCP 服务：97 个在工具描述里塞了对模型的指令",
+      "agweb：专为 Agent 做的浏览器，不抢焦点、多标签同屏",
+      "Docker 谈 Agent 安全：隔离与治理优先于「再训模型」",
+      "Anthropic 重做 Claude Code Projects：一目标多线程并行，协调者分派与审阅"
     ]
   }
 }
