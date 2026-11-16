@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-15T09:13:41+08:00",
+  "updated_at": "2026-11-16T09:10:04+08:00",
   "days": {
-    "20261108": [
-      "银湖资本与沙特基金据报出价约 250 亿美元收购 Unity",
-      "METR：Anthropic 用 AI 加速自身研发，模型迭代约快一倍",
-      "Viggle 开源 Remake：Agent 一句话重拍整段视频",
-      "resolve-ai-workflow：达芬奇接三套 MCP，无头 Blender 跑字幕管线",
-      "NVIDIA：Hugging Face 上 SimReady 仿真资产下载破 100 万",
-      "xmimic：约一分钟完成 Unitree G1 全身动作跟踪",
-      "Into the Unknown：9 个 Agent 攻国家实验室开放题，135 份无一过关",
-      "Harness Leaderboard：Kimi Code、Claude Code、Codex 等编程外壳横向对比",
-      "Claude Code「Don't Ask Again」致 1122 个公开仓库泄露密码",
-      "Anthropic 接受约 1.25–1.75 万亿美元估值，感恩节前冲刺 IPO（跟进）"
-    ],
     "20261109": [
       "gokayfem 发布 image-to-sculpt：单图对照雕刻并回放到 Blender",
       "阿里发布 Co-Design Bench：顶尖编程 Agent 全解率约仅 26.4%",
@@ -120,6 +108,16 @@
       "Unsloth 更新 Qwen3.8-27B 动态量化，HN 热度约 241 分",
       "Anthropic CEO Amodei：IPO 前夕称明年高度不确定，算力采购是最深商业困境",
       "GitLab 19.5：把智能体开发纳入可治理的 DevOps 平台能力"
+    ],
+    "20261116": [
+      "美团开源 LongCat-2.5：1.6 万亿参数 Agent 模型，全华系芯片训练",
+      "OpenAI 上线科学博客首文：物理学家与 GPT-6 Astra 合推标准模型格点定义",
+      "Budget3D：按算力自适应的图生 3D tokenization",
+      "Sebastian Raschka 详解现代 LLM 位置编码：从 RoPE 到 NoPE",
+      "The Decoder 解读：Claude Fable 5.2 用代码「画画」而非直接出像素（跟进）",
+      "Basalt 0.4.0：本地多模型路由，Qwen 27B 在 5090 上约 770 tok/s",
+      "据报黄仁勋考虑重返 NVIDIA 担任 CEO（跟进）",
+      "澳大利亚央行：AI 先冲击年轻入门岗，软件与客服最明显"
     ]
   }
 }
