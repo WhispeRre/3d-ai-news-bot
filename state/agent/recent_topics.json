@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-15T08:40:50+08:00",
+  "updated_at": "2026-11-16T08:30:59+08:00",
   "days": {
-    "20261108": [
-      "Into the Unknown：九大 Agent 做国家实验室开放题，无一过专家门槛",
-      "Andy Hall 复盘用模型审计 Agent：能抓奖励黑客，却容易淹没人审",
-      "MCPHallu：在 36 个真实 MCP 服务上测幻觉，Agent 很少承认「做不到」",
-      "社区讨论：Browser MCP 还是 Playwright MCP？先问这活要不要 MCP",
-      "Google ADK Python v2.14.0：执行环境、A2A 与评测毕业为稳定能力",
-      "Microsoft Agent Framework python-1.25.0：MCP 工具发现可挂审批策略",
-      "社区实测：LangGraph 在数据库写入已提交后仍可能重放未完成任务",
-      "Apiiro：Claude Code「Don't Ask Again」相关配置出现在 1122 个公开 GitHub 文件中",
-      "量子位：AGENTS.md 正变成 Agent 时代的「文本病毒」",
-      "Perplexity 推出面向工作的 Teammates Agent"
-    ],
     "20261109": [
       "阿里云 CIO 蒋林泉复盘三年实践：Agent 越多，企业为何仍不够 AI Native",
       "LoreKit：Agent 记忆该有自己的 OpenTelemetry 时刻",
@@ -95,6 +83,17 @@
       "agweb：专为 Agent 做的浏览器，不抢焦点、多标签同屏",
       "Docker 谈 Agent 安全：隔离与治理优先于「再训模型」",
       "Anthropic 重做 Claude Code Projects：一目标多线程并行，协调者分派与审阅"
+    ],
+    "20261116": [
+      "实践者沉淀「规划→批判→Diff 审计」三阶段 Coding Agent 工作流",
+      "京东把 Super Agent 做成「数字人队长」：嵌进保障群，聚合证据不替人拍板",
+      "Elvis Saravia 提醒：最强 Agent 系统里有大量无聊的确定性步骤",
+      "社区盘点：生产里搞垮 AI Agent 的痛点，首位是静默失败",
+      "Geoff Stearns 论证：采购 Agent 会偏向可改固件的硬件",
+      "Attest 提供只读 MCP：让 Claude Code / Cursor / Codex 写 Agent 回归测试",
+      "社区做了只读 Windows MCP：用 delta canvas 与 UIA 网格砍视觉 token",
+      "GitLab 19.5 把外部 Coding Agent 纳入可治理的 DevOps 平台",
+      "美团开源 LongCat-2.5：1.6T MoE 专攻长程 Agent，全在国产芯上训练"
     ]
   }
 }

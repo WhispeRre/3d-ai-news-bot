@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T08:40:50+08:00",
+  "updated_at": "2026-11-16T08:30:59+08:00",
   "items": {
     "arxiv:2610.33568": "20261027",
     "https://x.com/cursor_ai/status/2114793714531102901": "20261027",
@@ -843,6 +843,26 @@
     "https://claude.com/resources/articles/projects-redesigned": "20261115",
     "https://x.com/omarsar0/status/2121610612040220832": "20261115",
     "https://x.com/omarsar0/status/2121638797419118619": "20261115",
-    "https://x.com/omarsar0/status/2121656194465243164": "20261115"
+    "https://x.com/omarsar0/status/2121656194465243164": "20261115",
+    "https://infoq.cn/article/myl5Mcw3iyCYv3ZJ3hwQ": "20261116",
+    "https://reddit.com/r/LangChain/comments/1xwy16i/regression_tests_for_langgraph_agents_from_a": "20261116",
+    "https://x.com/swyx/status/2121896675048587765": "20261116",
+    "https://simonwillison.net/2026/Nov/14/datasette-llm": "20261116",
+    "https://github.com/vaibhav-space/my-ai-coding-workflow": "20261116",
+    "https://reddit.com/r/LangChain/comments/1xxap0r/the_missing_layer_in_ai_agents_execution": "20261116",
+    "https://geoffstearns.com/blog/your-agent-will-pick-the-hackable-one": "20261116",
+    "https://x.com/akshay_pachaar/status/2121953665473036328": "20261116",
+    "https://x.com/jerryjliu0/status/2122019605271167009": "20261116",
+    "https://reddit.com/r/AI_Agents/comments/1xwtxbd/amazon_is_planning_a_world_product_graph_to_index": "20261116",
+    "https://reddit.com/r/AI_Agents/comments/1xwio0h/7_things_that_break_ai_agents_in_production": "20261116",
+    "https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu": "20261116",
+    "https://x.com/omarsar0/status/2122035455793188980": "20261116",
+    "https://github.com/fumbdendade19718/blender-ai-copilot-desk": "20261116",
+    "https://reddit.com/r/mcp/comments/1xwy8xx/a_readonly_mcp_server_that_lets_claude_code": "20261116",
+    "https://x.com/dair_ai/status/2122026336059543589": "20261116",
+    "https://infoq.cn/article/0IpE2EOypcqMFtL7z4z1": "20261116",
+    "https://reddit.com/r/AI_Agents/comments/1xwyts4/spare_home_laptop_ai_use_cases": "20261116",
+    "https://reddit.com/r/mcp/comments/1xwt4tk/i_built_a_readonly_windows_mcp_server_that_cuts": "20261116",
+    "https://reddit.com/r/AI_Agents/comments/1xx5l8s/im_tired_of_ai_explaining_things_instead_of": "20261116"
   }
 }
