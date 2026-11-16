@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-15T12:21:52+08:00",
+  "updated_at": "2026-11-16T12:22:32+08:00",
   "days": {
-    "20261108": [
-      "Video-Rebirth/hyperflow-h3-flash：压缩后的本地音画同生视频模型",
-      "sarpstar/cinecode：用编程 Agent 把想法做成完整影片",
-      "lucas-martinic/polyfork-catalog：三千多个可编程低多边形 Web 三维资产",
-      "shanselman/gputaskman：看清 GPU 里到底是谁占了显存",
-      "Leviidev/Henge：在 iPhone / iPad 上跑真正的 macOS"
-    ],
     "20261109": [
       "DIYgod/pinky：人在环路的手机操控 Agent",
       "SamG-Coder/solstice：浏览器里的 Nanite 级渲染",
@@ -56,6 +49,13 @@
       "opencoredev/islandcn：shadcn 安装的 React 灵动岛",
       "caru-ini/stack-diagram：一句话画出带官方 Logo 的架构图",
       "jhaizhou-ops/S2Arm：把 Switch 游戏原生跑上苹果设备"
+    ],
+    "20261116": [
+      "Noniv/abyssal-garden：纯代码 WebGPU 水下漫游世界",
+      "Tthanh2k6/turbo-browser-mcp：批量省 Token 的浏览器 MCP",
+      "n4ze3m/tiny-voca：450 万参数可端侧跑的英文 TTS",
+      "backnotprop/plannotator：编程 Agent 的批注与评审工作台",
+      "faizfahmi77/ScanDot：手机端实验性三维点云扫描"
     ]
   }
 }

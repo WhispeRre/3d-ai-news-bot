@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T12:21:52+08:00",
+  "updated_at": "2026-11-16T12:22:32+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -90,6 +90,11 @@
     "https://github.com/opencoredev/islandcn": "20261115",
     "https://github.com/caru-ini/stack-diagram": "20261115",
     "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax": "20261115",
-    "https://github.com/paul-nameless/agweb": "20261115"
+    "https://github.com/paul-nameless/agweb": "20261115",
+    "https://github.com/faizfahmi77/ScanDot": "20261116",
+    "https://github.com/n4ze3m/tiny-voca": "20261116",
+    "https://github.com/backnotprop/plannotator": "20261116",
+    "https://github.com/Noniv/abyssal-garden": "20261116",
+    "https://github.com/Tthanh2k6/turbo-browser-mcp": "20261116"
   }
 }
