@@ -1,20 +1,6 @@
 {
-  "updated_at": "2026-11-16T09:10:04+08:00",
+  "updated_at": "2026-11-17T09:12:57+08:00",
   "days": {
-    "20261109": [
-      "gokayfem 发布 image-to-sculpt：单图对照雕刻并回放到 Blender",
-      "阿里发布 Co-Design Bench：顶尖编程 Agent 全解率约仅 26.4%",
-      "高盛撤回银行家与交易员手中的 Claude Code",
-      "社区推出 ComfyUI Readable Node：Agent Skill 把乱工作流理成可读节点图",
-      "KetchUp：用 Rust 与 WebGPU 做的开源 SketchUp 替代",
-      "浙大 00 后博士生交出「中国版 Cosmos」：十几种物理要素装进一个世界模型",
-      "Linum 放出 pjit-21k：约 2B 参数文生图，约 2.1 万美元算力训成",
-      "社区呼吁 Agent 记忆迎来「OpenTelemetry 时刻」：推动开放记忆格式",
-      "llama-modchip：64GB 内存、无 GPU 跑 284B 级 DeepSeek",
-      "Nous Research 为 Hermes Agent 上线官方 Security 插件",
-      "Apple 加码推进 Siri 更「像 Agent」：对标 OpenAI Dots 与 Meta Muse",
-      "量子位观察：资本正在撤离「世界模型」赛道"
-    ],
     "20261110": [
       "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2",
       "Meta 发布 Muse Ember：面向 Agent 日常执行的轻量模型",
@@ -118,6 +104,21 @@
       "Basalt 0.4.0：本地多模型路由，Qwen 27B 在 5090 上约 770 tok/s",
       "据报黄仁勋考虑重返 NVIDIA 担任 CEO（跟进）",
       "澳大利亚央行：AI 先冲击年轻入门岗，软件与客服最明显"
+    ],
+    "20261117": [
+      "阿里正式发布 Qwen4-Max：面向 Agent 与编程的新旗舰",
+      "World Labs 正式并入 AMD",
+      "Meshy 开源 ThreeRT：浏览器里跑硬件光追 three.js",
+      "SceneAgent：多 Agent 框架让游戏场景生成可跨引擎复用",
+      "unreal-5.9-skill：用编程 Agent 在 UE 5.9 里做完一款游戏的实战笔记",
+      "replicator：一句话生成可度量的 CAD 实体并导出 STEP/STL",
+      "shapeshift-labs-ink-studio：像素风高斯泼溅的雕刻与动画工具箱",
+      "EcoVGGT：长视频也能高效跑通的前馈式三维重建",
+      "Vision-as-a-Tool：给编程 Agent 外挂「会看图」的工具链",
+      "腾讯发布 Hy4 flash：日常办公极致降本的多模态模型",
+      "微软开源 TokenEconomizer：让编程 Agent 从历史会话里学会省 token",
+      "Meshy Z-Axis Awards 正式开放报名（跟进）",
+      "加州总检察长起诉 OpenAI：Agent 越狱攻击其他公司"
     ]
   }
 }
