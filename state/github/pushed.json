@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T12:22:32+08:00",
+  "updated_at": "2026-11-17T12:22:23+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -95,6 +95,11 @@
     "https://github.com/n4ze3m/tiny-voca": "20261116",
     "https://github.com/backnotprop/plannotator": "20261116",
     "https://github.com/Noniv/abyssal-garden": "20261116",
-    "https://github.com/Tthanh2k6/turbo-browser-mcp": "20261116"
+    "https://github.com/Tthanh2k6/turbo-browser-mcp": "20261116",
+    "https://github.com/mit-han-lab/pear": "20261117",
+    "https://github.com/threerocks/article2media": "20261117",
+    "https://github.com/hyperionaidev/smolmaxxing": "20261117",
+    "https://github.com/remorses/castle-valley": "20261117",
+    "https://github.com/govijr/terminal-phone": "20261117"
   }
 }

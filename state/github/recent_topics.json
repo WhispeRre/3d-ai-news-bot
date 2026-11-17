@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-16T12:22:32+08:00",
+  "updated_at": "2026-11-17T12:22:23+08:00",
   "days": {
-    "20261109": [
-      "DIYgod/pinky：人在环路的手机操控 Agent",
-      "SamG-Coder/solstice：浏览器里的 Nanite 级渲染",
-      "Moh4696/open-3d-skills：八套三维网页创作技能",
-      "jamesondh/chimera-vocal-synth：物理建模的浏览器人声合成",
-      "VoxelKei/SplatThumb：资源管理器里预览高斯泼溅"
-    ],
     "20261110": [
       "ooolabdev/ooosplat：本地一键出三维高斯泼溅",
       "anteloc/ldraw-mecha：用 Agent 把乐高机构做成动画",
@@ -56,6 +49,13 @@
       "n4ze3m/tiny-voca：450 万参数可端侧跑的英文 TTS",
       "backnotprop/plannotator：编程 Agent 的批注与评审工作台",
       "faizfahmi77/ScanDot：手机端实验性三维点云扫描"
+    ],
+    "20261117": [
+      "govijr/terminal-phone：终端里给 Agent 用的 iPhone",
+      "mit-han-lab/pear：仿真里训出能开真机的推理模型",
+      "remorses/castle-valley：油画笔触风的可玩 three.js 世界",
+      "hyperionaidev/smolmaxxing：在最小硬件上硬塞大模型",
+      "threerocks/article2media：文章视频一键出多平台内容的 Skill"
     ]
   }
 }
