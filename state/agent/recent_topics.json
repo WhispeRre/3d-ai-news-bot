@@ -1,17 +1,6 @@
 {
-  "updated_at": "2026-11-16T08:30:59+08:00",
+  "updated_at": "2026-11-17T08:31:32+08:00",
   "days": {
-    "20261109": [
-      "阿里云 CIO 蒋林泉复盘三年实践：Agent 越多，企业为何仍不够 AI Native",
-      "LoreKit：Agent 记忆该有自己的 OpenTelemetry 时刻",
-      "Evolver：把 Agent 轨迹沉淀成可复用 Gene，不改模型也能进化",
-      "阿里等发布 Co-Design Bench：最强模型也只完整做对约四分之一真实改版",
-      "NVIDIA Auto Ontology：给 Text-to-SQL Agent 补上可认证的语义层",
-      "mini-harness：约 1400 行可读完的教学级 Agent harness",
-      "Agent Office：用 MCP 让 Claude Code / Codex / Cursor 互相委派",
-      "斯坦福 CS146S × Monaco：Coding Agent 能秒交作业后，课怎么上、团队怎么买工具",
-      "tinker-ai-skill：把自家 Claude Code 会话炼成可本地跑的 Agent 模型"
-    ],
     "20261110": [
       "Anthropic 工程师 Addy Osmani：Coding Agent 让你变成管理者，关键是验证与判断",
       "CodeRabbit 用 Codex 重做交付：同团队软件交付约提升 20 倍",
@@ -94,6 +83,16 @@
       "社区做了只读 Windows MCP：用 delta canvas 与 UIA 网格砍视觉 token",
       "GitLab 19.5 把外部 Coding Agent 纳入可治理的 DevOps 平台",
       "美团开源 LongCat-2.5：1.6T MoE 专攻长程 Agent，全在国产芯上训练"
+    ],
+    "20261117": [
+      "Anthropic 论证 Agent 记忆关键是「会忘什么」，并用 Dreaming 事后纠错",
+      "实践者本地落地 Anthropic always-on 五件套，后台跑满配额仅占 0.41%",
+      "Docker 把 Sandbox Kit 捐给 CNCF：Agent 权限随 OCI 镜像走",
+      "DigitalOcean 推出 Managed Agents：空闲暂停的 microVM 加受治理工具网关",
+      "Philipp Schmid 盘点：Gemini Decisions API 与自托管 Agent 沙箱",
+      "OpenAI 推进医疗 computer-use：行政任务可便宜跑，关键步骤仍要人批",
+      "T3 Code 用 Orchestrator V2 统一多 Harness，远程环境可跨机委派子任务",
+      "阿里发布 Qwen4-Max：内置 Live Delivery，先交可用版再按反馈扩写"
     ]
   }
 }

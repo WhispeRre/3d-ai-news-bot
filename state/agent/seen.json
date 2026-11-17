@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T08:30:59+08:00",
+  "updated_at": "2026-11-17T08:31:32+08:00",
   "items": {
     "arxiv:2610.33568": "20261027",
     "https://x.com/cursor_ai/status/2114793714531102901": "20261027",
@@ -863,6 +863,29 @@
     "https://infoq.cn/article/0IpE2EOypcqMFtL7z4z1": "20261116",
     "https://reddit.com/r/AI_Agents/comments/1xwyts4/spare_home_laptop_ai_use_cases": "20261116",
     "https://reddit.com/r/mcp/comments/1xwt4tk/i_built_a_readonly_windows_mcp_server_that_cuts": "20261116",
-    "https://reddit.com/r/AI_Agents/comments/1xx5l8s/im_tired_of_ai_explaining_things_instead_of": "20261116"
+    "https://reddit.com/r/AI_Agents/comments/1xx5l8s/im_tired_of_ai_explaining_things_instead_of": "20261116",
+    "https://reddit.com/r/mcp/comments/1xxcyo7/from_phone_photos_to_a_playable_counterstrike_2": "20261117",
+    "https://infoq.cn/article/LjVeWVAsBWwaiifdMRiu": "20261117",
+    "https://infoq.cn/article/yV89L6iMCqSLDHeSoLxo": "20261117",
+    "https://reddit.com/r/AI_Agents/comments/1xxhtk5/anthropic_just_mapped_out_the_5_primitives_of": "20261117",
+    "https://xusheng.dev/posts/windows-coding-agent-telemetry": "20261117",
+    "https://reddit.com/r/AI_Agents/comments/1xxcj0z/coding_agents_make_my_life_so_much_harder": "20261117",
+    "https://github.com/OpenHands/OpenHands/releases/tag/v1.41.0": "20261117",
+    "https://qbitai.com/2026/11/510486.html": "20261117",
+    "https://reddit.com/r/LangChain/comments/1xxt5rj/cost_per_node_and_budget_caps_in": "20261117",
+    "https://openai.com/index/advancing-computer-use-for-healthcare-teams": "20261117",
+    "https://reddit.com/r/AI_Agents/comments/1xxjewn/are_ai_agents_actually_ready_to_work": "20261117",
+    "https://infoq.cn/article/8TySw9wzqf0l90keJUNf": "20261117",
+    "https://simonwillison.net/2026/Nov/15/datasette-agent": "20261117",
+    "https://reddit.com/r/mcp/comments/1xxp1x8/opensource_mcp_server_for_agent_memory_see_what": "20261117",
+    "https://the-decoder.com/anthropic-says-the-key-to-agent-memory-is-knowing-what-to-forget-not-how-much-to-store": "20261117",
+    "https://reddit.com/r/AI_Agents/comments/1xxksjq/what_is_the_point_of_ai_agents": "20261117",
+    "https://github.com/pmndre/pine": "20261117",
+    "https://simonwillison.net/2026/Nov/15/datasette-apps": "20261117",
+    "https://github.com/huggingface/pybot": "20261117",
+    "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare": "20261117",
+    "https://the-decoder.com/google-warns-that-fully-automated-cyberattacks-have-arrived-and-will-get-worse-fast": "20261117",
+    "https://reddit.com/r/LangChain/comments/1xxbs34/chatgpt_wallet_lets_agents_spend_real_money_what": "20261117",
+    "https://philschmid.de/google-deepmind-roundup-nov-2026": "20261117"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T08:30:59+08:00",
+  "updated_at": "2026-11-17T08:31:32+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
@@ -21,6 +21,7 @@
     "20261113": "when_multi_agent",
     "20261114": "subagents",
     "20261115": "evals_basics",
-    "20261116": "trajectory_eval"
+    "20261116": "trajectory_eval",
+    "20261117": "benchmarks"
   }
 }
