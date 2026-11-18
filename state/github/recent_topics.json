@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-17T12:22:23+08:00",
+  "updated_at": "2026-11-18T12:21:12+08:00",
   "days": {
-    "20261110": [
-      "ooolabdev/ooosplat：本地一键出三维高斯泼溅",
-      "anteloc/ldraw-mecha：用 Agent 把乐高机构做成动画",
-      "chutingyean/Agent-Cockpit：给研究 Agent 的证据链白板",
-      "OmniJev/Flide：决策模型的极速本地推理",
-      "skingko/PastAi：带 Agent 的 macOS 剪贴板工具"
-    ],
     "20261111": [
       "expo/exact：一套应用，Agent 跨端构建并验收",
       "JuneYaooo/rea-video：逐镜拆解视频并给出复刻方案",
@@ -56,6 +49,13 @@
       "remorses/castle-valley：油画笔触风的可玩 three.js 世界",
       "hyperionaidev/smolmaxxing：在最小硬件上硬塞大模型",
       "threerocks/article2media：文章视频一键出多平台内容的 Skill"
+    ],
+    "20261118": [
+      "NicolasDrum/splat-repair：给高斯泼溅用的修复笔刷编辑器",
+      "chuanqisun/spaceship：实时驾驭想法的 Spaceship IDE",
+      "yocontra/pulsar：跨框架让编程 Agent 互相发消息",
+      "sybil-solutions/inference-optimisation-skill：爬坡式榨干本地推理速度",
+      "cobanov/pixelart-gaussiansplat：浏览器里像素风的三维高斯泼溅"
     ]
   }
 }
