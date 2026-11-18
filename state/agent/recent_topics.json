@@ -1,18 +1,6 @@
 {
-  "updated_at": "2026-11-17T08:31:32+08:00",
+  "updated_at": "2026-11-18T08:32:17+08:00",
   "days": {
-    "20261110": [
-      "Anthropic 工程师 Addy Osmani：Coding Agent 让你变成管理者，关键是验证与判断",
-      "CodeRabbit 用 Codex 重做交付：同团队软件交付约提升 20 倍",
-      "Microsoft 等提出 BoxBox：长跑任务中热更新自身 harness",
-      "斯坦福等发布 Shepherd：把 Agent 执行做成可回放的 Git 轨迹",
-      "社区复现：Agent 记忆写回向量库可能丢掉 ACL，造成跨租户泄漏",
-      "Shuttle：为 Agent 改造 Chromium，身份隔离与内置 MCP",
-      "社区复盘：MCP 上架 Claude 与 ChatGPT 目录的硬性清单",
-      "Meta 发布 Muse Ember：专攻工具调用与路由等重复 Agent 活",
-      "千问办公 2.0 推出 Team Agent：多人与数字员工同场协作",
-      "ChatGPT Desktop 会把本机 SSH agent 转发到远程机器"
-    ],
     "20261111": [
       "微软提出 LongCapHarness：不训模型，靠 harness 把长上下文推理抬了 64 分",
       "Resend CEO 谈 Designing for Agents：文档与工具怎么写成 Agent 愿意用的形态",
@@ -93,6 +81,17 @@
       "OpenAI 推进医疗 computer-use：行政任务可便宜跑，关键步骤仍要人批",
       "T3 Code 用 Orchestrator V2 统一多 Harness，远程环境可跨机委派子任务",
       "阿里发布 Qwen4-Max：内置 Live Delivery，先交可用版再按反馈扩写"
+    ],
+    "20261118": [
+      "Claude Code 团队拆解验证：E2E、属性测试与差分测试，护栏不能被改动的代码改掉",
+      "Simon Willison 与 Prime Radiant：External Sandbox——Agent 在外，命令进沙箱",
+      "LangChain 复盘主动式 Agent：记忆与审阅 UX 决定会不会烦人",
+      "rust-anything：录行为、逐段迁 Rust，每步用录音当对照",
+      "OpenAI Agents SDK Python v0.25：开放第三方 Session 适配器",
+      "LangSmith：Trace 敏感数据三级管控",
+      "Revolut 用 Codex：编码时间降 30–60%，FinCrime Agent 扩人效",
+      "实践者用 lend：远程 Agent 借本机命令，密钥不出笔记本",
+      "SAP：演示亮、生产翻车，先语义就绪再谈 Agent 自主"
     ]
   }
 }
