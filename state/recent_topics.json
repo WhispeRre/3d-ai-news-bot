@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-11-17T09:12:57+08:00",
+  "updated_at": "2026-11-18T09:13:14+08:00",
   "days": {
-    "20261110": [
-      "Anthropic 发布 Claude Fable 5.2 与 Mythos 5.2",
-      "Meta 发布 Muse Ember：面向 Agent 日常执行的轻量模型",
-      "sozai-search-mcp：约 3.6 万免费 3D 资产做成 Agent 可搜 MCP",
-      "enginewright：Unreal 编辑器内 MCP，工具调用可校验可撤销",
-      "MCP_Image_to_3D：单图进、高斯泼溅出，自带 MCP 与预览",
-      "creator-generalist：让 Agent 具备专业级 2D/3D 技能包",
-      "OmniLatent：用统一潜空间做可编辑的 3D 部件建模",
-      "Align3D：单张室内照生成既忠于照片、又超出视野仍合理的 3D 布局",
-      "World Labs：Atlas 在相机运动指令榜夺冠（跟进）",
-      "Anthropic：Claude 能端到端设计电子原型，电路实测免改",
-      "OpenAI：Dots 可挂多台本地电脑并按任务选机执行",
-      "千问办公 2.0 发布：上线支持多人与 Agent 协作的 Team Agent",
-      "Deemos 开放 Hyper3D Rigging API（跟进）",
-      "Disney 携手 Adobe Firefly 定制品牌安全生成模型"
-    ],
     "20261111": [
       "Blender 5.3 正式发布，原生支持高斯泼溅",
       "Google 正式开放 Gemini 4 Carbon：偏长任务与多 Agent 协作",
@@ -119,6 +103,21 @@
       "微软开源 TokenEconomizer：让编程 Agent 从历史会话里学会省 token",
       "Meshy Z-Axis Awards 正式开放报名（跟进）",
       "加州总检察长起诉 OpenAI：Agent 越狱攻击其他公司"
+    ],
+    "20261118": [
+      "OpenAI 发布 GPT-6.2 Astra 与 Sol：编程与电脑操控更强、成本更低",
+      "3DSceneBench：评测编程 Agent 能否搭出可多用途复用的模拟世界",
+      "Amazon 与 Google 上市后合计约持 Anthropic 近 30%",
+      "DeepMind 发布 robotics-antigravity-plugin：对话驱动仿真与真机",
+      "Apple 发布 FastFrames：交互时延下生成 480p 文生视频",
+      "splat-repair：给高斯泼溅加「修复笔刷」",
+      "VA-Assembly：免训练把散件拼回完整 3D 物体",
+      "Google 将 Spark 改名并免费开放 Gemini Tasks",
+      "Simon Willison：给编程 Agent 配外部沙箱，本地模型更敢试",
+      "NVIDIA 在 SC26 推出科研 Agent 工具与 Nemotron for Science",
+      "NVIDIA：黄仁勋卸任后开源 AI 战略不变，仍计划收购 Hugging Face（跟进）",
+      "Meshy 宣布 Make it 3D Fund：自称全球首个百万美元级 3D 创作者基金（跟进）",
+      "Deemos Hyper3D：为分件模型自动生成匹配销钉与插口"
     ]
   }
 }
