@@ -1,19 +1,6 @@
 {
-  "updated_at": "2026-11-18T08:32:17+08:00",
+  "updated_at": "2026-11-19T08:31:22+08:00",
   "days": {
-    "20261111": [
-      "微软提出 LongCapHarness：不训模型，靠 harness 把长上下文推理抬了 64 分",
-      "Resend CEO 谈 Designing for Agents：文档与工具怎么写成 Agent 愿意用的形态",
-      "Meta 提出 AutoRefine：用合并/放弃等业务结果给代码 Judge 自动校准",
-      "UC Berkeley：改 harness 几乎不动准确率，成本却能差到 2.6 倍",
-      "社区实践：Stripe 密钥留给代理，退款等 Slack 点头再放行",
-      "browser-use 1.0：删掉八成代码，Agent 在持久 REPL 里写 Python 直连 CDP",
-      "DSPy 3.5：轻量 LM 层落地，ReAct 与 RLM/Flex/GEPA 毕业为正式能力",
-      "社区实测：MCP 接过 15 个后 Agent 变笨，6–8 个工具更稳",
-      "Cursor 重做 Projects：队友与各自 Agent 可在同一工作区协作",
-      "OpenAI 推出 ChatGPT Businesses：企业认领资料并可选 Business Agent 答客",
-      "Google Chrome 发布 modern-web-guidance：把 Coding Agent 从旧 JS 习惯拽回现代 Web 原语"
-    ],
     "20261112": [
       "AWS 发布 Emulator：Agent 写代码时，工程师的活变成规格、保真测试与合并门禁",
       "JioStar 首席架构师复盘：5 亿用户级对话发现，先定护栏再扩 evals 飞轮",
@@ -92,6 +79,17 @@
       "Revolut 用 Codex：编码时间降 30–60%，FinCrime Agent 扩人效",
       "实践者用 lend：远程 Agent 借本机命令，密钥不出笔记本",
       "SAP：演示亮、生产翻车，先语义就绪再谈 Agent 自主"
+    ],
+    "20261119": [
+      "OpenAI 拆解 Codex 沙箱：在本机环境里用 OS 能力做最小权限",
+      "OpenAI 量化「锯齿前沿」：Coding Agent 加速研发，但能力极不均匀",
+      "Google：自改进 Agent Harness 用门控模块演进，成本约全量重写的十分之一",
+      "BRIDGE：极简 RAG 记忆打平复杂记忆系统，关键看能否改下一步动作",
+      "Mastra @mastra/core@1.84.0：Storage v2 只写增量，并自动恢复崩溃工作流",
+      "LangSmith 上线 Coding Agent ROI 看板：把花费挂到 PR 结果上",
+      "OpenAI Responses API 后台模式：可等待工作流最高约省 40% token 价",
+      "Harvard 工作论文：Coding Agent 让代码量涨约 30%，产出不增、评审更慢",
+      "StarSling：面向 Agent 海量 PR 的自改进 CI，用对照实验开优化 PR"
     ]
   }
 }
