@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T12:21:12+08:00",
+  "updated_at": "2026-11-19T12:20:57+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -105,6 +105,11 @@
     "https://github.com/cobanov/pixelart-gaussiansplat": "20261118",
     "https://github.com/NicolasDrum/splat-repair": "20261118",
     "https://github.com/sybil-solutions/inference-optimisation-skill": "20261118",
-    "https://github.com/chuanqisun/spaceship": "20261118"
+    "https://github.com/chuanqisun/spaceship": "20261118",
+    "https://github.com/siliconjungle/shapeshift-labs-ink-studio": "20261119",
+    "https://github.com/dannystuart/sketch-to-3d": "20261119",
+    "https://github.com/manuelgscom/inside-llm": "20261119",
+    "https://github.com/NVIDIA/SkillEvaluator": "20261119",
+    "https://github.com/google-deepmind/robotics-antigravity-plugin": "20261119"
   }
 }

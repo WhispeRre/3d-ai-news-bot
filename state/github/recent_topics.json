@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-18T12:21:12+08:00",
+  "updated_at": "2026-11-19T12:20:57+08:00",
   "days": {
-    "20261111": [
-      "expo/exact：一套应用，Agent 跨端构建并验收",
-      "JuneYaooo/rea-video：逐镜拆解视频并给出复刻方案",
-      "WhiteTowerAI/ohmygame：一个人的开源 AI 游戏工作室",
-      "imxieyi/Kernarium：在 iOS 上原生跑 Linux 内核",
-      "jammaru/sakutto：本地大模型做的网页翻译扩展"
-    ],
     "20261112": [
       "klad-app/klad：人机共绘的笔画级动画画板",
       "SsKanDon/blender-ai-mcp-addon：Blender 场景里的 MCP AI 助手",
@@ -56,6 +49,13 @@
       "yocontra/pulsar：跨框架让编程 Agent 互相发消息",
       "sybil-solutions/inference-optimisation-skill：爬坡式榨干本地推理速度",
       "cobanov/pixelart-gaussiansplat：浏览器里像素风的三维高斯泼溅"
+    ],
+    "20261119": [
+      "google-deepmind/robotics-antigravity-plugin：让 Agent 在仿真与真机上写控制器",
+      "NVIDIA/SkillEvaluator：给 Agent Skills 做质量与效果评测",
+      "siliconjungle/shapeshift-labs-ink-studio：把 SDF 雕成可动的像素风高斯泼溅",
+      "dannystuart/sketch-to-3d：让 3D 模型像马克笔素描一样画出来",
+      "manuelgscom/inside-llm：浏览器里透视 GGUF 量化差异"
     ]
   }
 }
