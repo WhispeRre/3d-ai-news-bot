@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T08:31:22+08:00",
+  "updated_at": "2026-11-20T08:31:52+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
@@ -24,6 +24,7 @@
     "20261116": "trajectory_eval",
     "20261117": "benchmarks",
     "20261118": "llm_judge",
-    "20261119": "guardrails_hitl"
+    "20261119": "guardrails_hitl",
+    "20261120": "prompt_injection"
   }
 }
