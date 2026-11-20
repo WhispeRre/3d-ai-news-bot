@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T12:20:57+08:00",
+  "updated_at": "2026-11-20T12:21:03+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -110,6 +110,11 @@
     "https://github.com/dannystuart/sketch-to-3d": "20261119",
     "https://github.com/manuelgscom/inside-llm": "20261119",
     "https://github.com/NVIDIA/SkillEvaluator": "20261119",
-    "https://github.com/google-deepmind/robotics-antigravity-plugin": "20261119"
+    "https://github.com/google-deepmind/robotics-antigravity-plugin": "20261119",
+    "https://github.com/mankidev/antialgorithm": "20261120",
+    "https://github.com/FlashML-org/FreeVideo": "20261120",
+    "https://github.com/nilbuild/stick-scene": "20261120",
+    "https://github.com/ELU-Labs/elu": "20261120",
+    "https://github.com/felixbfx/MuleCreate": "20261120"
   }
 }

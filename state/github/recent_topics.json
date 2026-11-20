@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-19T12:20:57+08:00",
+  "updated_at": "2026-11-20T12:21:03+08:00",
   "days": {
-    "20261112": [
-      "klad-app/klad：人机共绘的笔画级动画画板",
-      "SsKanDon/blender-ai-mcp-addon：Blender 场景里的 MCP AI 助手",
-      "Tencent/LoopForge：自托管的编程 Agent 交付台",
-      "FrigadeHQ/yogurt：不上会机器人的私密会议笔记",
-      "muratozturkdev/homescape：可互动的智能家居 3D 娃娃屋"
-    ],
     "20261113": [
       "op7418/guizang-game-skill：用 Skill 做出可玩浏览器 3D 游戏",
       "agentes-chat/agentes-chat：人与 Agent 共处的自托管团队聊天",
@@ -56,6 +49,13 @@
       "siliconjungle/shapeshift-labs-ink-studio：把 SDF 雕成可动的像素风高斯泼溅",
       "dannystuart/sketch-to-3d：让 3D 模型像马克笔素描一样画出来",
       "manuelgscom/inside-llm：浏览器里透视 GGUF 量化差异"
+    ],
+    "20261120": [
+      "felixbfx/MuleCreate：三维线稿草图交给 AI 建模",
+      "mankidev/antialgorithm：逼 Agent 先躲开平庸创意",
+      "FlashML-org/FreeVideo：8GB 显存本地出片",
+      "ELU-Labs/elu：全屏终端编排编程会话",
+      "nilbuild/stick-scene：Agent 画出可交互火柴人"
     ]
   }
 }
