@@ -1,23 +1,6 @@
 {
-  "updated_at": "2026-11-19T09:12:46+08:00",
+  "updated_at": "2026-11-20T09:11:39+08:00",
   "days": {
-    "20261112": [
-      "阿里预告 Qwen4，Qwen4-Max 已可预览",
-      "Meshy 用 Fable 5.2 × 3D Agent：一对话做出可玩射击游戏",
-      "Adobe Max 实验：照片可变可逛 3D，还能「采访」角色",
-      "blender-ai-mcp-addon：Blender 里挂 AI 助手与 MCP",
-      "blockout-to-real：灰模一键变成照片级 PBR 场景",
-      "SuperSplat v3.8.0：WebMCP 增加时间轴与相机关键帧",
-      "SuperMimic：一个可微世界模型做人形全身动作跟踪",
-      "Luma 上线 Character Swap & Insert：同镜头换角、加物、删人",
-      "FlashMotion：超快生成长时间三维人体动作",
-      "Google 推出 Gemini Decisions API：一次评判最多约 1000 题",
-      "Anthropic 称用 AI 三天把 Claude 迁到 AMD，削弱 CUDA 护城河",
-      "Atuin Threads：多台机器上的 Agent 会话一处看齐",
-      "OpenAI 季度营收据报首次突破约 100 亿美元",
-      "字节跳动据报几周内推出类似 Meta Muse 的个人 AI 助手",
-      "Tripo 首届 3D World Hackathon：超 2000 队做出可玩世界与 VR"
-    ],
     "20261113": [
       "Google 发布 Gemini 4 Hydrogen：面向日常编码与 Agent 工作流的高速模型",
       "World Labs 向所有人开放 Atlas，并提供应用与 API（跟进）",
@@ -118,6 +101,23 @@
       "微软 Ignite 推 7 款自研 MAI 模型，逐步替换产品里的外部模型",
       "具身公司 Genesis 完成 A 轮，估值超 230 亿，英伟达与 AMD 首次联手押注",
       "微软 CEO 纳德拉：AI Agent 将重塑互联网经济模型"
+    ],
+    "20261120": [
+      "Anthropic 正式挂牌纳斯达克，开盘约高于发行价三成（跟进）",
+      "Google 在 Gemini API 推出 Tool Retrieval",
+      "MuleCreate：三维线稿交给 AI，在 Houdini 或 Blender 里建模",
+      "threejs-to-3d-model：一句话生成带动画的 3D，可导入主流引擎",
+      "CADMAGEDDON：本地视觉模型从多边形网格反推 CAD",
+      "LumenAct：中文语义驱动角色表情，并适配 Blender＋MCP",
+      "UltraTex：单张参考图为网格生成高保真 PBR 材质",
+      "WM^MLLM：把多模态大模型做成可持久编辑的交互世界模型",
+      "Ultimate3D：大规模数据教模型理解相机与物体空间关系",
+      "Google Gemini for Mac 上线 computer-use，可跨本地文件与应用干活",
+      "OpenAI 公开 Performance Factory：用 Codex Agent 巡检并修复性能问题",
+      "Google ADK Python 发布 v2.15.0：慢工具下保响应并加强沙箱隔离",
+      "Apple 据招聘信息自研可操控 Mac 的 AI Agent",
+      "Meta Muse 据报串话，甚至可能暴露他人隐私数据",
+      "Ramp 指数：六周内 token 单价降约 21%，用量创新高但增速放缓"
     ]
   }
 }
