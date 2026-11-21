@@ -1,19 +1,6 @@
 {
-  "updated_at": "2026-11-20T08:31:52+08:00",
+  "updated_at": "2026-11-21T08:31:27+08:00",
   "days": {
-    "20261113": [
-      "InfoQ 拆解：把上下文做成控制平面，知识、记忆各管一摊",
-      "Amplitude 用 Wave：洞察到上线约 1–2 天，强推理与高频检查分模型跑",
-      "TRUST：自改进别见验证分涨就改，贪心门槛近半更新其实更差",
-      "JoMoHa：用同一任务结果 RL 联合训「写 harness」与「干活」两套策略",
-      "社区踩坑：Playwright MCP 每步回灌整页快照，长表单跑到一半上下文爆掉",
-      "Agno v3.2：Super Agent 直连工具干活，Company 任务可编排，A2A 升到 v1.0",
-      "Pydantic AI v2.68：跑中途可 RequestInput 问人，子 Agent 可挂成 durable 子工作流",
-      "agentes-chat：人和 Claude / Codex 等 Agent 同频道协作的自托管工作区",
-      "Google 发布 Gemini 4 Hydrogen：日常 coding 与 agentic 快环，可作多 Agent 执行层",
-      "Perplexity 红队自家 Computer Agent 沙箱：无人逃出宿主机，4 个模型绕过网络白名单",
-      "Expo 上线云端 iOS 模拟器：Coding Agent 改完先出截图和录像再找人审"
-    ],
     "20261114": [
       "快手拆解商业互动 Agent：动态知识库、用户模拟器与稀疏奖励归因",
       "Shield 用 computer-use Agent 接手遗留门户：人只留判断与审批",
@@ -88,6 +75,17 @@
       "Google ADK Python v2.15.0：按用户/会话隔离沙箱，并区分「偶发能过」与「每次都稳」",
       "Pydantic AI v2.71.0：ModelRouter 按步选模，ToolBridge 与 PermissionRule 稳住工具面",
       "Cognition 用 FrontierCode 2.0 评 Gemini 4 Neon：合并决策接近 Opus 5.5，成本约三分之一"
+    ],
+    "20261121": [
+      "GrepMem：追加全文日志加正则检索，打赢结构化记忆",
+      "Pro² Agent：把主状态从代码库改成「问题状态」",
+      "Meta 提出 Benchmark Factory：用 Agent 从自家已合并改动自动造 Coding 评测",
+      "Agnes Harness 开源：Sys1 快决策 + TTT×RSI，把现场经验写成可复用 Playbook",
+      "Hospital-bench：模拟医院 13 应用 131 工具，安全失手比「会不会做」更扎眼",
+      "agent-crop：给 Coding Agent 一根「马鞭」，用本地耗时证据驱动复盘写回",
+      "火山引擎 Agent-Native：用目录树把知识、规则、记忆编成 Agent 可读上下文",
+      "Google 为 Gemini Mac 上线 Computer Use：隔离后台窗操作桌面，关键步骤可预批",
+      "ChatPRD 遭 Token 欺诈：免费试用被刷成地下算力，产品被迫收紧试用"
     ]
   }
 }
