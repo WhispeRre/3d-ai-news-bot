@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-20T12:21:03+08:00",
+  "updated_at": "2026-11-21T12:20:41+08:00",
   "days": {
-    "20261113": [
-      "op7418/guizang-game-skill：用 Skill 做出可玩浏览器 3D 游戏",
-      "agentes-chat/agentes-chat：人与 Agent 共处的自托管团队聊天",
-      "HybridRobotics/supermimic：可微世界模型做的人形全身跟踪",
-      "simpsoka/zigzag：带 MCP 的开源刺绣设计软件",
-      "adventists-ai/sophon-realtime：能听语气的开源全双工语音"
-    ],
     "20261114": [
       "meshy-dev/ThreeRT：用 three.js 写法做硬件实时光追",
       "berkantay/gpucanvas：WebGPU 无限画布上挂活 DOM",
@@ -56,6 +49,13 @@
       "FlashML-org/FreeVideo：8GB 显存本地出片",
       "ELU-Labs/elu：全屏终端编排编程会话",
       "nilbuild/stick-scene：Agent 画出可交互火柴人"
+    ],
+    "20261121": [
+      "rxolve/zpup：JSON 场景出任意角度 SVG",
+      "phone-harness/phone-harness：让编程 Agent 操控真机",
+      "diggerhq/opencomputer：开源可自托管的 Devin 替代",
+      "iamajmeena/neonclipping：本地两分钟出竖版字幕切片",
+      "tholtman1-del/deadboard：浏览器里练板级电路维修"
     ]
   }
 }

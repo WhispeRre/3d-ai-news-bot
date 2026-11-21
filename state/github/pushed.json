@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T12:21:03+08:00",
+  "updated_at": "2026-11-21T12:20:41+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -115,6 +115,11 @@
     "https://github.com/FlashML-org/FreeVideo": "20261120",
     "https://github.com/nilbuild/stick-scene": "20261120",
     "https://github.com/ELU-Labs/elu": "20261120",
-    "https://github.com/felixbfx/MuleCreate": "20261120"
+    "https://github.com/felixbfx/MuleCreate": "20261120",
+    "https://github.com/tholtman1-del/deadboard": "20261121",
+    "https://github.com/rxolve/zpup": "20261121",
+    "https://github.com/phone-harness/phone-harness": "20261121",
+    "https://github.com/iamajmeena/neonclipping": "20261121",
+    "https://github.com/diggerhq/opencomputer": "20261121"
   }
 }
