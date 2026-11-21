@@ -1,19 +1,6 @@
 {
-  "updated_at": "2026-11-20T09:11:39+08:00",
+  "updated_at": "2026-11-21T09:12:30+08:00",
   "days": {
-    "20261113": [
-      "Google 发布 Gemini 4 Hydrogen：面向日常编码与 Agent 工作流的高速模型",
-      "World Labs 向所有人开放 Atlas，并提供应用与 API（跟进）",
-      "黄仁勋卸任 NVIDIA CEO，开源 AI 路线引发外界猜测",
-      "歸藏 Game Skill：一句话让 Agent 从零做出可玩的浏览器 3D 动作游戏",
-      "Hugging Face 发布 TRELLIS.2 三维生成模型 LoRA 微调权威指南",
-      "Google Antigravity 上线 Orchestrator：同一会话里动态切换 Carbon 与 Hydrogen",
-      "美国联合航空以网络安全为由，禁止客户用 AI Agent 订机票与管订单",
-      "Klad：编程 Agent 能直接驱动的画图应用（源码可用）",
-      "Anthropic 正式上线 IPO 页面，HN 热议破八百（跟进）",
-      "Meshy 预告 Z-Axis Awards：自称全球最大 3D 创作奖，奖金约 30 万美元",
-      "腾讯推出会「看你玩游戏」并给建议的 AI 游戏伴侣"
-    ],
     "20261114": [
       "OpenAI 推出 ChatGPT Wallet：Agent 代购需用户确认",
       "VibePrevisBench：评测编程 Agent 在 Blender 里搭 4D 预演",
@@ -118,6 +105,23 @@
       "Apple 据招聘信息自研可操控 Mac 的 AI Agent",
       "Meta Muse 据报串话，甚至可能暴露他人隐私数据",
       "Ramp 指数：六周内 token 单价降约 21%，用量创新高但增速放缓"
+    ],
+    "20261121": [
+      "Apple 发布 Depth Pro 2：单目深度估计同时兼顾边缘锐利与视频时序稳定",
+      "SceneAnything：用 Agent 从单段视频重建可编辑的大规模网格场景",
+      "Meshy 在 GSTAR 展示 Meshy 7：4K 图生 3D 与图像对齐新 SOTA",
+      "sprite-stacking：四视图像素画一键变可旋转伪 3D，适配主流编程 Agent",
+      "Awesome-3D-Coding：汇总用代码创建与编辑 3D 的基准、数据与 Agent",
+      "Luma 宣布 Luma MCP 已接入 ChatGPT 与 Claude",
+      "animated-sog：定义带动画与音效的紧凑 4D 高斯泼溅片段格式",
+      "Direct3D-V3：在原生体素域做无潜空间扩散，直接生成 3D",
+      "PRIO：为可交互 4D 世界预训练「物体怎么动、怎么形变」的表征",
+      "Hugging Face 推出 harness adapters：按 Agent 脚手架定制模型以提效降本",
+      "量子位报道 Agnes：开源 Agent Harness，称效率最高约 14 倍、成本约降至 1/27",
+      "OpenAI 公开对抗蒸馏防护：多层手段防止模型能力被抽走",
+      "据报 NVIDIA 拟至少 5 亿美元收购 Inception，强化开源 Nemotron 扩散模型线",
+      "贝佐斯出任 Prometheus 联席 CEO，公司估值约 410 亿美元",
+      "Signal 屏蔽系统截屏，阻止 Gemini、Siri AI 等 Agent 读屏看聊天"
     ]
   }
 }
