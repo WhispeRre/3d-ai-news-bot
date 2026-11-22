@@ -1,23 +1,6 @@
 {
-  "updated_at": "2026-11-21T09:12:30+08:00",
+  "updated_at": "2026-11-22T09:10:25+08:00",
   "days": {
-    "20261114": [
-      "OpenAI 推出 ChatGPT Wallet：Agent 代购需用户确认",
-      "VibePrevisBench：评测编程 Agent 在 Blender 里搭 4D 预演",
-      "Meshy 实测 AI 模型上真机打印：100 次打印看完整率",
-      "Meshy × Epic AI MegaJam：编程 Agent 用 Meshy 往 Unreal 塞道具",
-      "Anthropic 推出 Claude for Manufacturing：直连 Autodesk Fusion 等",
-      "blender-ai-copilot-flow：Blender 改动可审可停",
-      "Sprint3D：整条管线加速图生 3D 资产",
-      "Spatial Foundry：空间智能多模态数据集",
-      "社区约 600 次实验复盘 JEPA 世界模型",
-      "DeepSeek 把 App 能力开放到 API",
-      "llama.cpp 发布 v1.0.0：本地推理迎正式大版本",
-      "Brave Search API 接入 x402：Agent 可按次付费搜",
-      "LangChain 估值约 30 亿美元，LangSmith 称约 7000 客户",
-      "OpenAI 解散机器人专项团队：通用模型开始控机",
-      "Anthropic IPO 据报超认购约六倍（跟进）"
-    ],
     "20261115": [
       "Runway 开源 Praxis-1：把视频 AI 知识做成机器人控制器",
       "blender-ai-copilot-forge：用自然语言分步在 Blender 里搭场景",
@@ -122,6 +105,20 @@
       "据报 NVIDIA 拟至少 5 亿美元收购 Inception，强化开源 Nemotron 扩散模型线",
       "贝佐斯出任 Prometheus 联席 CEO，公司估值约 410 亿美元",
       "Signal 屏蔽系统截屏，阻止 Gemini、Siri AI 等 Agent 读屏看聊天"
+    ],
+    "20261122": [
+      "量子位实测：GPT-6.2 Astra 16 项具身任务成功率较 GPT-6 Astra 翻倍",
+      "字节跳动发布 Axion 1.0：仅三阶段训练即对标顶尖商业 Agent",
+      "Anthropic 数学家用 Claude 给出黎曼猜想 Lean 证明，斯坦福数小时后放出全人工竞争稿",
+      "ysm-ai-engine：为 AI Agent 打造的 Minecraft 角色建模与校验引擎",
+      "SADL：用「供需损失」缓解 JEPA 世界模型的表征塌缩",
+      "米哈游发布 VLA：8B 参数、可自主跑约 50 小时",
+      "Thinking Machines 开源 Inkling 2 Mini：循环思考、笔记本可跑",
+      "OpenAI 公布 GPT-6.2 Astra / Sol 新提示模板：治过短回答与乱追问",
+      "OpenComputer：开源版「类 Devin」软件工程 Agent",
+      "《GTA6》首发收入约 37.9 亿美元，刷新娱乐作品首发纪录",
+      "Meshy 展示 N1 Texture：一键去掉投影贴图接缝",
+      "美股科技周跌幅创疫情来最差：英伟达约跌 14%，Anthropic IPO 涨幅几近回吐"
     ]
   }
 }
