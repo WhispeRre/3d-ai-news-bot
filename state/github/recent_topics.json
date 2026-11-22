@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-21T12:20:41+08:00",
+  "updated_at": "2026-11-22T12:21:27+08:00",
   "days": {
-    "20261114": [
-      "meshy-dev/ThreeRT：用 three.js 写法做硬件实时光追",
-      "berkantay/gpucanvas：WebGPU 无限画布上挂活 DOM",
-      "alexeyw/lot-map：Claude Code 旁的实时工作地图",
-      "google/elephant-goldfish-model：大象起草、金鱼审规格",
-      "KoljaB/RealtimeVAD：比 Silero 更早的停话信号"
-    ],
     "20261115": [
       "paul-nameless/agweb：专为编程 Agent 做的 macOS 浏览器",
       "Vaibhaav-Tiwari/deepseek-v3-jax：190 行 JAX 复刻 DeepSeek V3",
@@ -56,6 +49,13 @@
       "diggerhq/opencomputer：开源可自托管的 Devin 替代",
       "iamajmeena/neonclipping：本地两分钟出竖版字幕切片",
       "tholtman1-del/deadboard：浏览器里练板级电路维修"
+    ],
+    "20261122": [
+      "wquguru/fable52-fps-repro：一句话生成可玩的 3D FPS",
+      "sous-labs/songe：空闲时用交互教本地模型",
+      "w01fb0ss/PiBot：桌面多智能体协作与审批",
+      "replit/datacat：可自托管的一体化可观测平台",
+      "ItsNotRexed/Leonida：GTA6 Xbox 版静态重编译到 PC"
     ]
   }
 }

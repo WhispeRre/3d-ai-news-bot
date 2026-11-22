@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T12:20:41+08:00",
+  "updated_at": "2026-11-22T12:21:27+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -120,6 +120,11 @@
     "https://github.com/rxolve/zpup": "20261121",
     "https://github.com/phone-harness/phone-harness": "20261121",
     "https://github.com/iamajmeena/neonclipping": "20261121",
-    "https://github.com/diggerhq/opencomputer": "20261121"
+    "https://github.com/diggerhq/opencomputer": "20261121",
+    "https://github.com/replit/datacat": "20261122",
+    "https://github.com/wquguru/fable52-fps-repro": "20261122",
+    "https://github.com/w01fb0ss/PiBot": "20261122",
+    "https://github.com/ItsNotRexed/Leonida": "20261122",
+    "https://github.com/sous-labs/songe": "20261122"
   }
 }
