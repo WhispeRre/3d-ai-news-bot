@@ -1,19 +1,6 @@
 {
-  "updated_at": "2026-11-21T08:31:27+08:00",
+  "updated_at": "2026-11-22T08:31:40+08:00",
   "days": {
-    "20261114": [
-      "快手拆解商业互动 Agent：动态知识库、用户模拟器与稀疏奖励归因",
-      "Shield 用 computer-use Agent 接手遗留门户：人只留判断与审批",
-      "社区复现：LangChain / LangGraph 里「看起来成功」的静默失败",
-      "长程 Agent 的决策模型：评完轨迹，动作留给策略",
-      "Google SynthCorp：静态数据 Agent 基准易饱和，改用生成业务事件",
-      "Mastra @mastra/core@1.83.0：全 Agent 可恢复流，并内置 MCP 端点",
-      "Microsoft Agent Framework python-1.26.0：只取循环终态，Agent 当工具时审批隔离",
-      "Edera 在虚拟机监控器层做对象能力：权限与凭证强制分离",
-      "OpenAI 推出 ChatGPT Wallet：Agent 代付不持真卡号，每笔仍要人批",
-      "Cognition 发布 Devin Apps：在 Devin 云电脑上跑可分享的私有 Web 应用",
-      "Brave Search API 接入 x402：Agent 按次付费搜，无需先开账号领密钥"
-    ],
     "20261115": [
       "Harrison Chase 与 Actively：用 Goal Engineering 把 Agent 目标切成「人好评」的形状",
       "Anthropic 拆解 always-on Agent：收件箱、定时器、记忆、权限与发件箱五件套",
@@ -86,6 +73,18 @@
       "火山引擎 Agent-Native：用目录树把知识、规则、记忆编成 Agent 可读上下文",
       "Google 为 Gemini Mac 上线 Computer Use：隔离后台窗操作桌面，关键步骤可预批",
       "ChatPRD 遭 Token 欺诈：免费试用被刷成地下算力，产品被迫收紧试用"
+    ],
+    "20261122": [
+      "Entire 用 Trail 评分重构面向 Coding Agent 的 Git 协作",
+      "字节 Axion 1.0：三阶段训练就够，数据比再堆阶段更关键",
+      "实践者总结：先看 Agent 失败三次，再写真正管用的 Skills",
+      "Jerry Liu：企业 Agent 的 ROI，先卡在「什么叫好」的评测定义",
+      "AlphaProof Nexus 用 Lean 编译反馈证出量子光学「不可能」定理",
+      "Gemini API 上线 Dynamic Tool Retrieval：上百工具按需装载",
+      "PiBot：本机多 Agent 小组聊，风险步骤统一等人批",
+      "OpenComputer：Slack 里的开源 Devin，会话先落盘再进 git",
+      "DeepSeek V1 作者开源 Linger：本地 Personal Agent，反馈里学偏好",
+      "ClawDOS：把 Coding Agent Harness 塞进真实 IBM PC XT"
     ]
   }
 }
