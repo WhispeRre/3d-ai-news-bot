@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T12:21:27+08:00",
+  "updated_at": "2026-11-23T12:22:01+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -125,6 +125,11 @@
     "https://github.com/wquguru/fable52-fps-repro": "20261122",
     "https://github.com/w01fb0ss/PiBot": "20261122",
     "https://github.com/ItsNotRexed/Leonida": "20261122",
-    "https://github.com/sous-labs/songe": "20261122"
+    "https://github.com/sous-labs/songe": "20261122",
+    "https://github.com/gulivan/worker755": "20261123",
+    "https://github.com/sybil-solutions/skill-distill": "20261123",
+    "https://github.com/EL4CTEO/fast-anything": "20261123",
+    "https://github.com/danielwh2/sprite-stacking": "20261123",
+    "https://github.com/pierridotite/mobile-agent-testers": "20261123"
   }
 }

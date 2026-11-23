@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-22T12:21:27+08:00",
+  "updated_at": "2026-11-23T12:22:01+08:00",
   "days": {
-    "20261115": [
-      "paul-nameless/agweb：专为编程 Agent 做的 macOS 浏览器",
-      "Vaibhaav-Tiwari/deepseek-v3-jax：190 行 JAX 复刻 DeepSeek V3",
-      "opencoredev/islandcn：shadcn 安装的 React 灵动岛",
-      "caru-ini/stack-diagram：一句话画出带官方 Logo 的架构图",
-      "jhaizhou-ops/S2Arm：把 Switch 游戏原生跑上苹果设备"
-    ],
     "20261116": [
       "Noniv/abyssal-garden：纯代码 WebGPU 水下漫游世界",
       "Tthanh2k6/turbo-browser-mcp：批量省 Token 的浏览器 MCP",
@@ -56,6 +49,13 @@
       "w01fb0ss/PiBot：桌面多智能体协作与审批",
       "replit/datacat：可自托管的一体化可观测平台",
       "ItsNotRexed/Leonida：GTA6 Xbox 版静态重编译到 PC"
+    ],
+    "20261123": [
+      "danielwh2/sprite-stacking：四视图像素画变可旋转假三维",
+      "sybil-solutions/skill-distill：把好会话蒸馏成开源模型 Skill",
+      "EL4CTEO/fast-anything：只把最慢 5% 用 Agent 改成 Rust",
+      "gulivan/worker755：AI 经理当你是它的子代理",
+      "pierridotite/mobile-agent-testers：二十台模拟器并行跑 AI 测手"
     ]
   }
 }
