@@ -1,21 +1,6 @@
 {
-  "updated_at": "2026-11-22T09:10:25+08:00",
+  "updated_at": "2026-11-23T09:12:46+08:00",
   "days": {
-    "20261115": [
-      "Runway 开源 Praxis-1：把视频 AI 知识做成机器人控制器",
-      "blender-ai-copilot-forge：用自然语言分步在 Blender 里搭场景",
-      "Deemos Hyper3D 参加 Unreal MEGAJAM，全角色自动绑骨与智能低模上线",
-      "blender-ai-copilot-assets：对话中搜资产库，确认后再导入",
-      "shred-kit：跟编程 Agent 对话定制 Blender 碎纸短视频模板",
-      "voyager-so/vauss：面向 Blender 与 Agent 的快速高斯泼溅重建",
-      "社区开源可在消费级显卡跑的 GTA 风格世界模型",
-      "InstantAMP：一块 RTX 5090 约 30 分钟训出人形机器人行走与起身",
-      "Anthropic 将 Claude Opus 5.5 设为付费默认，并更新提示词习惯",
-      "Agweb：专为 Agent 设计、尽量不挡路的浏览器",
-      "Unsloth 更新 Qwen3.8-27B 动态量化，HN 热度约 241 分",
-      "Anthropic CEO Amodei：IPO 前夕称明年高度不确定，算力采购是最深商业困境",
-      "GitLab 19.5：把智能体开发纳入可治理的 DevOps 平台能力"
-    ],
     "20261116": [
       "美团开源 LongCat-2.5：1.6 万亿参数 Agent 模型，全华系芯片训练",
       "OpenAI 上线科学博客首文：物理学家与 GPT-6 Astra 合推标准模型格点定义",
@@ -119,6 +104,18 @@
       "《GTA6》首发收入约 37.9 亿美元，刷新娱乐作品首发纪录",
       "Meshy 展示 N1 Texture：一键去掉投影贴图接缝",
       "美股科技周跌幅创疫情来最差：英伟达约跌 14%，Anthropic IPO 涨幅几近回吐"
+    ],
+    "20261123": [
+      "OpenAI 发文：用困惑度衡量前沿 AI 进展，倡议行业共同尺子",
+      "film-director-skill-plugin：Agent 当导演，从剧本做到剪辑、Blender 代理与配音",
+      "腾讯 Q3：资本开支猛增，AI 算力采购拖累利润与现金流",
+      "Tesla 推出 Reality View：多摄像头融合成实时 360° 跟车「类 GTA」视图",
+      "WSMs：World Snapshot Models 官方代码开源",
+      "评测：编程 Agent 孤立测试很强，模拟职场完成率不足一成",
+      "腾讯元宝×KCL 发布首个基于群聊构建的 Agent 记忆基准",
+      "姚顺雨 Reddit AMA：回应混元 4 的算力、刷榜与 RSI",
+      "达瓦科技走「重控制、轻渲染」路线，扎进片场做工业级 AI 视频",
+      "Meshy 亮相 Epic AI MegaJam：展示用其资产做出的多款游戏"
     ]
   }
 }
