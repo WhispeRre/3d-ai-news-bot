@@ -1,16 +1,6 @@
 {
-  "updated_at": "2026-11-22T08:31:40+08:00",
+  "updated_at": "2026-11-23T08:31:34+08:00",
   "days": {
-    "20261115": [
-      "Harrison Chase 与 Actively：用 Goal Engineering 把 Agent 目标切成「人好评」的形状",
-      "Anthropic 拆解 always-on Agent：收件箱、定时器、记忆、权限与发件箱五件套",
-      "MetaPI：把现成 Agent 基准自动改造成提示词注入评测集",
-      "Agent 记忆别只按语义相似召回：要问会不会改变下一步动作",
-      "社区扫描 15380 个 MCP 服务：97 个在工具描述里塞了对模型的指令",
-      "agweb：专为 Agent 做的浏览器，不抢焦点、多标签同屏",
-      "Docker 谈 Agent 安全：隔离与治理优先于「再训模型」",
-      "Anthropic 重做 Claude Code Projects：一目标多线程并行，协调者分派与审阅"
-    ],
     "20261116": [
       "实践者沉淀「规划→批判→Diff 审计」三阶段 Coding Agent 工作流",
       "京东把 Super Agent 做成「数字人队长」：嵌进保障群，聚合证据不替人拍板",
@@ -85,6 +75,18 @@
       "OpenComputer：Slack 里的开源 Devin，会话先落盘再进 git",
       "DeepSeek V1 作者开源 Linger：本地 Personal Agent，反馈里学偏好",
       "ClawDOS：把 Coding Agent Harness 塞进真实 IBM PC XT"
+    ],
+    "20261123": [
+      "SWE-CoWork：Coding Agent 在模拟职场完整过关不足一成",
+      "腾讯元宝×KCL 发布 GroupAssistBench：群聊记忆「会召回」不等于「会服务」",
+      "Harrison Chase：Agent 平台不能只谈 runtime，还缺可观测与治理",
+      "Google 等提出 BuggyMLE：往可跑通的 ML 仓库里注入 bug，按难度扩评测",
+      "Akshay Pachaar：用 CAG 缓存静态知识，避免每次查询都打向量库",
+      "Perplexity 上线 Monitor API：定时搜网，有实质变化才 webhook 叫醒 Agent",
+      "Pandex：经 MCP 向 Agent 提供欧洲多国官方法律文本",
+      "Karpo：System 1 决策小模型 + System 2 规划，浏览器 Agent 又快又省",
+      "mobile-agent-testers：免费 CI 上 20 路 Claude Code 并行测真机流",
+      "fast-anything：跟进 rust-anything，只让 Agent 改掉最慢的那 5%"
     ]
   }
 }
