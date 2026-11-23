@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T12:22:01+08:00",
+  "updated_at": "2026-11-24T02:08:41+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -130,6 +130,11 @@
     "https://github.com/sybil-solutions/skill-distill": "20261123",
     "https://github.com/EL4CTEO/fast-anything": "20261123",
     "https://github.com/danielwh2/sprite-stacking": "20261123",
-    "https://github.com/pierridotite/mobile-agent-testers": "20261123"
+    "https://github.com/pierridotite/mobile-agent-testers": "20261123",
+    "https://github.com/simplexai-labs/linger": "20261124",
+    "https://github.com/qualixar/brief2mp4": "20261124",
+    "https://github.com/AFK-surf/xnulinux": "20261124",
+    "https://github.com/morajabi/poo": "20261124",
+    "https://github.com/recon007jf/Blenda4D": "20261124"
   }
 }

@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-23T12:22:01+08:00",
+  "updated_at": "2026-11-24T02:08:41+08:00",
   "days": {
-    "20261116": [
-      "Noniv/abyssal-garden：纯代码 WebGPU 水下漫游世界",
-      "Tthanh2k6/turbo-browser-mcp：批量省 Token 的浏览器 MCP",
-      "n4ze3m/tiny-voca：450 万参数可端侧跑的英文 TTS",
-      "backnotprop/plannotator：编程 Agent 的批注与评审工作台",
-      "faizfahmi77/ScanDot：手机端实验性三维点云扫描"
-    ],
     "20261117": [
       "govijr/terminal-phone：终端里给 Agent 用的 iPhone",
       "mit-han-lab/pear：仿真里训出能开真机的推理模型",
@@ -56,6 +49,13 @@
       "EL4CTEO/fast-anything：只把最慢 5% 用 Agent 改成 Rust",
       "gulivan/worker755：AI 经理当你是它的子代理",
       "pierridotite/mobile-agent-testers：二十台模拟器并行跑 AI 测手"
+    ],
+    "20261124": [
+      "qualixar/brief2mp4：文字 brief 一键产出验收成片",
+      "simplexai-labs/linger：在自己电脑上跑的个人 Agent",
+      "recon007jf/Blenda4D：给 Blender 装上动效工作台",
+      "morajabi/poo：清掉开发和 Agent 吃掉的磁盘",
+      "AFK-surf/xnulinux：把 macOS 内核塞进 Linux 跑"
     ]
   }
 }
