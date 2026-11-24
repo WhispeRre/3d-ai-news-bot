@@ -1,17 +1,6 @@
 {
-  "updated_at": "2026-11-23T08:31:34+08:00",
+  "updated_at": "2026-11-24T08:34:01+08:00",
   "days": {
-    "20261116": [
-      "实践者沉淀「规划→批判→Diff 审计」三阶段 Coding Agent 工作流",
-      "京东把 Super Agent 做成「数字人队长」：嵌进保障群，聚合证据不替人拍板",
-      "Elvis Saravia 提醒：最强 Agent 系统里有大量无聊的确定性步骤",
-      "社区盘点：生产里搞垮 AI Agent 的痛点，首位是静默失败",
-      "Geoff Stearns 论证：采购 Agent 会偏向可改固件的硬件",
-      "Attest 提供只读 MCP：让 Claude Code / Cursor / Codex 写 Agent 回归测试",
-      "社区做了只读 Windows MCP：用 delta canvas 与 UIA 网格砍视觉 token",
-      "GitLab 19.5 把外部 Coding Agent 纳入可治理的 DevOps 平台",
-      "美团开源 LongCat-2.5：1.6T MoE 专攻长程 Agent，全在国产芯上训练"
-    ],
     "20261117": [
       "Anthropic 论证 Agent 记忆关键是「会忘什么」，并用 Dreaming 事后纠错",
       "实践者本地落地 Anthropic always-on 五件套，后台跑满配额仅占 0.41%",
@@ -87,6 +76,17 @@
       "Karpo：System 1 决策小模型 + System 2 规划，浏览器 Agent 又快又省",
       "mobile-agent-testers：免费 CI 上 20 路 Claude Code 并行测真机流",
       "fast-anything：跟进 rust-anything，只让 Agent 改掉最慢的那 5%"
+    ],
+    "20261124": [
+      "康奈尔大学指出知识类任务做推理 RL 会让模型记住自身幻觉",
+      "Philipp Schmid 分享 Gemini 4 Neon 推理档位分层策略",
+      "Elvis Saravia 强调 Agent 需用抽取与决策模型补足确定性",
+      "Gemini API 推出多模态工具返回，Gemini 4 Neon 原生读音视频与文档",
+      "Oracle AI Agent Memory 上线图像原生记忆，纯文本即可召回历史图片",
+      "Canva MCP 正式全面开放，Agent 可产出可编辑设计与视频",
+      "Richpanel 用多模型分工在 30 天内自动化 50% 客服支持",
+      "Replit 开源本地个人 Agent Amuse，关键动作前强制人工审批",
+      "LangChain 开源内部设计 Agent Content Studio，单条 Slack 指令出素材"
     ]
   }
 }
