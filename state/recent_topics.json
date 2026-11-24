@@ -1,16 +1,6 @@
 {
-  "updated_at": "2026-11-23T09:12:46+08:00",
+  "updated_at": "2026-11-24T09:17:14+08:00",
   "days": {
-    "20261116": [
-      "美团开源 LongCat-2.5：1.6 万亿参数 Agent 模型，全华系芯片训练",
-      "OpenAI 上线科学博客首文：物理学家与 GPT-6 Astra 合推标准模型格点定义",
-      "Budget3D：按算力自适应的图生 3D tokenization",
-      "Sebastian Raschka 详解现代 LLM 位置编码：从 RoPE 到 NoPE",
-      "The Decoder 解读：Claude Fable 5.2 用代码「画画」而非直接出像素（跟进）",
-      "Basalt 0.4.0：本地多模型路由，Qwen 27B 在 5090 上约 770 tok/s",
-      "据报黄仁勋考虑重返 NVIDIA 担任 CEO（跟进）",
-      "澳大利亚央行：AI 先冲击年轻入门岗，软件与客服最明显"
-    ],
     "20261117": [
       "阿里正式发布 Qwen4-Max：面向 Agent 与编程的新旗舰",
       "World Labs 正式并入 AMD",
@@ -116,6 +106,23 @@
       "姚顺雨 Reddit AMA：回应混元 4 的算力、刷榜与 RSI",
       "达瓦科技走「重控制、轻渲染」路线，扎进片场做工业级 AI 视频",
       "Meshy 亮相 Epic AI MegaJam：展示用其资产做出的多款游戏"
+    ],
+    "20261124": [
+      "Z.ai 发布 GLM-5.4：首用 Loop Transformer，发力 3D 着色器与 CAD 建模",
+      "Anthropic 推出 Claude Ship：让 AI Agent 自动审阅、修复并批准代码变更",
+      "黄仁勋正式重返英伟达任 CEO，公司市值大涨逾三成（跟进）",
+      "OpenAI 展示 GPT-6.2 直接在 Blender 中复原 1915 年旧金山世博会 3D 场景",
+      "Google DeepMind 用 Gemini 4 Neon 凭历史照片重建可交互 3D 图灵书房",
+      "Unity 官方详解：实时 3D 项目何时用 Unity CLI「氛围编程」，何时买托管基建",
+      "dashsplat：把行车记录仪视频变成可再次「开进去」的 3D 世界",
+      "NoPeWorld：专门解决世界模型物体「穿模」问题的防穿透方案",
+      "S2D-Splat：先静态后动态的自动驾驶场景高斯泼溅前馈重建",
+      "Gemini API 升级：工具与子 Agent 可原生返回视频、音频和文档片段",
+      "OpenAI 与思科开源 Shirudo：让 AI Agent 在不停机下动态防御 Linux 系统",
+      "Google DeepMind 用多 Agent 结合形式化验证，将量子模拟成本降至十分之一",
+      "据报 SpaceXSI 转向算力出租：Anthropic 月付约 31 亿美元，Grok 图像团队被解散",
+      "企业客服 AI 独角兽 Sierra 融资 17.5 亿美元，半年估值翻倍至 300 亿美元",
+      "育碧成立新工作室 Motherbrain，专注开发 AI 驱动的游戏体验"
     ]
   }
 }
