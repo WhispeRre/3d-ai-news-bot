@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-24T02:08:41+08:00",
+  "updated_at": "2026-11-25T01:45:44+08:00",
   "days": {
-    "20261117": [
-      "govijr/terminal-phone：终端里给 Agent 用的 iPhone",
-      "mit-han-lab/pear：仿真里训出能开真机的推理模型",
-      "remorses/castle-valley：油画笔触风的可玩 three.js 世界",
-      "hyperionaidev/smolmaxxing：在最小硬件上硬塞大模型",
-      "threerocks/article2media：文章视频一键出多平台内容的 Skill"
-    ],
     "20261118": [
       "NicolasDrum/splat-repair：给高斯泼溅用的修复笔刷编辑器",
       "chuanqisun/spaceship：实时驾驭想法的 Spaceship IDE",
@@ -56,6 +49,13 @@
       "recon007jf/Blenda4D：给 Blender 装上动效工作台",
       "morajabi/poo：清掉开发和 Agent 吃掉的磁盘",
       "AFK-surf/xnulinux：把 macOS 内核塞进 Linux 跑"
+    ],
+    "20261125": [
+      "xikhar/papercraft：让 Agent 做出立体折纸风三维场景的 Skill",
+      "erkamyaman/safe-anything：一条命令扫出代码漏洞与 Agent 配置风险",
+      "deterministic-machines/deslop-please：专治 AI 烂结构代码的架构级检查器",
+      "Doug-218/blender-ai-copilot-forge：带审批流与 MCP 的 Blender 场景搭建助手",
+      "Renakoni/Voicebox：支持端侧加速的安卓离线语音合成与克隆工具"
     ]
   }
 }
