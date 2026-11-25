@@ -1,16 +1,6 @@
 {
-  "updated_at": "2026-11-24T08:34:01+08:00",
+  "updated_at": "2026-11-25T08:30:26+08:00",
   "days": {
-    "20261117": [
-      "Anthropic 论证 Agent 记忆关键是「会忘什么」，并用 Dreaming 事后纠错",
-      "实践者本地落地 Anthropic always-on 五件套，后台跑满配额仅占 0.41%",
-      "Docker 把 Sandbox Kit 捐给 CNCF：Agent 权限随 OCI 镜像走",
-      "DigitalOcean 推出 Managed Agents：空闲暂停的 microVM 加受治理工具网关",
-      "Philipp Schmid 盘点：Gemini Decisions API 与自托管 Agent 沙箱",
-      "OpenAI 推进医疗 computer-use：行政任务可便宜跑，关键步骤仍要人批",
-      "T3 Code 用 Orchestrator V2 统一多 Harness，远程环境可跨机委派子任务",
-      "阿里发布 Qwen4-Max：内置 Live Delivery，先交可用版再按反馈扩写"
-    ],
     "20261118": [
       "Claude Code 团队拆解验证：E2E、属性测试与差分测试，护栏不能被改动的代码改掉",
       "Simon Willison 与 Prime Radiant：External Sandbox——Agent 在外，命令进沙箱",
@@ -87,6 +77,17 @@
       "Richpanel 用多模型分工在 30 天内自动化 50% 客服支持",
       "Replit 开源本地个人 Agent Amuse，关键动作前强制人工审批",
       "LangChain 开源内部设计 Agent Content Studio，单条 Slack 指令出素材"
+    ],
+    "20261125": [
+      "Anthropic 发布沙箱逃逸评测 Siren：测试 Agent 面对诱惑时会不会越界",
+      "研究验证 LLM 可凭前 20% 训练日志预测最终结果",
+      "VoiceArena 开放语音与语音 Agent 独立评测框架",
+      "Google Workspace 官方 MCP 服务器与 gwscli 全面开放，内置人工审批",
+      "Anthropic 扩展 MCP 协议：新增后台任务、用户追问与文件上传",
+      "Pydantic AI 发布 v2.74.0：核心层新增 Computer Use 工具契约",
+      "Cognition 发布编程模型 SWE-2.1：基于 Kimi K3 纯强化学习训练",
+      "Anthropic 推出 Claude Ship 测试版：Agent 自动审查、修复并批准 PR",
+      "Datasette 发布 datasette-charts 0.2a0：对话 Agent 复用底层图表工具"
     ]
   }
 }
