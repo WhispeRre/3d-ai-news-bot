@@ -1,21 +1,6 @@
 {
-  "updated_at": "2026-11-24T09:17:14+08:00",
+  "updated_at": "2026-11-25T09:12:17+08:00",
   "days": {
-    "20261117": [
-      "阿里正式发布 Qwen4-Max：面向 Agent 与编程的新旗舰",
-      "World Labs 正式并入 AMD",
-      "Meshy 开源 ThreeRT：浏览器里跑硬件光追 three.js",
-      "SceneAgent：多 Agent 框架让游戏场景生成可跨引擎复用",
-      "unreal-5.9-skill：用编程 Agent 在 UE 5.9 里做完一款游戏的实战笔记",
-      "replicator：一句话生成可度量的 CAD 实体并导出 STEP/STL",
-      "shapeshift-labs-ink-studio：像素风高斯泼溅的雕刻与动画工具箱",
-      "EcoVGGT：长视频也能高效跑通的前馈式三维重建",
-      "Vision-as-a-Tool：给编程 Agent 外挂「会看图」的工具链",
-      "腾讯发布 Hy4 flash：日常办公极致降本的多模态模型",
-      "微软开源 TokenEconomizer：让编程 Agent 从历史会话里学会省 token",
-      "Meshy Z-Axis Awards 正式开放报名（跟进）",
-      "加州总检察长起诉 OpenAI：Agent 越狱攻击其他公司"
-    ],
     "20261118": [
       "OpenAI 发布 GPT-6.2 Astra 与 Sol：编程与电脑操控更强、成本更低",
       "3DSceneBench：评测编程 Agent 能否搭出可多用途复用的模拟世界",
@@ -123,6 +108,23 @@
       "据报 SpaceXSI 转向算力出租：Anthropic 月付约 31 亿美元，Grok 图像团队被解散",
       "企业客服 AI 独角兽 Sierra 融资 17.5 亿美元，半年估值翻倍至 300 亿美元",
       "育碧成立新工作室 Motherbrain，专注开发 AI 驱动的游戏体验"
+    ],
+    "20261125": [
+      "Anthropic 宣布 MCP SDK 月下载量破 7 亿，协议新增后台任务与文件上传",
+      "亚马逊据报 75 亿美元收购 Decart，押注软件优化追赶英伟达",
+      "3DCodeFactory：为 3D 编程 Agent 扩充高质量训练数据",
+      "hello-3dneko：AI Agent 驱动的风格化 3D 角色编排与自动重拓扑",
+      "cloud-blender-skills：面向编程 Agent 的 29 项 Blender 技能包",
+      "3AGameFactory-Motion：用 Agent 为各类 3D 资产自动绑骨并生成动作",
+      "NVIDIA 发布教程：用 Diffusers 在本地设备运行世界模型 Cosmos 3 Nano",
+      "LichtFeld 发布官方 Blender 插件：支持在 Blender 内直接交换数据并训练",
+      "ArgsWorld：用自回归扩散模型统一高斯泼溅的重建、生成与外推",
+      "百度开源文心 5.5 Flash Preview，采用 Apache 2.0 协议",
+      "Google Workspace 官方 MCP 服务与命令行工具正式全面开放",
+      "Anthropic 支持将 Claude Artifacts 一键安装为独立桌面应用",
+      "Anthropic 股价跌破 83 美元 IPO 发行价，引发 AI 创企估值担忧",
+      "Deemos（Hyper3D）图/文/网格转低模能力全面上线 fal.ai",
+      "Meshy 携手 XR 厂商 VITURE，助力 Liquid 开启公测并达成赛事合作"
     ]
   }
 }
