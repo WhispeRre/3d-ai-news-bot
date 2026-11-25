@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-25T01:45:44+08:00",
+  "updated_at": "2026-11-26T01:14:31+08:00",
   "days": {
-    "20261118": [
-      "NicolasDrum/splat-repair：给高斯泼溅用的修复笔刷编辑器",
-      "chuanqisun/spaceship：实时驾驭想法的 Spaceship IDE",
-      "yocontra/pulsar：跨框架让编程 Agent 互相发消息",
-      "sybil-solutions/inference-optimisation-skill：爬坡式榨干本地推理速度",
-      "cobanov/pixelart-gaussiansplat：浏览器里像素风的三维高斯泼溅"
-    ],
     "20261119": [
       "google-deepmind/robotics-antigravity-plugin：让 Agent 在仿真与真机上写控制器",
       "NVIDIA/SkillEvaluator：给 Agent Skills 做质量与效果评测",
@@ -56,6 +49,13 @@
       "deterministic-machines/deslop-please：专治 AI 烂结构代码的架构级检查器",
       "Doug-218/blender-ai-copilot-forge：带审批流与 MCP 的 Blender 场景搭建助手",
       "Renakoni/Voicebox：支持端侧加速的安卓离线语音合成与克隆工具"
+    ],
+    "20261126": [
+      "n8n-io/nod：自带独立电脑和审批流的开源个人 Agent",
+      "opensetlabs/openset-llm：纯 CPU 8GB 内存跑 27B 大模型的推理引擎",
+      "kajisho5/ffmpeg-skill：给编程 Agent 用的本地 FFmpeg 剪辑工具集",
+      "erkamyaman/rea-games：逆向游戏并跨引擎重建且逐帧验证玩法一致",
+      "Spilveru/mergeon：用 Rust 与 GPUI 写的 GPU 加速桌面 Git 客户端"
     ]
   }
 }

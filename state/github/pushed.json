@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T01:45:44+08:00",
+  "updated_at": "2026-11-26T01:14:31+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -140,6 +140,11 @@
     "https://github.com/deterministic-machines/deslop-please": "20261125",
     "https://github.com/Renakoni/Voicebox": "20261125",
     "https://github.com/Doug-218/blender-ai-copilot-forge": "20261125",
-    "https://github.com/erkamyaman/safe-anything": "20261125"
+    "https://github.com/erkamyaman/safe-anything": "20261125",
+    "https://github.com/Spilveru/mergeon": "20261126",
+    "https://github.com/erkamyaman/rea-games": "20261126",
+    "https://github.com/n8n-io/nod": "20261126",
+    "https://github.com/kajisho5/ffmpeg-skill": "20261126",
+    "https://github.com/opensetlabs/openset-llm": "20261126"
   }
 }
