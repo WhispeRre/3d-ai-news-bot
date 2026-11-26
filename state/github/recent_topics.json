@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-26T01:14:31+08:00",
+  "updated_at": "2026-11-27T00:55:02+08:00",
   "days": {
-    "20261119": [
-      "google-deepmind/robotics-antigravity-plugin：让 Agent 在仿真与真机上写控制器",
-      "NVIDIA/SkillEvaluator：给 Agent Skills 做质量与效果评测",
-      "siliconjungle/shapeshift-labs-ink-studio：把 SDF 雕成可动的像素风高斯泼溅",
-      "dannystuart/sketch-to-3d：让 3D 模型像马克笔素描一样画出来",
-      "manuelgscom/inside-llm：浏览器里透视 GGUF 量化差异"
-    ],
     "20261120": [
       "felixbfx/MuleCreate：三维线稿草图交给 AI 建模",
       "mankidev/antialgorithm：逼 Agent 先躲开平庸创意",
@@ -56,6 +49,13 @@
       "kajisho5/ffmpeg-skill：给编程 Agent 用的本地 FFmpeg 剪辑工具集",
       "erkamyaman/rea-games：逆向游戏并跨引擎重建且逐帧验证玩法一致",
       "Spilveru/mergeon：用 Rust 与 GPUI 写的 GPU 加速桌面 Git 客户端"
+    ],
+    "20261127": [
+      "Moh4696/inkworks-skill：让 Agent 生成工程图纸风交互式 3D 原理页",
+      "alesha-pro/llm.asm：纯 x86-64 汇编手写的 14KB 大模型推理与裸机 OS",
+      "nexu-io/opengame：把编程 Agent 变成全栈 3D AI 游戏工作室",
+      "koorchik/swarmy：终端里的多编程 Agent 实时监控与花费看板",
+      "click6067-ship-it/token-tv：把 5 美元桌面小电视变成 Agent 像素宠物"
     ]
   }
 }

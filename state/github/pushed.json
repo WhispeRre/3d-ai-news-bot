@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T01:14:31+08:00",
+  "updated_at": "2026-11-27T00:55:02+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -145,6 +145,11 @@
     "https://github.com/erkamyaman/rea-games": "20261126",
     "https://github.com/n8n-io/nod": "20261126",
     "https://github.com/kajisho5/ffmpeg-skill": "20261126",
-    "https://github.com/opensetlabs/openset-llm": "20261126"
+    "https://github.com/opensetlabs/openset-llm": "20261126",
+    "https://github.com/click6067-ship-it/token-tv": "20261127",
+    "https://github.com/alesha-pro/llm.asm": "20261127",
+    "https://github.com/nexu-io/opengame": "20261127",
+    "https://github.com/Moh4696/inkworks-skill": "20261127",
+    "https://github.com/koorchik/swarmy": "20261127"
   }
 }
