@@ -1,21 +1,6 @@
 {
-  "updated_at": "2026-11-25T09:12:17+08:00",
+  "updated_at": "2026-11-26T09:10:12+08:00",
   "days": {
-    "20261118": [
-      "OpenAI 发布 GPT-6.2 Astra 与 Sol：编程与电脑操控更强、成本更低",
-      "3DSceneBench：评测编程 Agent 能否搭出可多用途复用的模拟世界",
-      "Amazon 与 Google 上市后合计约持 Anthropic 近 30%",
-      "DeepMind 发布 robotics-antigravity-plugin：对话驱动仿真与真机",
-      "Apple 发布 FastFrames：交互时延下生成 480p 文生视频",
-      "splat-repair：给高斯泼溅加「修复笔刷」",
-      "VA-Assembly：免训练把散件拼回完整 3D 物体",
-      "Google 将 Spark 改名并免费开放 Gemini Tasks",
-      "Simon Willison：给编程 Agent 配外部沙箱，本地模型更敢试",
-      "NVIDIA 在 SC26 推出科研 Agent 工具与 Nemotron for Science",
-      "NVIDIA：黄仁勋卸任后开源 AI 战略不变，仍计划收购 Hugging Face（跟进）",
-      "Meshy 宣布 Make it 3D Fund：自称全球首个百万美元级 3D 创作者基金（跟进）",
-      "Deemos Hyper3D：为分件模型自动生成匹配销钉与插口"
-    ],
     "20261119": [
       "Google DeepMind 发布 Genie 4：可交互 3D 世界模型正式可用",
       "Google 发布 Gemini 4 Neon：介于 Carbon 与 Hydrogen 的新档位",
@@ -125,6 +110,23 @@
       "Anthropic 股价跌破 83 美元 IPO 发行价，引发 AI 创企估值担忧",
       "Deemos（Hyper3D）图/文/网格转低模能力全面上线 fal.ai",
       "Meshy 携手 XR 厂商 VITURE，助力 Liquid 开启公测并达成赛事合作"
+    ],
+    "20261126": [
+      "PartAgent：融合 2D 与 3D 专家的闭环 3D 部件分割 Agent",
+      "Anthropic 分享：如何用多 Claude Agent 团队将核心 API 从 Python 迁至 Rust",
+      "亚马逊与 Meta 谈判解封 AI 购物 Agent「Muse」，争夺电商搜索与广告主导权",
+      "inkworks-skill：让 AI Agent 生成工程图纸风的交互式 3D 原理演示页",
+      "agy-colab-plugin：打通 Google Colab 的 MCP 插件，支持 Blender 批量渲染",
+      "GoldiBench：评测专业编辑 Agent 能否拿捏「工具用多少」的分寸感",
+      "A Mesh to Remember：用显式 3D 网格解决交互式视频世界的外观漂移",
+      "NVIDIA 发布 Nemotron-Labs-VisualCreation：探索「像素即代码」的 Agent 视觉创作",
+      "Meshy 展示 Unity 地形植被新工作流：串联多模型一键刷出游戏级资产",
+      "Meta 开源 AgentBox：面向 AI Agent 的分布式容器编排器",
+      "腾讯混元 Hy4 flash 支持 AngelSlim 量化本地运行（跟进）",
+      "Google DeepMind 透露：AI Agent 已接管部分算力自主跑 Gemini 实验",
+      "Meshy 预告 3D 打印新能力：展示 132 个零件、1.8 米轨道的可动机械结构",
+      "华人计算机视觉泰斗离开苹果二次创业，专注下一代空间与物理 AI",
+      "Anthropic 调研 58 家美企近 300 个 AI 项目：近五分之一尚未产生商业价值"
     ]
   }
 }
