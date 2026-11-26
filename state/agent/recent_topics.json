@@ -1,17 +1,6 @@
 {
-  "updated_at": "2026-11-25T08:30:26+08:00",
+  "updated_at": "2026-11-26T08:29:46+08:00",
   "days": {
-    "20261118": [
-      "Claude Code 团队拆解验证：E2E、属性测试与差分测试，护栏不能被改动的代码改掉",
-      "Simon Willison 与 Prime Radiant：External Sandbox——Agent 在外，命令进沙箱",
-      "LangChain 复盘主动式 Agent：记忆与审阅 UX 决定会不会烦人",
-      "rust-anything：录行为、逐段迁 Rust，每步用录音当对照",
-      "OpenAI Agents SDK Python v0.25：开放第三方 Session 适配器",
-      "LangSmith：Trace 敏感数据三级管控",
-      "Revolut 用 Codex：编码时间降 30–60%，FinCrime Agent 扩人效",
-      "实践者用 lend：远程 Agent 借本机命令，密钥不出笔记本",
-      "SAP：演示亮、生产翻车，先语义就绪再谈 Agent 自主"
-    ],
     "20261119": [
       "OpenAI 拆解 Codex 沙箱：在本机环境里用 OS 能力做最小权限",
       "OpenAI 量化「锯齿前沿」：Coding Agent 加速研发，但能力极不均匀",
@@ -88,6 +77,18 @@
       "Cognition 发布编程模型 SWE-2.1：基于 Kimi K3 纯强化学习训练",
       "Anthropic 推出 Claude Ship 测试版：Agent 自动审查、修复并批准 PR",
       "Datasette 发布 datasette-charts 0.2a0：对话 Agent 复用底层图表工具"
+    ],
+    "20261126": [
+      "Anthropic 复盘：用多组 Claude Agent 将 Messages API 从 Python 迁至 Rust",
+      "Philipp Schmid：针对 Gemini 4 Neon 重构上下文工程，清理拖慢新模型的旧护栏",
+      "滑铁卢大学提出 Delegent：前沿模型主导规划，本地小模型接管常规子任务降本",
+      "港科大与 NVIDIA 提出 MLEvolver：面向多轮实验研究 Agent 的 Harness 设计",
+      "Pydantic AI 发布 v2.75.0：隔离低权限工作区文件，防止污染系统指令",
+      "Mastra 发布 @mastra/core@1.86.0：数据集评测支持防崩溃持久化执行",
+      "sap-data-mcp：面向 SAP S/4HANA 的只读审计型 MCP 服务器",
+      "Google DeepMind 让 AI Agent 自主掌管部分算力，为下一代 Gemini 跑实验",
+      "Cognition 在 Devin Bots 推出 Org Charts：单画布统筹多 Agent 进度与人工介入",
+      "亚马逊与 Meta 谈判解禁购物 Agent Muse，焦点落在广告分成与搜索控制权"
     ]
   }
 }
