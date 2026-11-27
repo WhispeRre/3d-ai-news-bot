@@ -1,22 +1,6 @@
 {
-  "updated_at": "2026-11-26T09:10:12+08:00",
+  "updated_at": "2026-11-27T09:10:31+08:00",
   "days": {
-    "20261119": [
-      "Google DeepMind 发布 Genie 4：可交互 3D 世界模型正式可用",
-      "Google 发布 Gemini 4 Neon：介于 Carbon 与 Hydrogen 的新档位",
-      "Anthropic 正式敲定 IPO 发行价（跟进）",
-      "Snapchat 开放用 Claude Code、Cursor 等用自然语言做 AR Lens",
-      "character-factory-skills：一页 brief 做到 Unity 可动画 Prefab",
-      "Deemos Hyper3D Rodin 上线干净拓扑低模，并提供 API 与 MCP",
-      "MAVE：从影片镜头重建可编辑的 3D 预演灰模",
-      "PhyVGGT：单目视频前馈重建带关节的可动物体",
-      "NVIDIA Cosmos：两句提示即可合成物理 AI 训练数据",
-      "腾讯 Hy4 flash 开源权重（跟进）",
-      "OpenAI 详解 Codex 沙箱：本机跑命令也可限文件与网络",
-      "微软 Ignite 推 7 款自研 MAI 模型，逐步替换产品里的外部模型",
-      "具身公司 Genesis 完成 A 轮，估值超 230 亿，英伟达与 AMD 首次联手押注",
-      "微软 CEO 纳德拉：AI Agent 将重塑互联网经济模型"
-    ],
     "20261120": [
       "Anthropic 正式挂牌纳斯达克，开盘约高于发行价三成（跟进）",
       "Google 在 Gemini API 推出 Tool Retrieval",
@@ -127,6 +111,21 @@
       "Meshy 预告 3D 打印新能力：展示 132 个零件、1.8 米轨道的可动机械结构",
       "华人计算机视觉泰斗离开苹果二次创业，专注下一代空间与物理 AI",
       "Anthropic 调研 58 家美企近 300 个 AI 项目：近五分之一尚未产生商业价值"
+    ],
+    "20261127": [
+      "Meshy 7.5 开始推送：3D 模型面数压缩约 50 倍且画质几乎无损",
+      "OpenGame 发布：把 20 多款编程 Agent 变成全栈 AI 游戏工作室",
+      "OpenAI 修复计费漏洞：GPT-6.2 Astra 额度消耗加快 40%、Sol 加快 25%",
+      "Karpathy 实测 Opus 5.5：7 小时写 4.5 万行代码生成真实数据游戏地图",
+      "PostMesh：用流式模型与自奖励后训练快速生成「美术级」四边面网格",
+      "ReMeDi：重参数化金属与非金属假设，提升单图 PBR 材质估计精度",
+      "LiteRT 社区移植 Idol：安卓手机离线将单张照片转为 3D 高斯泼溅",
+      "腾讯混元开源 DFly2：Hy4 flash 投机解码器为 Agent 任务提速 4.2 倍",
+      "Mistral 展示 Mistral Large 4 视觉定位能力：称在地图定位上超越闭源前沿模型",
+      "Nous Research 推出 Hermes Agent 官方 Obsidian 连接器，打通本地知识库",
+      "MAGI-2 开源权重并主打成本低九成，视频大模型进入性价比竞争阶段",
+      "蔚来发布世界模型 3.0：智驾训练提效 5 倍，座舱同步引入强化学习",
+      "智谱高管辟谣 GLM-5.5 延期传闻：称国产万卡训练进展顺利"
     ]
   }
 }
