@@ -1,17 +1,6 @@
 {
-  "updated_at": "2026-11-26T08:29:46+08:00",
+  "updated_at": "2026-11-27T08:29:32+08:00",
   "days": {
-    "20261119": [
-      "OpenAI 拆解 Codex 沙箱：在本机环境里用 OS 能力做最小权限",
-      "OpenAI 量化「锯齿前沿」：Coding Agent 加速研发，但能力极不均匀",
-      "Google：自改进 Agent Harness 用门控模块演进，成本约全量重写的十分之一",
-      "BRIDGE：极简 RAG 记忆打平复杂记忆系统，关键看能否改下一步动作",
-      "Mastra @mastra/core@1.84.0：Storage v2 只写增量，并自动恢复崩溃工作流",
-      "LangSmith 上线 Coding Agent ROI 看板：把花费挂到 PR 结果上",
-      "OpenAI Responses API 后台模式：可等待工作流最高约省 40% token 价",
-      "Harvard 工作论文：Coding Agent 让代码量涨约 30%，产出不增、评审更慢",
-      "StarSling：面向 Agent 海量 PR 的自改进 CI，用对照实验开优化 PR"
-    ],
     "20261120": [
       "OpenAI 拆解 Performance Factory：Codex 工作流从告警查因到上线验证闭环",
       "Meta「MLE Agent」：生产搜索排序上验证 Harness 与模型同等关键",
@@ -89,6 +78,18 @@
       "Google DeepMind 让 AI Agent 自主掌管部分算力，为下一代 Gemini 跑实验",
       "Cognition 在 Devin Bots 推出 Org Charts：单画布统筹多 Agent 进度与人工介入",
       "亚马逊与 Meta 谈判解禁购物 Agent Muse，焦点落在广告分成与搜索控制权"
+    ],
+    "20261127": [
+      "Philipp Schmid 复盘 MCP 演进：为什么 2027 年它仍是 Agent Harness 的集成层",
+      "NVIDIA 提出上下文管理协同设计：训练模型自主管上下文，推理引擎协同加速",
+      "微软实测 7660 条编程 Agent 轨迹：验证是否存在过度修改问题",
+      "Speculative Encoding 加速多 Agent 蜂群：跨 Agent 复用相同上下文计算",
+      "Pydantic AI 发布 v2.76.0：实时会话支持中途动态暴露工具",
+      "Harrison Chase 分享企业常驻 Agent 蓝图 persistent-agent",
+      "Harrison Chase 谈 Agent 轨迹复用：高效存储层与智能计算缺一不可",
+      "Google Antigravity 揭秘缓存感知路由：缓存命中率涨 4.5% 换来 28% 更多任务量",
+      "Karpathy 实测 Opus 5.5 长程编程：7 小时写 4.5 万行代码构建美国真实数据地图",
+      "Clay 拆解 GTM Agent 实践：为何客户反感模型选择器及低成本筛选思路"
     ]
   }
 }
