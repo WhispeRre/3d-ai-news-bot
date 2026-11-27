@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T00:55:02+08:00",
+  "updated_at": "2026-11-28T00:41:17+08:00",
   "items": {
     "https://github.com/nightly-labs/openbot": "20261029",
     "https://github.com/JetBrains/thinkrail": "20261029",
@@ -150,6 +150,11 @@
     "https://github.com/alesha-pro/llm.asm": "20261127",
     "https://github.com/nexu-io/opengame": "20261127",
     "https://github.com/Moh4696/inkworks-skill": "20261127",
-    "https://github.com/koorchik/swarmy": "20261127"
+    "https://github.com/koorchik/swarmy": "20261127",
+    "https://github.com/qianyiai/KuroCat": "20261128",
+    "https://github.com/ag-ui-protocol/ag-ui": "20261128",
+    "https://github.com/gary23w/f-ck_data_brokers": "20261128",
+    "https://github.com/Reukix/Reloc": "20261128",
+    "https://github.com/axelered/papyrus": "20261128"
   }
 }

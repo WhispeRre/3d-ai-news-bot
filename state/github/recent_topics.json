@@ -1,13 +1,6 @@
 {
-  "updated_at": "2026-11-27T00:55:02+08:00",
+  "updated_at": "2026-11-28T00:41:17+08:00",
   "days": {
-    "20261120": [
-      "felixbfx/MuleCreate：三维线稿草图交给 AI 建模",
-      "mankidev/antialgorithm：逼 Agent 先躲开平庸创意",
-      "FlashML-org/FreeVideo：8GB 显存本地出片",
-      "ELU-Labs/elu：全屏终端编排编程会话",
-      "nilbuild/stick-scene：Agent 画出可交互火柴人"
-    ],
     "20261121": [
       "rxolve/zpup：JSON 场景出任意角度 SVG",
       "phone-harness/phone-harness：让编程 Agent 操控真机",
@@ -56,6 +49,13 @@
       "nexu-io/opengame：把编程 Agent 变成全栈 3D AI 游戏工作室",
       "koorchik/swarmy：终端里的多编程 Agent 实时监控与花费看板",
       "click6067-ship-it/token-tv：把 5 美元桌面小电视变成 Agent 像素宠物"
+    ],
+    "20261128": [
+      "ag-ui-protocol/ag-ui：连接任意 Agent 与前端应用的开放交互协议",
+      "axelered/papyrus：单容器自托管的 AI 文档解析与私有 OCR 服务",
+      "qianyiai/KuroCat：支持 MCP 捏脸的 3D/2D 桌面打字猫伴侣",
+      "Reukix/Reloc：免越狱的 iOS 本机虚拟外设级 GPS 定位模拟",
+      "gary23w/f-ck_data_brokers：自动向数据经纪商发删除请求的隐私脚本"
     ]
   }
 }
