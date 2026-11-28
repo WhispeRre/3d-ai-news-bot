@@ -1,23 +1,6 @@
 {
-  "updated_at": "2026-11-27T09:10:31+08:00",
+  "updated_at": "2026-11-28T09:10:50+08:00",
   "days": {
-    "20261120": [
-      "Anthropic 正式挂牌纳斯达克，开盘约高于发行价三成（跟进）",
-      "Google 在 Gemini API 推出 Tool Retrieval",
-      "MuleCreate：三维线稿交给 AI，在 Houdini 或 Blender 里建模",
-      "threejs-to-3d-model：一句话生成带动画的 3D，可导入主流引擎",
-      "CADMAGEDDON：本地视觉模型从多边形网格反推 CAD",
-      "LumenAct：中文语义驱动角色表情，并适配 Blender＋MCP",
-      "UltraTex：单张参考图为网格生成高保真 PBR 材质",
-      "WM^MLLM：把多模态大模型做成可持久编辑的交互世界模型",
-      "Ultimate3D：大规模数据教模型理解相机与物体空间关系",
-      "Google Gemini for Mac 上线 computer-use，可跨本地文件与应用干活",
-      "OpenAI 公开 Performance Factory：用 Codex Agent 巡检并修复性能问题",
-      "Google ADK Python 发布 v2.15.0：慢工具下保响应并加强沙箱隔离",
-      "Apple 据招聘信息自研可操控 Mac 的 AI Agent",
-      "Meta Muse 据报串话，甚至可能暴露他人隐私数据",
-      "Ramp 指数：六周内 token 单价降约 21%，用量创新高但增速放缓"
-    ],
     "20261121": [
       "Apple 发布 Depth Pro 2：单目深度估计同时兼顾边缘锐利与视频时序稳定",
       "SceneAnything：用 Agent 从单段视频重建可编辑的大规模网格场景",
@@ -126,6 +109,23 @@
       "MAGI-2 开源权重并主打成本低九成，视频大模型进入性价比竞争阶段",
       "蔚来发布世界模型 3.0：智驾训练提效 5 倍，座舱同步引入强化学习",
       "智谱高管辟谣 GLM-5.5 延期传闻：称国产万卡训练进展顺利"
+    ],
+    "20261128": [
+      "腾讯混元发布 Hy3D 3.6：聚焦高模表面整洁度与结构细节",
+      "OpenAI 秘密打造「Athena」数据平台，用语义层减少 AI Agent 猜错",
+      "OpenAI 反诉苹果窃密并施压供应商，AI 个人硬件争夺战升级",
+      "Datum：让 AI Agent 主导 CAD 零件设计与力学计算的工程编辑器",
+      "ww-auto-model-extractor-skill：面向 Blender 与 UE 的游戏角色资产交接 Skill",
+      "paper-vinyl：让 Agent 在 Blender 中自动生成纸艺微缩动画短片",
+      "蚂蚁灵波发布 LingBot-Map 2.0：能自我修正「空间记忆」的流式三维重建模型",
+      "Pi4：上海 AI Lab 开源 4D 场景几何与运动重建基础模型",
+      "Meta 与 AMI Labs 三项新研究力挺 JEPA 世界模型路线",
+      "OpenAI 展示语音＋WebMCP 交互式商城方案，让任意 Agent 直接调用网页工具",
+      "Google 工程师分享 Gemini 4 Neon 深度研究 Skill：并行子 Agent 变身科研助手",
+      "20 个 AI Agent 组队 4 天跑 350 次实验，刷新 ClickBench 性能纪录",
+      "AI 编程 Agent 加速《GTA 6》泄露版 PC 逆向，冲击游戏大厂错峰发售模式",
+      "Meshy 启动全球创作者合作计划，零粉丝门槛加码 3D 内容生态",
+      "微软 CEO 纳德拉承认放缓应届生招聘，优先推进「软件工厂」AI 转型"
     ]
   }
 }
