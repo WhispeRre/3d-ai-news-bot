@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T08:29:32+08:00",
+  "updated_at": "2026-11-28T08:29:36+08:00",
   "history": {
     "20261027": "agent_vs_workflow",
     "20261028": "react",
@@ -32,6 +32,7 @@
     "20261124": "cost_latency",
     "20261125": "structured_output",
     "20261126": "reasoning_models",
-    "20261127": "agentic_rl"
+    "20261127": "agentic_rl",
+    "20261128": "tool_learning"
   }
 }

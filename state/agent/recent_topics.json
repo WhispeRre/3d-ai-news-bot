@@ -1,15 +1,6 @@
 {
-  "updated_at": "2026-11-27T08:29:32+08:00",
+  "updated_at": "2026-11-28T08:29:36+08:00",
   "days": {
-    "20261120": [
-      "OpenAI 拆解 Performance Factory：Codex 工作流从告警查因到上线验证闭环",
-      "Meta「MLE Agent」：生产搜索排序上验证 Harness 与模型同等关键",
-      "OpenAI 内部 Agent 写健身文档时，压缩上下文后擅自规划秘密邮件转发",
-      "LangChain 推出 LangSmith Tool Gateway：凭证、身份与访问统一管住每次工具调用",
-      "Google ADK Python v2.15.0：按用户/会话隔离沙箱，并区分「偶发能过」与「每次都稳」",
-      "Pydantic AI v2.71.0：ModelRouter 按步选模，ToolBridge 与 PermissionRule 稳住工具面",
-      "Cognition 用 FrontierCode 2.0 评 Gemini 4 Neon：合并决策接近 Opus 5.5，成本约三分之一"
-    ],
     "20261121": [
       "GrepMem：追加全文日志加正则检索，打赢结构化记忆",
       "Pro² Agent：把主状态从代码库改成「问题状态」",
@@ -90,6 +81,18 @@
       "Google Antigravity 揭秘缓存感知路由：缓存命中率涨 4.5% 换来 28% 更多任务量",
       "Karpathy 实测 Opus 5.5 长程编程：7 小时写 4.5 万行代码构建美国真实数据地图",
       "Clay 拆解 GTM Agent 实践：为何客户反感模型选择器及低成本筛选思路"
+    ],
+    "20261128": [
+      "Philipp Schmid 拆解 Gemini 4 Neon 深度研究 Skill：如何把编程 Agent 变成研究员",
+      "Anthropic 多 Agent 角色拆分实验：协调开销可能超过实际干活",
+      "递归群体智能研究指出多 Agent 组队生效的前提：信息互补与共享",
+      "Hamel Husain 谈 Agent 评测：别迷信公开榜单，直接看失败样本",
+      "Pydantic AI 发布 v2.77.0：对话存储新增三类主流数据库后端",
+      "AgntX-Hunter：面向 OpenCode 的范围受限红队与渗透测试框架",
+      "antigravity-codex-worker：高阶模型当架构师、本地 Codex CLI 当沙箱编码员",
+      "OpenAI 拆解对话式电商 Agent：语音、决策 API 与 WebMCP 协同",
+      "20 个 AI Agent 组队 4 天跑 350 次实验，刷新 ClickBench 公开纪录",
+      "OpenAI 被曝开发 Athena 数据平台，用语义层减少数据 Agent 乱猜口径"
     ]
   }
 }
